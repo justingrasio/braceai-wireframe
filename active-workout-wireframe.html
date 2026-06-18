@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BraceAI — Feature Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#050505;--card:#1c1c20;--card-2:#26262b;--brand:#ff553a;
+    --green:#2fd96d;--green-deep:#0f5132;--red:#ef4343;
+    --txt:#fff;--txt-dim:#8b8b92;--txt-mute:#5a5a61;--stroke:rgba(255,255,255,.08);
+    --radius:12px;--pill:999px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Archivo',sans-serif;background:#2c2c2c;color:var(--txt);
+    padding:40px 32px 90px;-webkit-font-smoothing:antialiased}
+  .page-tab{display:inline-block;background:var(--brand);color:#fff;font-weight:800;font-size:22px;
+    letter-spacing:.5px;padding:14px 28px;border-radius:14px 14px 0 0;text-transform:uppercase}
+  .page-rule{height:5px;background:var(--brand);width:100%;margin-bottom:8px;border-radius:3px}
+  .intro{color:#d4d4d8;max-width:820px;margin:18px 0 28px;line-height:1.6;font-size:14px}
+  .intro b{color:#fff}
+
+  /* feature tabs */
+  .tabnav{display:flex;gap:6px;margin:0 0 22px;border-bottom:2px solid #444;flex-wrap:wrap}
+  .tab{background:transparent;color:#9a9aa2;border:none;font-family:inherit;font-weight:800;
+    font-size:16px;padding:13px 26px;cursor:pointer;border-radius:10px 10px 0 0;position:relative;top:2px}
+  .tab.active{background:#000;color:#fff;border:2px solid #444;border-bottom:2px solid #000}
+  .tabpanel{display:none}
+  .tabpanel.active{display:block}
+
+  /* coach mode toggle */
+  .mode-bar{display:flex;gap:8px;align-items:center;margin:0 0 30px;flex-wrap:wrap}
+  .mode-bar span{color:#bbb;font-size:13px;font-weight:600;margin-right:6px}
+  .mode-btn{background:#1c1c20;color:#aaa;border:1px solid var(--stroke);font-family:inherit;
+    font-weight:700;font-size:13px;padding:9px 18px;border-radius:var(--pill);cursor:pointer;transition:.15s}
+  .mode-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .mode-hint{color:#888;font-size:12px;margin-left:4px}
+
+  /* section labels */
+  .section-label{display:inline-block;background:#000;color:#fff;font-weight:700;font-size:13px;
+    padding:7px 16px;border-radius:6px;margin:40px 0 4px}
+  .section-rule{height:2px;background:#000;width:100%;margin-bottom:8px}
+  .flow-note{color:#cfcfd4;font-size:13px;margin:10px 0 24px;max-width:820px;line-height:1.55}
+  .flow-note b{color:#fff}
+
+  /* flow rows with arrows */
+  .flow{display:flex;gap:6px;flex-wrap:wrap;align-items:flex-start;margin-bottom:14px}
+  .frame-wrap{display:flex;flex-direction:column;gap:10px;align-items:center;width:280px}
+  .frame-cap{color:#bbb;font-size:12px;font-weight:600;text-align:center;max-width:280px;line-height:1.35}
+  .frame-cap b{color:var(--brand)}
+
+  .flow-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    width:96px;align-self:center;padding-top:0}
+  .flow-arrow .ar{font-size:30px;color:var(--brand);line-height:1}
+  .flow-arrow .lbl{font-size:11px;color:#cdcdd2;text-align:center;margin-top:8px;line-height:1.35}
+  .flow-arrow .lbl b{color:#fff}
+
+  /* phone */
+  .phone{width:280px;height:610px;background:var(--canvas);border-radius:36px;overflow:hidden;
+    position:relative;border:1px solid #000;box-shadow:0 18px 44px rgba(0,0,0,.5);display:flex;flex-direction:column}
+  .statusbar{display:flex;justify-content:space-between;align-items:center;padding:13px 20px 6px;
+    font-size:12px;font-weight:700;flex:0 0 auto}
+  .statusbar .dots{letter-spacing:2px;font-size:10px;opacity:.9}
+  .screen{flex:1;overflow:hidden;position:relative;padding:0 15px}
+
+  /* workout bits */
+  .wo-top{display:flex;align-items:center;justify-content:space-between;padding:6px 0 12px}
+  .circle-btn{width:36px;height:36px;border-radius:50%;background:#1c1c20;display:flex;
+    align-items:center;justify-content:center;font-size:15px;color:#ddd}
+  .timer{background:#3a1410;color:#fff;border:1px solid #5a1d16;border-radius:var(--pill);
+    padding:8px 18px;font-weight:800;font-style:italic;font-size:14px;display:flex;align-items:center;gap:8px}
+  .timer .rec{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+  .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ff7a63,#ff553a);border:2px solid var(--brand)}
+  .ex-row{display:flex;align-items:center;gap:11px;padding:9px 0}
+  .ex-thumb{width:42px;height:50px;border-radius:8px;background:linear-gradient(135deg,#3a3a40,#222);flex:0 0 auto;position:relative}
+  .ex-name{font-weight:700;font-size:15px}
+  .ex-meta{color:var(--txt-dim);font-size:11px;margin-top:3px}
+  .ex-dots{margin-left:auto;color:#888;font-size:18px;letter-spacing:1px;align-self:flex-start;background:#1c1c20;
+    border-radius:8px;padding:2px 8px}
+  .set-card{background:#141417;border:1px solid var(--stroke);border-radius:var(--radius);padding:11px;margin-top:6px}
+  .set-head{display:grid;grid-template-columns:34px 1fr 1fr 32px;gap:7px;color:var(--txt-dim);
+    font-size:10px;font-weight:700;padding:0 3px 8px;text-transform:uppercase}
+  .set-row{display:grid;grid-template-columns:34px 1fr 1fr 32px;gap:7px;margin-bottom:7px;align-items:center}
+  .set-cell{background:#2a2a30;border-radius:7px;padding:10px 0;text-align:center;font-weight:700;font-size:14px}
+  .set-row.done .set-cell{background:var(--green-deep);color:#7ef0a8}
+  .check{width:32px;height:32px;border-radius:7px;background:#2a2a30;display:flex;align-items:center;justify-content:center;color:#666;font-weight:800}
+  .set-row.done .check{background:var(--green);color:#04220f}
+  .add-set{background:#222;border-radius:7px;text-align:center;padding:10px;color:#ccc;font-weight:700;font-size:12px;margin-top:2px}
+  .wo-controls{position:absolute;bottom:16px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:12px}
+  .stop-btn{width:54px;height:54px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center}
+  .stop-btn i{width:16px;height:16px;background:#fff;border-radius:4px}
+  .view-toggle{background:#1c1c20;border-radius:var(--pill);padding:5px;display:flex;gap:4px}
+  .view-toggle .vt{width:38px;height:34px;border-radius:var(--pill);display:flex;align-items:center;justify-content:center;color:#888;font-size:15px}
+  .view-toggle .vt.active{background:#fff;color:#000}
+
+  /* buttons */
+  .btn{display:block;width:100%;text-align:center;padding:14px;border-radius:var(--pill);
+    font-weight:800;font-size:14px;border:none;font-family:inherit;cursor:pointer}
+  .btn-white{background:#fff;color:#000}.btn-brand{background:var(--brand);color:#fff}
+  .btn-ghost{background:transparent;color:#bbb}.btn-dark{background:#2a2a30;color:#fff}
+
+  /* sheet/modal */
+  .sheet{position:absolute;left:0;right:0;bottom:0;background:#161619;border-radius:22px 22px 0 0;
+    padding:20px 16px 18px;border-top:1px solid var(--stroke)}
+  .sheet-grip{width:40px;height:5px;border-radius:3px;background:#3a3a40;margin:0 auto 16px}
+  .coach-line{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px}
+  .coach-line .av{width:28px;height:28px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
+  .coach-line p{font-size:14px;line-height:1.45;font-weight:500}
+  .q-sub{color:var(--txt-dim);font-size:12px;margin-bottom:18px;line-height:1.4}
+
+  /* slider */
+  .slider-wrap{margin:4px 2px 20px}
+  .slider-track{height:9px;border-radius:var(--pill);position:relative;background:linear-gradient(90deg,#2fd96d,#ffd23a,#ff8c42,#ef4343)}
+  .slider-stops{display:flex;justify-content:space-between;position:absolute;top:-3px;left:0;right:0;padding:0 2px}
+  .slider-stops i{width:15px;height:15px;border-radius:50%;background:#0a0a0a;border:2px solid #fff;opacity:.35}
+  .slider-stops i.on{opacity:1;transform:scale(1.5);box-shadow:0 0 0 4px rgba(255,255,255,.15)}
+  .slider-emojis{display:flex;justify-content:space-between;margin-top:14px}
+  .slider-emojis span{font-size:18px;width:25%;text-align:center;opacity:.4}
+  .slider-emojis span.on{opacity:1;transform:scale(1.2)}
+  .slider-labels{display:flex;justify-content:space-between;margin-top:3px}
+  .slider-labels span{font-size:10px;color:var(--txt-dim);width:25%;text-align:center;font-weight:600}
+  .slider-labels span.on{color:#fff}
+
+  .suggest-box{background:#221b18;border:1px solid #4a2a20;border-radius:var(--radius);padding:14px;margin-bottom:14px}
+  .suggest-box .lbl{color:var(--brand);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:7px}
+  .suggest-box .big{font-size:16px;font-weight:700;line-height:1.4}.suggest-box .big b{color:var(--brand)}
+  .pr-tag{display:inline-block;background:var(--brand);color:#fff;font-size:9px;font-weight:800;padding:3px 7px;
+    border-radius:var(--pill);margin-left:5px;vertical-align:middle;text-transform:uppercase}
+
+  .bodymap{display:flex;justify-content:center;margin:4px 0 14px}
+  .bodymap svg{height:210px}
+  .zone{fill:#2a2a30;stroke:#3a3a40;stroke-width:1}
+  .zone.hurt{fill:var(--brand);stroke:#ff7a63}
+
+  .choices{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
+  .choice{background:#2a2a30;border-radius:11px;padding:14px;font-weight:700;font-size:14px;text-align:center}
+  .choice.sel{background:var(--brand);color:#fff}
+  .choice.danger{background:#3a1410;color:#ff8a78;border:1px solid #5a1d16}
+
+  .alt{display:flex;align-items:center;gap:11px;background:#1c1c20;border:1px solid var(--stroke);border-radius:11px;padding:9px;margin-bottom:9px}
+  .alt .t{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#3a3a40,#222);flex:0 0 auto}
+  .alt .n{font-weight:700;font-size:13px}.alt .m{color:var(--txt-dim);font-size:10px;margin-top:2px}
+  .alt .go{margin-left:auto;color:#666;font-size:17px}
+
+  .full-lock{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:0 26px}
+  .lock-emoji{font-size:50px;margin-bottom:20px}
+  .lock-title{font-size:20px;font-weight:800;margin-bottom:11px}
+  .lock-body{color:var(--txt-dim);font-size:13px;line-height:1.5;margin-bottom:8px}
+
+  /* ===== Lock App specific ===== */
+  .home-head{display:flex;justify-content:space-between;align-items:center;padding:4px 0 10px}
+  .home-head .wk{font-weight:800;font-size:17px}
+  .pill-mini{background:#1c1c20;border-radius:var(--pill);padding:6px 12px;font-size:11px;color:#ccc;font-weight:700}
+  .checkin{display:flex;justify-content:space-between;align-items:center;background:#141417;border-radius:10px;padding:11px 13px;margin-bottom:10px;font-size:12px;color:#ccc}
+  .hero{border-radius:14px;overflow:hidden;position:relative;height:150px;background:linear-gradient(160deg,#4a4a52,#1a1a1e);display:flex;flex-direction:column;justify-content:flex-end;padding:13px;margin-bottom:11px}
+  .hero .day{font-weight:800;font-size:24px;font-style:italic}
+  .hero .sm{color:#cfcfd4;font-size:10px;margin-top:3px}
+  .hero .open{position:absolute;right:12px;bottom:12px;background:#fff;color:#000;font-weight:800;font-size:11px;padding:7px 16px;border-radius:var(--pill)}
+  .lockcard{background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:14px;margin-bottom:11px}
+  .lockcard .ti{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:5px}
+  .lockcard .ds{color:var(--txt-dim);font-size:11px;line-height:1.4;margin-bottom:12px}
+  .lockcard.active{background:linear-gradient(160deg,#2a1410,#141417);border-color:#5a1d16}
+  .lock-badge{color:var(--brand);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+  .app-ico{width:26px;height:26px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+  .app-row{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px solid var(--stroke)}
+  .app-row .nm{font-weight:600;font-size:14px}
+  .app-row .x{margin-left:auto;color:#777;font-size:16px}
+  .picker-note{background:#1a1a1e;border:1px dashed #3a3a40;border-radius:10px;padding:11px;color:#9a9aa2;font-size:11px;line-height:1.45;text-align:center;margin:10px 0}
+  .daybar{display:flex;justify-content:space-between;margin:12px 0 16px}
+  .daybar i{width:30px;height:30px;border-radius:50%;background:#2a2a30;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#888;font-style:normal}
+  .daybar i.on{background:var(--brand);color:#fff}
+  .timefield{display:flex;justify-content:space-between;align-items:center;background:#1c1c20;border-radius:10px;padding:13px 15px;margin-bottom:10px;font-weight:700;font-size:14px}
+  .timefield .v{color:#fff}
+  .bottombar{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-around;
+    padding:11px 0 16px;background:linear-gradient(transparent,#050505 30%)}
+  .bottombar .it{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px;color:#666}
+  .bottombar .it.on{color:var(--brand)}
+  .bottombar .ic{font-size:16px}
+  /* live activity */
+  .la-phone{background:linear-gradient(180deg,#1a1a22,#050505)}
+  .liveact{background:rgba(40,40,48,.92);border-radius:20px;padding:13px 14px;display:flex;align-items:center;gap:10px;
+    margin:8px 4px;border:1px solid rgba(255,255,255,.07);backdrop-filter:blur(8px)}
+  .liveact .lic{font-size:22px}
+  .liveact .lt{font-weight:700;font-size:14px}
+  .liveact .ls{color:#bbb;font-size:11px;margin-top:2px}
+  .liveact .lbtns{margin-left:auto;display:flex;gap:6px}
+  .la-btn{background:#fff;color:#000;font-weight:800;font-size:11px;padding:8px 12px;border-radius:var(--pill)}
+  .la-btn.dark{background:rgba(255,255,255,.18);color:#fff}
+  .budget{background:#141417;border-radius:10px;padding:12px;margin:10px 0}
+  .budget .bt{display:flex;justify-content:space-between;font-size:11px;color:#bbb;margin-bottom:8px}
+  .budget .track{height:7px;background:#2a2a30;border-radius:var(--pill);overflow:hidden}
+  .budget .fill{height:100%;width:40%;background:var(--green);border-radius:var(--pill)}
+  .dur{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 0}
+  .dur .o{font-size:14px;color:#555;font-weight:700}
+  .dur .o.on{font-size:22px;color:#fff}
+
+  /* ===== Cardio specific ===== */
+  .media{position:absolute;inset:0;background:linear-gradient(160deg,#43342c,#1a1410);overflow:hidden}
+  .media::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0,transparent 40%,rgba(0,0,0,.65))}
+  .media .ph{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-size:150px;opacity:.22}
+  .media-top{position:absolute;left:0;right:0;top:0;padding:8px 15px;display:flex;align-items:center;justify-content:space-between;z-index:3}
+  .targets{display:flex;flex-wrap:wrap;gap:7px}
+  .tchip{background:rgba(28,28,32,.82);backdrop-filter:blur(6px);border:1px solid var(--stroke);border-radius:var(--pill);padding:7px 13px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700}
+  .tchip .k{color:var(--txt-dim);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}
+  .tchip .v{color:#fff}
+  .tchip.lead{background:var(--brand);border-color:var(--brand)}
+  .tchip.lead .k{color:#ffd8d0}
+  .media-panel{position:absolute;left:15px;right:15px;bottom:15px;z-index:3}
+  .stage-tag{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--brand);margin-bottom:6px}
+  .ex-title{font-weight:800;font-size:21px;font-style:italic;text-transform:uppercase;line-height:1}
+  .coach-mini{display:flex;gap:9px;align-items:flex-start;background:rgba(10,10,10,.55);backdrop-filter:blur(6px);border:1px solid var(--stroke);border-radius:12px;padding:10px 11px;margin:12px 0}
+  .coach-mini .av{width:24px;height:24px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
+  .coach-mini p{font-size:12px;line-height:1.4;font-weight:500}
+  .ring-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;margin:6px 0}
+  .ring{position:relative;width:148px;height:148px}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .big{font-size:30px;font-weight:800;font-style:italic;line-height:1}
+  .ring .tgt{font-size:11px;color:var(--txt-dim);font-weight:700;margin-top:3px}
+  .live-stats{display:flex;justify-content:center;gap:8px;margin-top:2px}
+  .lstat{background:rgba(28,28,32,.82);border:1px solid var(--stroke);border-radius:10px;padding:8px 12px;text-align:center;min-width:74px}
+  .lstat .n{font-size:15px;font-weight:800}
+  .lstat .l{font-size:9px;color:var(--txt-dim);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
+  .ctrl-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px}
+  .pause-btn{flex:1;background:#fff;color:#000;border-radius:var(--pill);font-weight:800;font-size:14px;padding:14px;text-align:center}
+  .done-btn{flex:0 0 auto;background:#2a2a30;color:#fff;border-radius:var(--pill);font-weight:800;font-size:13px;padding:14px 20px}
+  .summary-stats{display:flex;gap:9px;margin:14px 0}
+  .sstat{flex:1;background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:14px 8px;text-align:center}
+  .sstat .n{font-size:20px;font-weight:800;font-style:italic}
+  .sstat .n small{font-size:11px;font-style:normal;color:var(--txt-dim);font-weight:700}
+  .sstat .l{font-size:9px;color:var(--txt-dim);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:4px}
+  .est-note{text-align:center;color:var(--txt-mute);font-size:10px;margin:-4px 0 14px}
+
+  /* ===== Progress tab ===== */
+  .pg-pagehead{display:flex;align-items:center;justify-content:space-between;padding:4px 0 12px}
+  .pg-pagehead .h{font-weight:800;font-style:italic;font-size:20px;text-transform:uppercase}
+  .pg-segs{display:flex;gap:4px;background:#1c1c20;border-radius:var(--pill);padding:3px}
+  .pg-segs span{font-size:10px;font-weight:700;padding:5px 11px;border-radius:var(--pill);color:var(--txt-dim)}
+  .pg-segs span.on{background:#fff;color:#000}
+  .pg-card{background:var(--card);border-radius:16px;padding:15px 13px}
+  .pg-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+  .pg-title{font-weight:800;font-style:italic;font-size:15px;text-transform:uppercase;letter-spacing:-.3px}
+  .pg-drop{display:flex;align-items:center;gap:6px;background:var(--card-2);border-radius:var(--pill);padding:6px 11px;color:var(--txt-dim);font-size:11px;font-weight:700}
+  .pg-infoline{display:flex;align-items:center;gap:6px;color:var(--txt-dim);font-size:10px;margin-bottom:15px}
+  .pg-sec{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .pg-sec .dot{width:7px;height:7px;border-radius:var(--pill);background:var(--brand);flex:0 0 auto}
+  .pg-sec .t{font-weight:700;font-size:13px}
+  .pg-sub{color:var(--txt-dim);font-size:10px;margin:-6px 0 11px 15px}
+  .pg-div{height:1px;background:var(--stroke);margin:16px 2px}
+  .mrow{background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:11px 12px;margin-bottom:8px}
+  .mrow-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+  .mrow-top .nm{font-weight:700;font-size:14px}
+  .mbar{height:8px;background:var(--card-2);border-radius:var(--pill);overflow:hidden}
+  .mbar .fill{height:100%;border-radius:var(--pill);background:var(--brand)}
+  .mbar .fill.cold{background:#5a5a63}
+  .mrow-bot{display:flex;align-items:center;justify-content:space-between;margin-top:9px}
+  .mrow-bot .to{color:var(--txt-dim);font-size:11px}
+  .mrow-bot .to b{color:#fff;font-weight:800}
+  .lvl{font-size:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:3px 8px;border-radius:var(--pill)}
+  .lvl.rookie{background:#2a2a30;color:#b9b9c2}
+  .lvl.practiced{background:#123a23;color:var(--green)}
+  .lvl.expert{background:#3a1d12;color:#ff7a55}
+  .lvl.elite{background:#3a1518;color:var(--red)}
+  .delta{display:inline-flex;align-items:center;gap:3px;color:var(--green);font-size:12px;font-weight:800}
+  .stale{display:inline-flex;align-items:center;gap:4px;color:var(--txt-dim);font-size:11px;font-weight:600}
+
+  .legend{color:#999;font-size:12px;margin-top:54px;line-height:1.7;border-top:1px solid #444;padding-top:20px;max-width:900px}
+  .legend b{color:#fff}
+</style>
+</head>
+<body>
+
+  <div class="page-tab">BraceAI — Feature Wireframes</div>
+  <div class="page-rule"></div>
+  <p class="intro">
+    Flow wireframes. <b>Arrows</b> describe what triggers the next screen ("tap X → this shows").
+    The <b>Coach Mode</b> toggle rewrites coach copy live (works in both tabs). Dark theme, brand
+    <b style="color:#ff553a">#ff553a</b>, Archivo. Content + flow only — not final pixel UI.
+  </p>
+
+  <div class="tabnav">
+    <button class="tab active" data-tab="workout">Active Workout</button>
+    <button class="tab" data-tab="lock">Lock App</button>
+    <button class="tab" data-tab="progress">Progress</button>
+  </div>
+
+  <div class="mode-bar">
+    <span>COACH MODE:</span>
+    <button class="mode-btn active" data-mode="chill">Chill</button>
+    <button class="mode-btn" data-mode="hype">Hype</button>
+    <button class="mode-btn" data-mode="direct">Direct</button>
+    <button class="mode-btn" data-mode="savage">Savage</button>
+    <span class="mode-hint">← changes copy on the coach + lock screens</span>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- TAB 1: ACTIVE WORKOUT -->
+  <!-- ============================================================= -->
+  <div class="tabpanel active" id="tab-workout">
+
+    <div class="section-label">SYSTEM 1 · Effort Check + Progressive Overload</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Fires after the <b>2nd set of each exercise</b>. User drags a slider → coach reacts. "Too easy" offers +2.5&nbsp;kg (or +reps/+seconds) and auto-fills the next set.</p>
+
+    <div class="flow">
+      <!-- 1A -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>12:04</div><div class="avatar"></div></div>
+            <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Goblet Squat</div><div class="ex-meta">3 sets · 10 reps · 17.5 kg</div></div><div class="ex-dots">⋯</div></div>
+            <div class="set-card">
+              <div class="set-head"><span>SET</span><span>WEIGHT</span><span>REPS</span><span>✓</span></div>
+              <div class="set-row done"><div class="set-cell">1</div><div class="set-cell">17.5</div><div class="set-cell">10</div><div class="check">✓</div></div>
+              <div class="set-row done"><div class="set-cell">2</div><div class="set-cell">17.5</div><div class="set-cell">10</div><div class="check">✓</div></div>
+              <div class="set-row"><div class="set-cell" style="color:#666">3</div><div class="set-cell" style="color:#666">0</div><div class="set-cell" style="color:#666">0</div><div class="check">✓</div></div>
+              <div class="add-set">+ ADD SET</div>
+            </div>
+          </div>
+          <div class="wo-controls"><div class="stop-btn"><i></i></div><div class="view-toggle"><div class="vt">☰</div><div class="vt active">▦</div></div></div>
+        </div>
+        <div class="frame-cap">① Active workout — set 2 just logged</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">auto, <b>after set 2</b></div></div>
+
+      <!-- 1B -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.5)"><div class="wo-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>12:04</div><div class="avatar"></div></div></div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div class="coach-line"><div class="av"></div><p><b>How did that feel?</b></p></div>
+            <p class="q-sub">Be honest — this is how your coach knows when to push you.</p>
+            <div class="slider-wrap">
+              <div class="slider-track"><div class="slider-stops"><i class="on"></i><i></i><i></i><i></i></div></div>
+              <div class="slider-emojis"><span class="on">😮‍💨</span><span>💪</span><span>🔥</span><span>🥵</span></div>
+              <div class="slider-labels"><span class="on">Too easy</span><span>Solid</span><span>Hard</span><span>Maxed</span></div>
+            </div>
+            <button class="btn btn-white">Continue</button>
+          </div>
+        </div>
+        <div class="frame-cap">② Effort slider — 4 snap points</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>"Too easy"</b> + Continue</div></div>
+
+      <!-- 1C -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.5)"><div class="wo-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>12:04</div><div class="avatar"></div></div></div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div class="coach-line"><div class="av"></div><p id="suggest-copy">Nice, that looked smooth. Want to bump to 20 kg for the next set?</p></div>
+            <div class="suggest-box"><div class="lbl">Next set update</div><div class="big">17.5 kg → <b>20 kg</b> <span class="pr-tag">PR target</span></div></div>
+            <button class="btn btn-brand" style="margin-bottom:9px">Apply — update next set</button>
+            <button class="btn btn-ghost">Keep it the same</button>
+          </div>
+        </div>
+        <div class="frame-cap">③ Suggestion <b>(changes w/ Coach Mode)</b></div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 2 · Mid-Workout Injury</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Entry via the exercise <b>⋯ menu → "I'm hurt"</b>. Mild → safe swap. Sharp → stop &amp; log (streak still counts).</p>
+
+    <div class="flow">
+      <!-- 2A -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">I'm Hurt</div><div class="circle-btn">✕</div></div>
+            <div class="coach-line" style="margin-top:8px"><div class="av"></div><p>Where does it hurt? Tap the area.</p></div>
+            <div class="bodymap">
+              <svg viewBox="0 0 120 240" xmlns="http://www.w3.org/2000/svg">
+                <circle class="zone" cx="60" cy="22" r="14"/><rect class="zone" x="44" y="40" width="32" height="46" rx="8"/>
+                <rect class="zone hurt" x="22" y="42" width="16" height="40" rx="7"/><rect class="zone" x="82" y="42" width="16" height="40" rx="7"/>
+                <rect class="zone hurt" x="18" y="84" width="13" height="34" rx="6"/><rect class="zone" x="89" y="84" width="13" height="34" rx="6"/>
+                <rect class="zone" x="44" y="90" width="32" height="44" rx="8"/>
+                <rect class="zone" x="46" y="140" width="13" height="48" rx="6"/><rect class="zone" x="61" y="140" width="13" height="48" rx="6"/>
+                <rect class="zone" x="46" y="192" width="13" height="40" rx="6"/><rect class="zone" x="61" y="192" width="13" height="40" rx="6"/>
+              </svg>
+            </div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:12px">Selected: <b style="color:#fff">Left forearm / wrist</b></div>
+            <button class="btn btn-white">Continue</button>
+          </div>
+        </div>
+        <div class="frame-cap">④ Body map — tap painful area</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap area + <b>Continue</b></div></div>
+
+      <!-- 2B -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">I'm Hurt</div><div class="circle-btn">✕</div></div>
+            <div class="coach-line" style="margin-top:8px"><div class="av"></div><p>How bad is it?</p></div>
+            <div class="choices" style="margin-top:18px">
+              <div class="choice sel">Mild discomfort</div><div class="choice">Sharp pain</div><div class="choice">Can't continue</div>
+            </div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Continue</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑤ Severity → decides branch</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">⤳</div><div class="lbl">"<b>Mild</b>" →</div></div>
+
+      <!-- 2C -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Swap Exercise</div><div class="circle-btn">✕</div></div>
+            <div class="coach-line" style="margin-top:8px"><div class="av"></div><p id="mild-copy">No worries — let's swap this for something that doesn't load your wrist.</p></div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:12px 3px 9px">Safe alternatives · lower body</div>
+            <div class="alt"><div class="t"></div><div><div class="n">Leg Press</div><div class="m">Quads · no wrist load</div></div><div class="go">›</div></div>
+            <div class="alt"><div class="t"></div><div><div class="n">Bulgarian Split Squat</div><div class="m">Quads, glutes · bodyweight</div></div><div class="go">›</div></div>
+            <div class="alt"><div class="t"></div><div><div class="n">Leg Extension</div><div class="m">Quads · machine</div></div><div class="go">›</div></div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px">
+              <button class="btn btn-dark" style="margin-bottom:9px">Rest &amp; finish early</button>
+              <button class="btn btn-ghost">End session</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑥ Mild → pre-tagged safe swaps</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">⤳</div><div class="lbl">"<b>Sharp</b>" →</div></div>
+
+      <!-- 2D -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock">
+              <div class="lock-emoji">🛑</div><div class="lock-title">Let's stop here</div>
+              <p class="lock-body" id="sharp-copy">Stop right there. Sharp pain isn't something we push through. Ending today's session is the smart move.</p>
+              <div style="color:var(--green);font-size:12px;font-weight:700;margin-top:12px">✓ Session saved · streak protected</div>
+            </div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px">
+              <button class="btn btn-white" style="margin-bottom:9px">End &amp; save session</button><button class="btn btn-ghost">Back to workout</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑦ Sharp → stop &amp; log, <b>streak counts</b></div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 3 · Personalized Next-Day Check-in</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">If a pain event was logged, the next day's check-in opens by referencing it.</p>
+    <div class="flow">
+      <div class="flow-arrow" style="width:120px"><div class="lbl" style="margin-top:0">From ⑦ → <b>next day's first app open</b> →</div></div>
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div style="font-weight:800;font-size:15px">Daily Check-In</div><div class="circle-btn">✕</div></div>
+            <div class="coach-line" style="margin-top:12px"><div class="av"></div><p>Yesterday your <b>left wrist</b> flared up during <b>Goblet Squats</b>. How's it feeling today?</p></div>
+            <div class="choices" style="margin-top:20px">
+              <div class="choice" style="background:var(--green-deep);color:#7ef0a8">Good to go</div>
+              <div class="choice">Still tender</div><div class="choice danger">Worse</div>
+            </div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Confirm</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑧ Opener references the exact incident</div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 4 · Help (?) — Injury / pain</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">The <b>?</b> button is <b>purely for pain</b>. (Difficulty — "too easy / too hard" and the weight bump — is handled by the Effort Check slider in System 1, so there's no overlap here.) "Something hurts" → the injury flow (System 2, screens ④–⑦, logs a pain event). An "end session" escape is always available.</p>
+
+    <div class="flow">
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)">
+            <div class="ex-row" style="margin-top:6px"><div class="ex-thumb"></div><div><div class="ex-name">Goblet Squat</div><div class="ex-meta">3 sets · 10 reps</div></div></div>
+          </div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div style="display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px"><div style="font-weight:800;font-size:15px">Need a hand?</div><div class="circle-btn" style="position:absolute;right:0;width:30px;height:30px">✕</div></div>
+            <div class="coach-line"><div class="av"></div><p>Something feeling off? Let's take care of it.</p></div>
+            <div class="choices" style="margin-top:6px">
+              <div class="choice danger" style="text-align:left;display:flex;gap:10px;align-items:center">🤕 <div><div>Something hurts</div><div style="font-size:11px;color:#c98;font-weight:500;margin-top:2px">Pain or discomfort — let's protect you</div></div></div>
+            </div>
+            <div style="text-align:center;color:#888;font-size:12px;font-weight:700;padding:12px">I need to stop — end session</div>
+          </div>
+        </div>
+        <div class="frame-cap">⑨ Help (?) — pain only (difficulty lives on the slider)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">"<b>Something hurts</b>" → injury flow<br>(System 2 · ④–⑦)</div></div>
+    </div>
+
+    <div class="section-label">SYSTEM 5 · Ask Coach — general preset questions</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Opens from the coach avatar. <b>6 templates authored once</b>; the exercise name is injected as a variable ({exercise}). Free text + mic always available. The AI answers live with the exercise/sets/history in context, in the user's Coach Mode — so no per-exercise content to maintain.</p>
+
+    <div class="flow">
+      <!-- B1 presets -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)"></div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><div class="av" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ff7a63,#ff553a)"></div><div style="font-weight:800;font-size:15px">Ask Coach</div><div class="circle-btn" style="margin-left:auto;width:30px;height:30px">✕</div></div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">How do I do <b style="color:var(--brand)">Goblet Squat</b> properly?</span>
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">I feel this in the wrong muscle</span>
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">Is this weight right today?</span>
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">Make this easier</span>
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">Make this harder</span>
+              <span style="background:#2a2a30;border:1px solid var(--stroke);border-radius:999px;padding:9px 13px;font-size:12px;font-weight:600">Replace <b style="color:var(--brand)">Goblet Squat</b></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;background:#1c1c20;border:1px solid var(--brand);border-radius:999px;padding:11px 14px"><div class="av" style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#ff7a63,#ff553a)"></div><span style="color:#888;font-size:13px">Ask anything…</span><span style="margin-left:auto">🎙️</span></div>
+          </div>
+        </div>
+        <div class="frame-cap">⑩ Ask Coach — 6 templates, {exercise} injected</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap a chip →<br>AI answers (in Coach Mode)</div></div>
+
+      <!-- B2 answer -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)"></div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div style="display:flex;justify-content:flex-end;margin-bottom:12px"><span style="background:var(--brand);color:#fff;border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:13px;font-weight:600;max-width:75%">How do I do Goblet Squat properly?</span></div>
+            <div style="display:flex;gap:9px;align-items:flex-start"><div class="av" style="width:28px;height:28px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)"></div><p id="coach-ans" style="background:#1c1c20;border-radius:14px 14px 14px 4px;padding:11px 13px;font-size:13px;line-height:1.45;font-weight:500">Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.</p></div>
+            <div style="display:flex;align-items:center;gap:10px;background:#1c1c20;border:1px solid var(--brand);border-radius:999px;padding:11px 14px;margin-top:16px"><span style="color:#888;font-size:13px">Ask anything…</span><span style="margin-left:auto">🎙️</span></div>
+          </div>
+        </div>
+        <div class="frame-cap">⑪ Live AI answer <b>(mode-aware)</b> — no pre-written content</div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 6 · Auto-Fill — suggested weight/reps from last session</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">When the user has done an exercise before, sets pre-fill as <b>ghost placeholders</b> (editable, must confirm). Source = last logged sets → adjusted by last Effort Check (too easy = +2.5kg…) → nudged by the current 4-week phase. Beating the suggestion fires a PR.</p>
+
+    <div class="flow">
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px;font-style:italic">Goblet Squat</div><div class="circle-btn">✕</div></div>
+            <div style="display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap">
+              <span class="pill-mini">⏱ 1:00 rest</span><span class="pill-mini">📈 History</span><span class="pill-mini">🔁 Replace</span>
+            </div>
+            <div style="background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:13px;margin-bottom:12px">
+              <div style="font-weight:800;font-size:13px"><span style="color:#ffd23a">Week 2 of 4</span> · <span style="color:var(--brand)">Load</span></div>
+              <div style="color:var(--txt-dim);font-size:12px;margin:5px 0 9px;line-height:1.4">Today should feel more challenging — keep form tight.</div>
+              <div style="display:flex;gap:8px"><span style="background:#0f2a1a;color:#7ef0a8;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px">Reps ↗</span><span style="background:#0f2a1a;color:#7ef0a8;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px">Weight ↗</span><span style="background:#2a1a14;color:var(--brand);font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px">Adjusted for you</span></div>
+            </div>
+            <div class="set-card">
+              <div class="set-head"><span>SET</span><span>REPS</span><span>WEIGHT</span><span></span></div>
+              <div class="set-row"><div class="set-cell" style="background:#1a1a1e;color:#888">W</div><div class="set-cell" style="background:#1a1a1e;color:#888">8</div><div class="set-cell" style="background:#1a1a1e;color:#888">10</div><div class="check" style="background:#1a1a1e"></div></div>
+              <div class="set-row"><div class="set-cell" style="background:#1a1a1e;color:#888">1</div><div class="set-cell" style="background:#222;color:#666;font-style:italic">10</div><div class="set-cell" style="background:#222;color:#666;font-style:italic">20</div><div class="check" style="background:#1a1a1e"></div></div>
+              <div class="set-row"><div class="set-cell" style="background:#1a1a1e;color:#888">2</div><div class="set-cell" style="background:#222;color:#666;font-style:italic">10</div><div class="set-cell" style="background:#222;color:#666;font-style:italic">20</div><div class="check" style="background:#1a1a1e"></div></div>
+              <div style="text-align:center;color:#666;font-size:10px;margin-top:4px">ghost values · last time 17.5 × 10 · tap to edit · <span style="color:#8ab4ff">Bar + plates ›</span></div>
+            </div>
+            <button class="btn btn-brand" style="position:absolute;bottom:16px;left:15px;right:15px;font-style:italic">Start Workout</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑫ Auto-fill — phase banner, warm-up, ghost suggestions</div>
+      </div>
+      <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0">The <b>20 kg</b> ghost = last session's "Next Target" bump.<br>Effort Check → next numbers → Effort Check.</div></div>
+    </div>
+
+    <div class="section-label">SYSTEM 7 · Cardio Block — Start → Run → Finish</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Distinct from the main lifts. Borrows the <b>warm-up / cool-down shell</b> (full-bleed media, big timer, Start/Pause) so it reads as <b>guided &amp; timed</b>, not "log-it-yourself." New part = the <b>target strip</b> (what to set on the machine). No wearable: we show <b>Time</b> (owned) + clearly-labelled <b>est. distance / calories</b> (from speed + bodyweight), and one <b>RPE check</b> at the end to feed progression.</p>
+
+    <div class="flow">
+      <!-- 7A · Start -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="padding:0">
+            <div class="media"><div class="ph">🏃</div></div>
+            <div class="media-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>00:00:00</div><div class="avatar"></div></div>
+            <div class="media-panel">
+              <div class="targets" style="margin-bottom:12px">
+                <span class="tchip lead"><span class="k">Time</span><span class="v">20 min</span></span>
+                <span class="tchip"><span class="k">Incline</span><span class="v">15%</span></span>
+                <span class="tchip"><span class="k">Speed</span><span class="v">4.5 km/h</span></span>
+                <span class="tchip"><span class="k">Zone</span><span class="v">Z2 · easy</span></span>
+              </div>
+              <div class="stage-tag">Cardio · 1 of 1</div>
+              <div class="ex-title">Incline Treadmill Walk</div>
+              <div class="coach-mini"><div class="av"></div><p id="cardio-kickoff">20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.</p></div>
+              <button class="btn btn-white">START</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑬ Start — <b>target strip</b> = what to set + coach kickoff</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>START</b></div></div>
+
+      <!-- 7B · Running -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="padding:0">
+            <div class="media"><div class="ph">🏃</div></div>
+            <div class="media-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>00:12:30</div><div class="avatar"></div></div>
+            <div class="media-panel">
+              <div class="targets" style="justify-content:center;margin-bottom:10px">
+                <span class="tchip"><span class="k">Incline</span><span class="v">15%</span></span>
+                <span class="tchip"><span class="k">Speed</span><span class="v">4.5 km/h</span></span>
+              </div>
+              <div class="ring-wrap">
+                <div class="ring">
+                  <svg width="148" height="148" viewBox="0 0 148 148">
+                    <circle cx="74" cy="74" r="66" fill="none" stroke="#2a2a30" stroke-width="9"/>
+                    <circle cx="74" cy="74" r="66" fill="none" stroke="#ff553a" stroke-width="9" stroke-linecap="round" stroke-dasharray="414.7" stroke-dashoffset="155.5"/>
+                  </svg>
+                  <div class="mid"><div class="big">12:30</div><div class="tgt">of 20:00</div></div>
+                </div>
+              </div>
+              <div class="live-stats">
+                <div class="lstat"><div class="n">0.94<small> km</small></div><div class="l">est. distance</div></div>
+                <div class="lstat"><div class="n">112</div><div class="l">est. kcal</div></div>
+              </div>
+              <div class="ctrl-row"><div class="pause-btn">❚❚ PAUSE</div><div class="done-btn">DONE</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑭ Running — count-up <b>ring to target</b> + live est. stats, DONE always there</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">hits target<br>or tap <b>DONE</b></div></div>
+
+      <!-- 7C · Finish + RPE -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Cardio Done</div><div class="circle-btn">✕</div></div>
+            <div class="coach-line" style="margin-top:6px"><div class="av"></div><p id="cardio-finish">Nice and steady — that's exactly the work. Legs warm, heart happy.</p></div>
+            <div class="summary-stats">
+              <div class="sstat"><div class="n">20:00</div><div class="l">Time</div></div>
+              <div class="sstat"><div class="n">1.5<small> km</small></div><div class="l">est. dist</div></div>
+              <div class="sstat"><div class="n">180<small> kcal</small></div><div class="l">est. burn</div></div>
+            </div>
+            <div class="est-note">Distance &amp; calories estimated from speed, incline &amp; your weight</div>
+            <div style="height:1px;background:var(--stroke);margin:4px 0 14px"></div>
+            <div style="font-weight:700;color:#fff;font-size:13px;margin-bottom:2px">How was that pace?</div>
+            <p class="q-sub">This is how your coach knows whether to push the pace next time.</p>
+            <div class="slider-wrap">
+              <div class="slider-track"><div class="slider-stops"><i class="on"></i><i></i><i></i><i></i></div></div>
+              <div class="slider-emojis"><span class="on">😮‍💨</span><span>💪</span><span>🔥</span><span>🥵</span></div>
+              <div class="slider-labels"><span class="on">Too easy</span><span>Just right</span><span>Tough</span><span>All out</span></div>
+            </div>
+            <button class="btn btn-white">Log cardio</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑮ Finish — <b>Time · est. dist · est. kcal</b> + RPE (reused Effort slider)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">⤳</div><div class="lbl">"<b>Too easy</b>" →</div></div>
+
+      <!-- 7D · progression bump -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.5)"><div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Cardio Done</div><div class="circle-btn">✕</div></div></div>
+          <div class="sheet">
+            <div class="sheet-grip"></div>
+            <div class="coach-line"><div class="av"></div><p id="cardio-bump">Too easy? Let's make next session count more — a bit faster or a touch steeper.</p></div>
+            <div class="suggest-box"><div class="lbl">Next cardio</div><div class="big">4.5 km/h → <b>5.0 km/h</b> · or incline 15% → <b>17%</b></div></div>
+            <button class="btn btn-brand" style="margin-bottom:9px">Apply to next session</button>
+            <button class="btn btn-ghost">Keep it the same</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑯ "Too easy" → <b>cardio bump</b> (mirrors +2.5 kg for lifts) <b>(changes w/ Coach Mode)</b></div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 7b · Machine-agnostic — one template, data-driven chips</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">The screen never hard-codes "treadmill" — it renders whatever <b>targets[]</b> the plan provides. Launch with treadmill; bike / rower / stair are <b>pure data later, zero new UI</b>. Intervals reuse the same shell with a work/rest timer.</p>
+
+    <div class="flow">
+      <!-- bike -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="padding:0">
+            <div class="media" style="background:linear-gradient(160deg,#2c3a43,#10171a)"><div class="ph">🚴</div></div>
+            <div class="media-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>00:00:00</div><div class="avatar"></div></div>
+            <div class="media-panel">
+              <div class="targets" style="margin-bottom:12px">
+                <span class="tchip lead"><span class="k">Time</span><span class="v">15 min</span></span>
+                <span class="tchip"><span class="k">Resistance</span><span class="v">L8</span></span>
+                <span class="tchip"><span class="k">Cadence</span><span class="v">80 rpm</span></span>
+              </div>
+              <div class="stage-tag">Cardio · 1 of 1</div>
+              <div class="ex-title">Stationary Bike</div>
+              <div class="coach-mini"><div class="av"></div><p>Same screen — only the chips changed. Spin steady at 80, hold L8.</p></div>
+              <button class="btn btn-white">START</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑰ Bike — identical layout, different <b>targets[]</b></div>
+      </div>
+
+      <div class="flow-arrow" style="width:120px"><div class="lbl" style="margin-top:0">Data model:<br><b>cardioType</b>, <b>targets[]</b><br>(label·value·unit), <b>metValue</b></div></div>
+
+      <!-- interval -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="padding:0">
+            <div class="media" style="background:linear-gradient(160deg,#3a2030,#16101a)"><div class="ph">⚡</div></div>
+            <div class="media-top"><div class="circle-btn">⌄</div><div class="timer"><span class="rec"></span>00:04:10</div><div class="avatar"></div></div>
+            <div class="media-panel">
+              <div class="targets" style="justify-content:center;margin-bottom:10px"><span class="tchip lead"><span class="k">Round</span><span class="v">3 / 8</span></span></div>
+              <div class="ring-wrap">
+                <div class="ring">
+                  <svg width="148" height="148" viewBox="0 0 148 148">
+                    <circle cx="74" cy="74" r="66" fill="none" stroke="#2a2a30" stroke-width="9"/>
+                    <circle cx="74" cy="74" r="66" fill="none" stroke="#ff553a" stroke-width="9" stroke-linecap="round" stroke-dasharray="414.7" stroke-dashoffset="250"/>
+                  </svg>
+                  <div class="mid"><div class="stage-tag" style="margin:0 0 2px">Work</div><div class="big">0:18</div><div class="tgt">rest 0:15 next</div></div>
+                </div>
+              </div>
+              <div class="ctrl-row"><div class="pause-btn">❚❚ PAUSE</div><div class="done-btn">DONE</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑱ <b>Interval / HIIT</b> (future) — same shell, timer becomes work/rest + rounds</div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 8 · End of Session — Summary, PRs &amp; Share</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Improvements: (1) Time/Volume show a <b>delta vs your Leg Day average</b> — volume green (good), time neutral. (2) <b>PRs moved up &amp; highlighted</b>, no share button (sharing is its own screen). (3) <b>Muscle Split → Muscle Progress</b> ("how much stronger") — shown two ways below: <b>Full</b> (level + progress earned) and <b>Simple</b> (volume delta vs last Leg Day).</p>
+
+    <div class="flow">
+      <!-- S1 session completed -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:14px">Session Completed</div><div style="width:36px"></div></div>
+            <div style="font-weight:800;font-size:26px;font-style:italic">LEG DAY</div>
+            <div style="color:var(--txt-dim);font-size:11px;letter-spacing:.5px;margin-bottom:14px">WEEK 1 D2/3 · FOUNDATION</div>
+            <div style="color:var(--txt-dim);font-size:10px;text-transform:uppercase;margin-bottom:10px">How do you feel?</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+              <div class="choice" style="padding:11px;font-size:13px">💪 Strong</div>
+              <div class="choice sel" style="padding:11px;font-size:13px">🥵 Drained</div>
+              <div class="choice" style="padding:11px;font-size:13px">🙏 Too Easy</div>
+              <div class="choice" style="padding:11px;font-size:13px">🤔 A bit Sore</div>
+            </div>
+            <div style="background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:12px;color:#777;font-size:12px;margin-bottom:12px">Add a quick note for today.</div>
+            <div style="display:flex;gap:8px"><div style="width:54px;height:54px;border-radius:10px;background:#1c1c20;border:1px dashed #3a3a40;display:flex;align-items:center;justify-content:center;color:#666">＋</div><div style="width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#3a3a40,#222)"></div><div style="width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#3a3a40,#222)"></div></div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px"><button class="btn btn-white" style="margin-bottom:8px">SAVE WORKOUT</button><div style="text-align:center;color:var(--red);font-size:12px;font-weight:800">DISCARD WORKOUT</div></div>
+          </div>
+        </div>
+        <div class="frame-cap">⑲ Session Completed — feel + notes + photos</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>SAVE WORKOUT</b></div></div>
+
+      <!-- S2 summary FULL -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div style="text-align:center;font-weight:800;font-size:13px;padding:4px 0 8px">Workout Summary</div>
+            <div style="text-align:center;font-weight:800;font-size:22px;font-style:italic">LEG DAY</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:10px;letter-spacing:.5px;margin-bottom:12px">WEEK 1 D2/3 · FOUNDATION</div>
+            <!-- stats with deltas -->
+            <div style="display:flex;gap:8px;margin-bottom:6px">
+              <div style="flex:1;background:#141417;border:1px solid var(--stroke);border-radius:10px;padding:10px;text-align:center"><div style="color:var(--txt-dim);font-size:10px">Time Training</div><div style="font-weight:800;font-style:italic;font-size:18px">1H 13M</div><div style="color:#999;font-size:10px;font-weight:700;margin-top:2px">▲ 6 min</div></div>
+              <div style="flex:1;background:#141417;border:1px solid var(--stroke);border-radius:10px;padding:10px;text-align:center"><div style="color:var(--txt-dim);font-size:10px">Total Volume</div><div style="font-weight:800;font-style:italic;font-size:18px">780 KG</div><div style="color:var(--green);font-size:10px;font-weight:700;margin-top:2px">▲ 8%</div></div>
+            </div>
+            <div style="text-align:center;color:#666;font-size:9px;margin-bottom:14px">vs your Leg Day average</div>
+            <!-- PR section moved up -->
+            <div style="background:linear-gradient(135deg,#2a1206,#141417);border:1px solid #5a2d16;border-radius:12px;padding:12px;margin-bottom:14px">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:14px">🏆</span><span style="font-weight:800;font-size:12px;color:var(--brand)">2 NEW PERSONAL RECORDS</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0"><span style="font-weight:700">Goblet Squat</span><span><b>105kg × 6</b> <span style="color:var(--green);font-size:10px">▲ was 100×6</span></span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-top:1px solid var(--stroke)"><span style="font-weight:700">Bulgarian Split</span><span><b>40kg × 10</b> <span style="color:var(--green);font-size:10px">▲ was 37.5×10</span></span></div>
+            </div>
+            <!-- MUSCLE PROGRESS full -->
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:800;text-transform:uppercase;margin-bottom:10px">Muscle Progress <span style="color:#555;font-weight:600;text-transform:none">· how much stronger</span></div>
+            <div style="margin-bottom:9px"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700"><span>Quads · <span style="color:#7ef0a8">Practiced</span></span><span style="color:#7ef0a8">▲ +4% today</span></div><div style="height:6px;background:#2a2a30;border-radius:999px;margin-top:4px;overflow:hidden"><div style="width:62%;height:100%;background:var(--brand)"></div></div></div>
+            <div style="margin-bottom:9px"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700"><span>Glutes · <span style="color:#aaa">Rookie</span></span><span style="color:#7ef0a8">▲ +6% today</span></div><div style="height:6px;background:#2a2a30;border-radius:999px;margin-top:4px;overflow:hidden"><div style="width:30%;height:100%;background:var(--brand)"></div></div></div>
+            <div style="margin-bottom:4px"><div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700"><span>Hamstrings · <span style="color:#aaa">Rookie</span></span><span style="color:#7ef0a8">▲ +3% today</span></div><div style="height:6px;background:#2a2a30;border-radius:999px;margin-top:4px;overflow:hidden"><div style="width:45%;height:100%;background:var(--brand)"></div></div></div>
+          </div>
+        </div>
+        <div class="frame-cap">⑳ Summary — deltas + PRs up top + <b>Muscle Progress (FULL)</b></div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">⇄</div><div class="lbl"><b>variant</b> of the<br>muscle section</div></div>
+
+      <!-- S3 summary SIMPLE -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div style="text-align:center;font-weight:800;font-size:13px;padding:4px 0 8px">Workout Summary</div>
+            <div style="text-align:center;font-weight:800;font-size:22px;font-style:italic">LEG DAY</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:10px;letter-spacing:.5px;margin-bottom:12px">WEEK 1 D2/3 · FOUNDATION</div>
+            <div style="display:flex;gap:8px;margin-bottom:6px">
+              <div style="flex:1;background:#141417;border:1px solid var(--stroke);border-radius:10px;padding:10px;text-align:center"><div style="color:var(--txt-dim);font-size:10px">Time Training</div><div style="font-weight:800;font-style:italic;font-size:18px">1H 13M</div><div style="color:#999;font-size:10px;font-weight:700;margin-top:2px">▲ 6 min</div></div>
+              <div style="flex:1;background:#141417;border:1px solid var(--stroke);border-radius:10px;padding:10px;text-align:center"><div style="color:var(--txt-dim);font-size:10px">Total Volume</div><div style="font-weight:800;font-style:italic;font-size:18px">780 KG</div><div style="color:var(--green);font-size:10px;font-weight:700;margin-top:2px">▲ 8%</div></div>
+            </div>
+            <div style="text-align:center;color:#666;font-size:9px;margin-bottom:14px">vs your Leg Day average</div>
+            <div style="background:linear-gradient(135deg,#2a1206,#141417);border:1px solid #5a2d16;border-radius:12px;padding:12px;margin-bottom:14px">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px"><span style="font-size:14px">🏆</span><span style="font-weight:800;font-size:12px;color:var(--brand)">2 NEW PERSONAL RECORDS</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0"><span style="font-weight:700">Goblet Squat</span><span><b>105kg × 6</b> <span style="color:var(--green);font-size:10px">▲ was 100×6</span></span></div>
+            </div>
+            <!-- MUSCLE PROGRESS simple -->
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:800;text-transform:uppercase;margin-bottom:10px">Muscle Progress <span style="color:#555;font-weight:600;text-transform:none">· vs last Leg Day</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--stroke);font-size:13px"><span style="font-weight:700">Quads</span><span style="color:#7ef0a8;font-weight:800">▲ +12%</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--stroke);font-size:13px"><span style="font-weight:700">Glutes</span><span style="color:#7ef0a8;font-weight:800">▲ +5%</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--stroke);font-size:13px"><span style="font-weight:700">Hamstrings</span><span style="color:#999;font-weight:800">— same</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:11px 0;font-size:13px"><span style="font-weight:700">Calves</span><span style="color:#ff7a6a;font-weight:800">▼ −3%</span></div>
+          </div>
+        </div>
+        <div class="frame-cap">㉑ Same summary — <b>Muscle Progress (SIMPLE)</b>, no Strength Map dependency</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">Continue →<br>(optional) Share</div></div>
+
+      <!-- S4 share -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div style="text-align:center;font-weight:800;font-size:13px;padding:4px 0 14px">Share Workout</div>
+            <div style="background:linear-gradient(160deg,#1c1c20,#0c0c0e);border:1px solid var(--stroke);border-radius:16px;padding:18px 16px;text-align:center">
+              <div style="color:var(--brand);font-weight:800;font-size:13px;margin-bottom:10px">⏱ PR Smashed!</div>
+              <div style="font-size:14px;line-height:1.4;margin-bottom:14px">Session Record! Your <b>Highest Total Volume</b> ever in one workout.</div>
+              <div style="color:var(--brand);font-weight:800;font-style:italic;font-size:26px;margin-bottom:12px">8,900 KG</div>
+              <div style="display:flex;gap:10px;align-items:flex-end;justify-content:center;margin-bottom:10px"><div style="width:70px;height:80px;border-radius:12px;background:linear-gradient(160deg,#ff7a3a,#ff553a)"></div><div style="width:62px;height:58px;border-radius:12px;background:#2a2a30;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;color:#888;font-size:11px;font-weight:700">6,890</div></div>
+              <div style="font-size:11px"><span style="color:var(--green);font-weight:800">▲ 29%</span> <span style="color:#888">Vs. Last Record</span></div>
+              <div style="font-weight:800;font-style:italic;font-size:11px;margin-top:8px;color:#aaa">BRAND APP</div>
+            </div>
+            <div style="display:flex;justify-content:center;gap:5px;margin:12px 0"><span style="width:16px;height:4px;background:#fff;border-radius:2px"></span><span style="width:5px;height:4px;background:#555;border-radius:2px"></span><span style="width:5px;height:4px;background:#555;border-radius:2px"></span></div>
+            <div style="display:flex;justify-content:space-around;text-align:center;font-size:9px;color:#999">
+              <div><div style="width:42px;height:42px;border-radius:50%;background:#2a2a30;margin:0 auto 4px"></div>Edit BG</div>
+              <div><div style="width:42px;height:42px;border-radius:50%;background:#2a2a30;margin:0 auto 4px"></div>More</div>
+              <div><div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);margin:0 auto 4px"></div>Stories</div>
+              <div><div style="width:42px;height:42px;border-radius:50%;background:#111;margin:0 auto 4px"></div>TikTok</div>
+              <div><div style="width:42px;height:42px;border-radius:50%;background:#25d366;margin:0 auto 4px"></div>WhatsApp</div>
+            </div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">DONE</button>
+          </div>
+        </div>
+        <div class="frame-cap">㉒ Share Workout — sharing lives here (not in the PR card)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- TAB 2: LOCK APP -->
+  <!-- ============================================================= -->
+  <div class="tabpanel" id="tab-lock">
+
+    <div class="section-label">SETUP · Onboarding / Homepage → Pick apps, days, time</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">User sets up in onboarding or via the homepage card. App selection MUST use Apple's system picker (we can't build a custom installed-apps list). Once set up, the card moves to Settings.</p>
+
+    <div class="flow">
+      <!-- L1 homepage card -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="home-head"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="checkin"><span>Daily Check-In</span><span class="pill-mini">+ Check In</span></div>
+            <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
+            <div class="lockcard">
+              <div class="ti">App Lock <span style="color:#666">🔒</span></div>
+              <div class="ds">Take control of your screen time during workouts or work.</div>
+              <button class="btn btn-white">SET UP APP LOCK</button>
+            </div>
+          </div>
+          <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
+        </div>
+        <div class="frame-cap">① Homepage — App Lock card (stands out if not set up)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>"Set Up App Lock"</b></div></div>
+
+      <!-- L2 app selection -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Apps to Lock</div><div class="circle-btn">✕</div></div>
+            <div class="picker-note">⚠ Apps are chosen through Apple's system picker (privacy). We show selected apps as icon + name rows.</div>
+            <div class="app-row"><span class="app-ico" style="background:#e1306c">📷</span><span class="nm">Instagram</span><span class="x">✕</span></div>
+            <div class="app-row"><span class="app-ico" style="background:#000">🎵</span><span class="nm">TikTok</span><span class="x">✕</span></div>
+            <div class="app-row"><span class="app-ico" style="background:#25d366">💬</span><span class="nm">WhatsApp</span><span class="x">✕</span></div>
+            <div class="app-row"><span class="app-ico" style="background:#fffc00">👻</span><span class="nm">Snapchat</span><span class="x">✕</span></div>
+            <div class="app-row" style="border:none;color:var(--brand);font-weight:700;font-size:14px">+ Add apps (system picker)</div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Next</button>
+          </div>
+        </div>
+        <div class="frame-cap">② Selected apps (via Apple's picker)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Next</b></div></div>
+
+      <!-- L3 schedule -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Lock Schedule</div><div class="circle-btn">✕</div></div>
+            <div style="color:var(--txt-dim);font-size:11px;font-weight:700;text-transform:uppercase;margin:14px 2px 4px">On these days</div>
+            <div class="daybar"><i>S</i><i class="on">M</i><i>T</i><i class="on">W</i><i>T</i><i class="on">F</i><i>S</i></div>
+            <div style="color:var(--txt-dim);font-size:11px;font-weight:700;text-transform:uppercase;margin:6px 2px 8px">Time window</div>
+            <div class="timefield"><span>From</span><span class="v">09 : 00 ⌄</span></div>
+            <div class="timefield"><span>To</span><span class="v">17 : 00 ⌄</span></div>
+            <div class="picker-note" style="margin-top:16px">🔓 Apps unlock automatically for the day once you finish your workout.</div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Activate App Lock</button>
+          </div>
+        </div>
+        <div class="frame-cap">③ Days + time window → Activate</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Activate App Lock</b></div></div>
+
+      <!-- L4 success -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock" style="height:auto;padding-top:52px">
+              <div class="lock-emoji">✅</div>
+              <div class="lock-title">App Lock is on</div>
+              <p class="lock-body">You're committed. Finish your workout to unlock your apps for the day.</p>
+            </div>
+            <div class="lockcard" style="margin-top:24px">
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0"><span>Apps locked</span><b style="color:#fff">4 apps</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Days</span><b style="color:#fff">Mon, Wed, Fri</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Window</span><b style="color:#fff">09:00 – 17:00</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Activates</span><b style="color:var(--brand)">Today, 9 AM</b></div>
+            </div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Done</button>
+          </div>
+        </div>
+        <div class="frame-cap">④ Success — confirms schedule + unlock rule</div>
+      </div>
+    </div>
+
+    <div class="section-label">ACTIVE · Lock screen, Live Activity, unlock by workout</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">During the scheduled window, opening a locked app shows the branded shield. A floating Live Activity reminds the user it's gym time and carries the "Start workout" action (the shield can't open our app).</p>
+
+    <div class="flow">
+      <!-- L4 active homepage -->
+      <div class="frame-wrap">
+        <div class="phone la-phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="liveact"><div class="lic">🏋️</div><div><div class="lt">Gym time</div><div class="ls">Apps locked · 09:00–17:00</div></div>
+              <div class="lbtns"><span class="la-btn dark">Break</span><span class="la-btn">Start</span></div></div>
+            <div class="home-head" style="margin-top:6px"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
+            <div class="lockcard active">
+              <div class="ti">App Lock <span class="lock-badge">● Active</span></div>
+              <div class="ds">4 apps blocked until you finish today's workout.</div>
+            </div>
+          </div>
+          <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
+        </div>
+        <div class="frame-cap">⑤ Active — Live Activity indicator (Opal-style)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">user opens a <b>locked app</b></div></div>
+
+      <!-- L5 shield -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>11:22</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock">
+              <div class="lock-emoji">🔒</div><div class="lock-title">Locked by BraceAI</div>
+              <p class="lock-body" id="lock-copy">Apps are resting until you do. Finish today's workout to unlock.</p>
+            </div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px">
+              <button class="btn btn-white">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑥ Shield — <b>"Close" only</b> (Apple rule); copy varies by mode</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">finish workout →</div></div>
+
+      <!-- L6 unlock -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock">
+              <div class="lock-emoji">🔓</div><div class="lock-title">Workout done — unlocked!</div>
+              <p class="lock-body">Nice work. Your apps are open for the rest of the day. See you next session.</p>
+              <div style="color:var(--green);font-size:12px;font-weight:700;margin-top:12px">🔥 +1 day streak</div>
+            </div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Done</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑦ Unlock-by-workout → feeds the <b>Streak</b></div>
+      </div>
+    </div>
+
+    <div class="section-label">UNLOCK · App Lock sheet → coach friction → duration → active state</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Tap the lock indicator → <b>App Lock sheet</b> (time left + locked apps, each with "Unlock"). Tapping Unlock shows a <b>coach intervention with a WAIT friction</b>, then a per-app duration (<b>1–15 min, 1-min steps</b>). After unlocking, the same sheet returns with that app shown <b>active</b> with a live countdown — no "Unlock" label; it re-locks when the timer ends.</p>
+
+    <div class="flow">
+      <!-- U1 app lock sheet (locked) -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)">
+            <div class="home-head"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="hero"><div class="day">LEG DAY</div></div>
+          </div>
+          <div class="sheet" style="padding-top:14px">
+            <div style="display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px">
+              <div class="circle-btn" style="position:absolute;left:0;width:32px;height:32px">‹</div>
+              <div style="font-weight:800;font-size:14px">App Lock</div>
+            </div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px">Time Left:</div>
+            <div style="text-align:center;font-weight:800;font-style:italic;font-size:28px;margin:1px 0 12px">01:26:04</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:10px;margin-bottom:18px">4 apps blocked</div>
+            <div style="display:flex;justify-content:space-around">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">📷<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#111;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">🎵<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑧ App Lock sheet — every app shows "Unlock"</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Unlock</b> under an app</div></div>
+
+      <!-- U2 coach intervention -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="display:flex;flex-direction:column">
+            <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 4px">
+              <div class="avatar" style="width:60px;height:60px;margin-bottom:22px"></div>
+              <div style="font-weight:800;font-size:25px;line-height:1.15">You could take a rest but don't forget to do the gym</div>
+            </div>
+            <div style="padding-bottom:14px">
+              <div style="position:relative;background:#2a2a30;border-radius:999px;overflow:hidden;text-align:center;padding:14px;font-weight:800;color:#999">
+                <div style="position:absolute;left:0;top:0;bottom:0;width:42%;background:#3a3a40"></div>
+                <span style="position:relative">WAIT 2</span>
+              </div>
+              <div style="text-align:center;font-weight:800;font-size:12px;margin-top:12px">NEVERMIND</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑨ Coach intervention — <b>WAIT friction</b> before unlock</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">friction done</div></div>
+
+      <!-- U3 duration -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="display:flex;flex-direction:column">
+            <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%">
+              <div style="font-weight:700;font-size:17px;margin-bottom:22px">Unlock 📷 for…</div>
+              <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:14px">
+                <span style="color:#3a3a42;font-weight:700;font-size:14px">3 minutes</span>
+                <span style="color:#6a6a72;font-weight:700;font-size:15px">4 minutes</span>
+                <div style="background:#2a2a30;border-radius:12px;padding:12px 44px;font-weight:800;font-size:16px">5 minutes</div>
+                <span style="color:#6a6a72;font-weight:700;font-size:15px">6 minutes</span>
+                <span style="color:#3a3a42;font-weight:700;font-size:14px">7 minutes</span>
+              </div>
+              <div style="color:var(--txt-dim);font-size:11px;margin-top:16px">Scroll · 1–15 min (1-min steps)</div>
+            </div>
+            <div style="padding-bottom:14px">
+              <button class="btn btn-white">UNLOCK</button>
+              <div style="text-align:center;font-weight:800;font-size:12px;margin-top:12px">NEVERMIND</div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑩ Pick duration → UNLOCK</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>UNLOCK</b><br>→ back to sheet</div></div>
+
+      <!-- U4 app lock sheet (after unlock — active) -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)">
+            <div class="home-head"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="hero"><div class="day">LEG DAY</div></div>
+          </div>
+          <div class="sheet" style="padding-top:14px">
+            <div style="display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px">
+              <div class="circle-btn" style="position:absolute;left:0;width:32px;height:32px">‹</div>
+              <div style="font-weight:800;font-size:14px">App Lock</div>
+            </div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px">Time Left:</div>
+            <div style="text-align:center;font-weight:800;font-style:italic;font-size:28px;margin:1px 0 12px">01:26:04</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:10px;margin-bottom:18px">3 apps blocked · 1 unlocked</div>
+            <div style="display:flex;justify-content:space-around">
+              <!-- UNLOCKED / ACTIVE -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:0 0 0 2px var(--green)">📷<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:var(--green);border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px;color:#04220f">✓</span></div>
+                <span style="color:var(--green);font-size:11px;font-weight:700">4:59</span></div>
+              <!-- still locked -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#111;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">🎵<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
+                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
+                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
+            </div>
+            <div style="text-align:center;color:var(--green);font-size:10px;margin-top:16px">✓ Instagram unlocked · 4:59 left, then re-locks</div>
+          </div>
+        </div>
+        <div class="frame-cap">⑪ <b>After unlock</b> — Instagram active (green ring, no "Unlock")</div>
+      </div>
+    </div>
+
+    <div class="section-label">PRIORITY · Workout vs Lock indicator (what happens when both are active)</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">They never compete: <b>an active workout always takes the floating slot</b> — starting a workout is exactly what the lock wants. The lock indicator yields to a slim "locked until you finish" strip; the system Live Activity / Dynamic Island shows the workout timer. Finishing the workout lifts the lock entirely. Abandoning it brings the lock indicator back.</p>
+    <div class="flow">
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div style="display:flex;align-items:center;gap:8px;background:#1a1310;border:1px solid #3a2420;border-radius:10px;padding:9px 12px;margin:6px 0 12px;font-size:11px;color:#ff8a78;font-weight:600">🔒 <span>Locked until you finish · 4 apps</span></div>
+            <div class="home-head"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
+            <div class="lockcard active"><div class="ti">App Lock <span class="lock-badge">● Active</span></div><div class="ds">Finish today's workout to unlock.</div></div>
+          </div>
+          <!-- collapsed workout bar owns the floating slot -->
+          <div style="position:absolute;bottom:62px;left:12px;right:12px;display:flex;align-items:center;gap:10px;background:#1c1c20;border-radius:var(--pill);padding:9px 10px;border:1px solid var(--stroke)">
+            <div class="circle-btn" style="width:34px;height:34px">⌃</div>
+            <div><div style="font-weight:700;font-size:13px">Workout · Goblet Squat</div><div style="font-size:11px;color:#bbb">● 00:02:00</div></div>
+            <div style="margin-left:auto;width:36px;height:36px;border-radius:50%;background:var(--brand);display:flex;align-items:center;justify-content:center"><i style="width:13px;height:13px;background:#fff;border-radius:3px;display:block"></i></div>
+          </div>
+          <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
+        </div>
+        <div class="frame-cap">⑫ Workout active → it owns the floating bar; lock shrinks to a top strip</div>
+      </div>
+      <div class="flow-arrow" style="width:140px"><div class="lbl" style="margin-top:0"><b>Finish workout</b> → lock lifts (back to screen ⑦).<br><b>Abandon</b> → lock indicator returns.</div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- TAB 3: PROGRESS -->
+  <!-- ============================================================= -->
+  <div class="tabpanel" id="tab-progress">
+
+    <div class="section-label">PROGRESS · Muscle Progress — clear metrics</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Redesign of the <b>Top Performers</b> + <b>Priority Focus</b> sections. The old floating "86%" had no unit. Now every row reads as a sentence: <b>level</b> + <b>% progress to the next level</b> (driven by training volume) + the <b>change this week</b>. <b>Biggest movers</b> ranks by weekly gain (momentum); <b>Train these next</b> ranks by how long since the muscle was trained (actionable).</p>
+
+    <div class="flow">
+      <div class="frame-wrap" style="width:300px">
+        <div class="phone" style="height:auto;width:300px">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="padding-bottom:18px">
+
+            <div class="pg-pagehead">
+              <div class="h">Progress</div>
+              <div class="pg-segs"><span class="on">Overview</span><span>History</span></div>
+            </div>
+
+            <div class="pg-card">
+              <div class="pg-head">
+                <div class="pg-title">Muscle Progress</div>
+                <div class="pg-drop">This week ⌄</div>
+              </div>
+              <div class="pg-infoline">ⓘ % = progress to next level · based on training volume</div>
+
+              <div class="pg-sec"><span class="dot"></span><span class="t">Biggest movers this week</span></div>
+
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Shoulders</span><span class="delta">↗ +4% this wk</span></div>
+                <div class="mbar"><div class="fill" style="width:86%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>86%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Lats</span><span class="delta">↗ +3% this wk</span></div>
+                <div class="mbar"><div class="fill" style="width:80%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>80%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Chest</span><span class="delta">↗ +3% this wk</span></div>
+                <div class="mbar"><div class="fill" style="width:76%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>76%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Quads</span><span class="delta">↗ +2% this wk</span></div>
+                <div class="mbar"><div class="fill" style="width:79%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>79%</b> to Practiced</span></div>
+              </div>
+              <div style="text-align:center;color:var(--txt-dim);font-size:11px;font-weight:700;padding:4px 0 2px">⌄ See more</div>
+
+              <div class="pg-div"></div>
+
+              <div class="pg-sec"><span class="dot"></span><span class="t">Train these next</span></div>
+              <div class="pg-sub">Haven't moved in a while</div>
+
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Glutes</span><span class="stale">⏱ Last trained 12d ago</span></div>
+                <div class="mbar"><div class="fill cold" style="width:23%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>23%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Calves</span><span class="stale">⏱ 9d ago</span></div>
+                <div class="mbar"><div class="fill cold" style="width:15%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>15%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Core</span><span class="stale">⏱ 8d ago</span></div>
+                <div class="mbar"><div class="fill cold" style="width:27%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>27%</b> to Practiced</span></div>
+              </div>
+              <div class="mrow">
+                <div class="mrow-top"><span class="nm">Biceps</span><span class="stale">⏱ 6d ago</span></div>
+                <div class="mbar"><div class="fill cold" style="width:32%"></div></div>
+                <div class="mrow-bot"><span class="lvl rookie">Rookie</span><span class="to"><b>32%</b> to Practiced</span></div>
+              </div>
+              <div style="text-align:center;color:var(--txt-dim);font-size:11px;font-weight:700;padding:4px 0 2px">⌄ See more</div>
+            </div>
+
+          </div>
+        </div>
+        <div class="frame-cap">Muscle Progress — every number now has a unit and a destination</div>
+      </div>
+
+      <div class="flow-arrow" style="width:220px"><div class="lbl" style="margin-top:0"><b>Open question for backend:</b> the <b>Rookie→Practiced→Expert→Elite</b> volume thresholds still need to be defined — nothing here is real until those cutoffs exist.</div></div>
+    </div>
+  </div>
+
+
+  <div class="legend">
+    <b>Reading the flow:</b> orange <b style="color:#ff553a">→</b> arrows show what triggers the next screen. The <b>Coach Mode</b> toggle (top) rewrites copy on Active Workout screens ③, ⑥, ⑦, ⑪ and Lock App screen ⑤ live.<br>
+    <b>iOS notes baked in:</b> app selection uses Apple's system picker (no custom installed-apps list); the lock screen has "Close" only (Apple doesn't allow a button to open our app — "Start workout" lives on the Live Activity instead).<br>
+    <b>Pair with:</b> <b>ACTIVE_WORKOUT_CONTENT.md</b> and <b>LOCK_APP_PLAN.md</b>.
+  </div>
+
+<script>
+  const COPY = {
+    suggest:{chill:"Nice, that looked smooth. Want to bump to 20 kg for the next set?",hype:"LET'S GO 🔥 You owned that. 20 kg next set — send it!",direct:"Too light. Add 2.5 kg. Next set: 20 kg.",savage:"Nothing left in reserve? You left half the rack untouched. 20 kg. Move."},
+    mild:{chill:"No worries — let's swap this for something that doesn't load your wrist.",hype:"We adapt and keep moving! 💪 Swapping in something safe for your wrist:",direct:"Swapping this exercise. These avoid your wrist:",savage:"Tweaked something? Fine, we work around it — no skipping the session."},
+    sharp:{chill:"Stop right there. Sharp pain isn't something we push through. Ending today's session is the smart move.",hype:"Hold up — that's a STOP, not a push. Ending here is the right call.",direct:"Stop. Sharp pain = end session now. Pushing through risks real injury.",savage:"Alright, real talk — sharp pain isn't toughness, it's a warning. We're done for today."},
+    lock:{chill:"Apps are resting until you do. Finish today's workout to unlock.",hype:"IT'S GO TIME 🔥 Crush your workout to set them free!",direct:"Locked. Finish today's workout to unlock.",savage:"Put the phone down. Instagram will survive without you. The gym won't."},
+    coachAns:{chill:"Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.",hype:"Okay let's NAIL this 🔥 Chest up, elbows under the bell, sit straight down, EXPLODE up through the heels!",direct:"Chest up. Elbows under the bell. Sit straight down. Drive through heels. Controlled descent.",savage:"It's not that hard — chest up, elbows under the bell, sit down between your knees, push through your heels. Don't half-rep it."},
+    cardioKickoff:{chill:"20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.",hype:"20 minutes — LET'S MOVE 🔥 Set it, lock in, and find that rhythm. You've got this!",direct:"20 minutes. Incline 15%, speed 4.5 km/h. Start now and hold the pace.",savage:"20 minutes. Don't drift to a stroll the second I stop watching. Set it. Move."},
+    cardioFinish:{chill:"Nice and steady — that's exactly the work. Legs warm, heart happy.",hype:"THAT'S WHAT I'M TALKING ABOUT 🔥 You stayed locked in the whole way!",direct:"Done. 20:00 logged, pace held. Good work.",savage:"Okay, you didn't bail halfway. Barely impressed — faster next time."},
+    cardioBump:{chill:"Too easy? Let's make next session count more — a bit faster or a touch steeper.",hype:"Too easy?! You've got more 🔥 Let's crank it next time — faster or steeper!",direct:"Too easy. Next session: +0.5 km/h or +2% incline.",savage:"Too easy means you cruised. Next time it's faster. No strolls."}
+  };
+  const setCopy=(id,html)=>{const e=document.getElementById(id);if(e)e.innerHTML=html;};
+  document.querySelectorAll('.mode-btn').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.mode-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');const m=b.dataset.mode;
+    setCopy('suggest-copy',COPY.suggest[m]);
+    setCopy('mild-copy',COPY.mild[m]);
+    setCopy('sharp-copy',COPY.sharp[m]);
+    setCopy('lock-copy',COPY.lock[m]);
+    setCopy('coach-ans',COPY.coachAns[m]);
+    setCopy('cardio-kickoff',COPY.cardioKickoff[m]);
+    setCopy('cardio-finish',COPY.cardioFinish[m]);
+    setCopy('cardio-bump',COPY.cardioBump[m]);
+  }));
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.tabpanel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('tab-'+t.dataset.tab).classList.add('active');
+  }));
+</script>
+</body>
+</html>

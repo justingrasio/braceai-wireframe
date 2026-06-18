@@ -1,0 +1,8 @@
+# Publish ONLY the wireframe to GitHub Pages.
+# Ignore everything by default...
+*
+
+# ...except the files needed for the public site.
+!.gitignore
+!index.html
+!active-workout-wireframe.html
