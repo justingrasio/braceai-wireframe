@@ -995,37 +995,12 @@
           </div>
           <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
         </div>
-        <div class="frame-cap">⑤ Active home — compact <b>Gym Time</b> status card (tap → actions sheet ⑦)</div>
+        <div class="frame-cap">⑤ Active home — compact <b>Gym Time</b> status card (tap → actions sheet ⑥)</div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">user opens a <b>locked app</b></div></div>
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap the <b>card</b></div></div>
 
-      <!-- L5 shield -->
-      <div class="frame-wrap">
-        <div class="phone">
-          <div class="statusbar"><span>11:22</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
-          <div class="screen">
-            <div class="full-lock">
-              <div class="lock-emoji">🏋️</div><div class="lock-title">Gym Time</div>
-              <p class="lock-body" id="lock-copy">It's your workout time. Leg Day's waiting — let's get it done.</p>
-            </div>
-            <div style="position:absolute;bottom:16px;left:15px;right:15px">
-              <button class="btn btn-white">Close</button>
-            </div>
-          </div>
-        </div>
-        <div class="frame-cap">⑥ Shield — a <b>Close</b>-only nudge that it's workout time; copy varies by mode</div>
-      </div>
-
-      <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0"><b>Finish the workout</b> → apps free up silently, Live Activity ends, Streak +1 (in the end-of-session summary). <b>No separate "unlocked" screen.</b></div></div>
-    </div>
-
-    <div class="section-label">BREAK & RESCHEDULE · One block — go train, or take a short break</div>
-    <div class="section-rule"></div>
-    <p class="flow-note"><b>One block</b> (Will's note ✓): no per-app unlock. Tapping the Gym Time card opens this sheet — the nudge to <b>go train</b>. If you genuinely can't right now: a <b>1–15 min break</b> (pick the minutes → countdown, 2/day) or <b>reschedule</b> and the lock moves with your workout (unlimited for now).</p>
-
-    <div class="flow">
-      <!-- P1 app lock sheet — one block, no per-app unlock -->
+      <!-- action sheet (opened from the card) -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
@@ -1050,11 +1025,36 @@
             </div>
           </div>
         </div>
-        <div class="frame-cap">⑦ Tap the card → <b>start your workout</b> (or mini / break / reschedule)</div>
+        <div class="frame-cap">⑥ Action sheet — <b>start your workout</b> (or mini / break / reschedule)</div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Take a break</b></div></div>
+      <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0">Or — from <b>outside the app</b>, opening a locked app shows the shield ↓</div></div>
 
+      <!-- L5 shield -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>11:22</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock">
+              <div class="lock-emoji">🏋️</div><div class="lock-title">Gym Time</div>
+              <p class="lock-body" id="lock-copy">It's your workout time. Leg Day's waiting — let's get it done.</p>
+            </div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px">
+              <button class="btn btn-white">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑦ Shield — a <b>Close</b>-only nudge that it's workout time; copy varies by mode</div>
+      </div>
+
+      <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0"><b>Finish the workout</b> → apps free up silently, Live Activity ends, Streak +1 (in the end-of-session summary). <b>No separate "unlocked" screen.</b></div></div>
+    </div>
+
+    <div class="section-label">BREAK & RESCHEDULE · One block — go train, or take a short break</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">From the action sheet (⑥), the two "can't train right now" escapes: a <b>1–15 min break</b> (pick the minutes → countdown, capped 2/day, then it re-locks) or <b>reschedule</b> (the lock moves with your workout; unlimited for now). <b>One block</b> — no per-app unlock (Will's note ✓). When breaks are spent, training is the only way in.</p>
+
+    <div class="flow">
       <!-- P2 break duration picker -->
       <div class="frame-wrap">
         <div class="phone">
@@ -1083,20 +1083,25 @@
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Start break</b></div></div>
 
-      <!-- P3 pass active -->
+      <!-- P3 break active — countdown inside the card, no floating card -->
       <div class="frame-wrap">
-        <div class="phone la-phone">
+        <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen">
-            <div class="liveact"><div class="lic">⏳</div><div style="flex:1"><div class="lt">Break · 13:48 left</div><div class="ls">Apps re-lock at 0:00</div></div>
-              <div class="lbtns"><span class="la-btn">Start workout</span></div></div>
-            <div class="home-head" style="margin-top:6px"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="home-head" style="margin-top:4px"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
             <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
-            <div class="lockcard active"><div class="ti">App Lock <span class="lock-badge">⏳ Break active</span></div><div class="ds">Apps open for 13:48, then re-lock. <b style="color:#fff">1 break left.</b></div></div>
+            <div class="lockcard active">
+              <div style="display:flex;align-items:center;gap:11px;margin-bottom:13px">
+                <div style="width:40px;height:40px;border-radius:11px;background:#2a2a30;display:flex;align-items:center;justify-content:center;font-size:18px">⏳</div>
+                <div style="flex:1"><div style="font-weight:800;font-size:16px">On a break</div><div style="color:var(--txt-dim);font-size:11px">1 break left · then back to Leg Day</div></div>
+                <span style="background:#3a1410;color:var(--brand);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:5px 10px;border-radius:var(--pill)">● Break</span>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:9px"><span style="font-weight:800;font-style:italic;font-size:32px">13:48</span><span style="color:var(--txt-dim);font-size:12px">until apps re-lock</span></div>
+            </div>
           </div>
           <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
         </div>
-        <div class="frame-cap">⑨ Break active — countdown, then <b>hard re-lock</b></div>
+        <div class="frame-cap">⑨ Break active — countdown <b>inside the card</b>, then re-locks</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">both breaks<br>used →</div></div>
