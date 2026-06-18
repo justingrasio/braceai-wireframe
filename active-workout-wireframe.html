@@ -1027,7 +1027,7 @@
 
     <div class="section-label">ACTIVE · Gym Time status card + shield (it's workout time)</div>
     <div class="section-rule"></div>
-    <p class="flow-note">On a training day, the home shows a compact <b>Gym Time</b> status card. <b>Tap it</b> → the Opal-style <b>session screen</b> (Start workout · Take a break · Change time · Stop session). <b>If a workout's already running</b>, it shows only Take a break (you might need an app mid-session). <b>Change time</b> moves today's lock only. From outside the app, opening a locked app shows the <b>Close</b>-only shield.</p>
+    <p class="flow-note">On a training day, the home shows a compact <b>Gym Time</b> status card. <b>Tap it</b> → the Opal-style <b>session screen</b> (Start workout · Take a break · Change time · Stop session). <b>If a workout's already running</b>, it shows only Take a break (you might need an app mid-session). <b>Reschedule</b> moves the session to another day or time (Week Plan unchanged). From outside the app, opening a locked app shows the <b>Close</b>-only shield.</p>
 
     <div class="flow">
       <!-- L4 active homepage -->
@@ -1078,7 +1078,7 @@
             <button class="btn btn-dark" style="margin-bottom:12px">Mini workout · 10 min</button>
             <div style="display:flex;justify-content:center;gap:18px;margin-bottom:12px">
               <span style="color:var(--txt-dim);font-size:12px;font-weight:700">⏸ Take a break · <span style="color:var(--brand)">2 left</span></span>
-              <span style="color:var(--txt-dim);font-size:12px;font-weight:700">🔁 Change time</span>
+              <span style="color:var(--txt-dim);font-size:12px;font-weight:700">🔁 Reschedule</span>
             </div>
             <div style="text-align:center;color:#ff6a6a;font-size:12px;font-weight:800">■ Stop session for today</div>
           </div>
@@ -1086,16 +1086,23 @@
         <div class="frame-cap">⑥ Session screen (Opal-style) — start workout · break · change time · <b>stop session</b></div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Change time</b></div></div>
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Reschedule</b></div></div>
 
       <!-- 6c reschedule / change today's time -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen">
-            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Change today's time</div><div class="circle-btn">✕</div></div>
-            <div class="picker-note" style="margin-top:14px">Just for <b style="color:#fff">today</b> — your Week Plan stays the same. Move it later so you're not locked right now.</div>
-            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:16px 2px 2px">New start time</div>
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Reschedule</div><div class="circle-btn">✕</div></div>
+            <div class="picker-note" style="margin-top:12px">Move this session to another <b style="color:#fff">day or time</b>. Your Week Plan stays the same.</div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:14px 2px 8px">Day</div>
+            <div style="display:flex;gap:7px">
+              <span style="background:#2a1410;border:1px solid var(--brand);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:800;color:#fff">Today</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">Tomorrow</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">Thu</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">Fri</span>
+            </div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:14px 2px 2px">New start time</div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;gap:4px;height:128px">
               <div style="position:absolute;left:30px;right:30px;top:50%;transform:translateY(-50%);height:40px;background:#1c1c20;border-radius:10px"></div>
               <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;width:50px">
@@ -1115,11 +1122,11 @@
                 <span style="color:#3a3a42;font-weight:700;font-size:15px">&nbsp;</span>
               </div>
             </div>
-            <div style="color:var(--txt-dim);font-size:11px;margin:6px 2px 0">Today's lock now starts <b style="color:#fff">6:00 PM</b>. Back to normal tomorrow.</div>
-            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Save for today</button>
+            <div style="color:var(--txt-dim);font-size:11px;margin:6px 2px 0">This session moves to <b style="color:#fff">Today · 6:00 PM</b>. Your Week Plan is unchanged.</div>
+            <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Reschedule</button>
           </div>
         </div>
-        <div class="frame-cap">⑥c Change time — move <b>today's</b> lock (Week Plan unchanged)</div>
+        <div class="frame-cap">⑥c Reschedule — pick a <b>day + time</b> (Week Plan unchanged)</div>
       </div>
 
       <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0">If a <b>workout's already running</b>, the session screen shows only ↓</div></div>
@@ -1135,7 +1142,12 @@
           <div class="sheet" style="padding-top:14px">
             <div class="sheet-grip"></div>
             <div style="text-align:center;font-weight:800;font-size:16px;margin-bottom:3px">Workout in progress 🏋️</div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:20px">Leg Day · 12:34 elapsed</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:16px">Leg Day · 12:34 elapsed</div>
+            <div style="display:flex;justify-content:center;gap:14px;margin-bottom:20px">
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">📷<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
+            </div>
             <button class="btn btn-white">Take a break</button>
             <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-top:11px">Need an app for a sec? · <span style="color:var(--brand)">2 breaks left</span></div>
           </div>
