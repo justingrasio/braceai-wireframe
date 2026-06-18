@@ -879,9 +879,9 @@
   <!-- ============================================================= -->
   <div class="tabpanel" id="tab-lock">
 
-    <div class="section-label">SETUP · Onboarding / Homepage → Pick apps, days, time</div>
+    <div class="section-label">SETUP · Plan-driven — pick what to lock; it follows your training days</div>
     <div class="section-rule"></div>
-    <p class="flow-note">User sets up in onboarding or via the homepage card. App selection MUST use Apple's system picker (we can't build a custom installed-apps list). Once set up, the card moves to Settings.</p>
+    <p class="flow-note"><b>Not a time-window blocker.</b> You pick what to lock (by <b>category</b> or app, via Apple's picker), and the lock runs on your <b>scheduled training days</b> — there is no end time. Rest days never lock. The only way to fully unlock is to <b>train</b>.</p>
 
     <div class="flow">
       <!-- L1 homepage card -->
@@ -894,7 +894,7 @@
             <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
             <div class="lockcard">
               <div class="ti">App Lock <span style="color:#666">🔒</span></div>
-              <div class="ds">Take control of your screen time during workouts or work.</div>
+              <div class="ds">Lock the apps that steal your gym time — they stay locked until you train.</div>
               <button class="btn btn-white">SET UP APP LOCK</button>
             </div>
           </div>
@@ -905,42 +905,43 @@
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>"Set Up App Lock"</b></div></div>
 
-      <!-- L2 app selection -->
+      <!-- L2 selection by category or app -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen">
-            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Apps to Lock</div><div class="circle-btn">✕</div></div>
-            <div class="picker-note">⚠ Apps are chosen through Apple's system picker (privacy). We show selected apps as icon + name rows.</div>
-            <div class="app-row"><span class="app-ico" style="background:#e1306c">📷</span><span class="nm">Instagram</span><span class="x">✕</span></div>
-            <div class="app-row"><span class="app-ico" style="background:#000">🎵</span><span class="nm">TikTok</span><span class="x">✕</span></div>
-            <div class="app-row"><span class="app-ico" style="background:#25d366">💬</span><span class="nm">WhatsApp</span><span class="x">✕</span></div>
-            <div class="app-row"><span class="app-ico" style="background:#fffc00">👻</span><span class="nm">Snapchat</span><span class="x">✕</span></div>
-            <div class="app-row" style="border:none;color:var(--brand);font-weight:700;font-size:14px">+ Add apps (system picker)</div>
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">What to Lock</div><div class="circle-btn">✕</div></div>
+            <div class="picker-note">⚠ Selection runs through Apple's system picker — which supports whole <b style="color:#fff">categories</b>, not just individual apps. <span style="color:var(--green)">(Will's note ✓)</span></div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:12px 2px 6px">Categories</div>
+            <div class="app-row"><span class="app-ico" style="background:#3a1d12;color:#ff7a55">◎</span><span class="nm">Social</span><span class="x" style="color:var(--green)">✓</span></div>
+            <div class="app-row"><span class="app-ico" style="background:#12233a;color:#5b9bff">◎</span><span class="nm">Games</span><span class="x" style="color:var(--green)">✓</span></div>
+            <div class="app-row"><span class="app-ico" style="background:#3a1518;color:#ff6a6a">◎</span><span class="nm">Entertainment</span><span class="x">＋</span></div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:14px 2px 6px">Or specific apps</div>
+            <div class="app-row"><span class="app-ico" style="background:#e1306c">📷</span><span class="nm">Instagram</span><span class="x" style="color:var(--green)">✓</span></div>
+            <div class="app-row" style="border:none;color:var(--brand);font-weight:700;font-size:14px">+ Open Apple picker</div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Next</button>
           </div>
         </div>
-        <div class="frame-cap">② Selected apps (via Apple's picker)</div>
+        <div class="frame-cap">② Lock by <b>category</b> or app — Apple's picker supports groups</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Next</b></div></div>
 
-      <!-- L3 schedule -->
+      <!-- L3 plan-driven schedule -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen">
-            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">Lock Schedule</div><div class="circle-btn">✕</div></div>
-            <div style="color:var(--txt-dim);font-size:11px;font-weight:700;text-transform:uppercase;margin:14px 2px 4px">On these days</div>
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">When It Locks</div><div class="circle-btn">✕</div></div>
+            <div style="color:var(--txt-dim);font-size:11px;font-weight:700;text-transform:uppercase;margin:14px 2px 4px">Your training days <span style="color:var(--brand)">· from your plan</span></div>
             <div class="daybar"><i>S</i><i class="on">M</i><i>T</i><i class="on">W</i><i>T</i><i class="on">F</i><i>S</i></div>
-            <div style="color:var(--txt-dim);font-size:11px;font-weight:700;text-transform:uppercase;margin:6px 2px 8px">Time window</div>
-            <div class="timefield"><span>From</span><span class="v">09 : 00 ⌄</span></div>
-            <div class="timefield"><span>To</span><span class="v">17 : 00 ⌄</span></div>
-            <div class="picker-note" style="margin-top:16px">🔓 Apps unlock automatically for the day once you finish your workout.</div>
+            <div style="display:flex;align-items:center;gap:8px;background:#141417;border-radius:10px;padding:11px 13px;margin:8px 0 2px;font-size:12px;color:#ccc">🛌 <span>Rest days (Tue / Thu / Sat / Sun) never lock.</span></div>
+            <div class="timefield" style="margin-top:14px"><span>Lock starts</span><span class="v">All day ⌄</span></div>
+            <div class="picker-note" style="margin-top:14px;border-color:#5a1d16;background:#1a1310;color:#ff8a78"><b style="color:#fff">No end time.</b> Apps stay locked until you <b style="color:#fff">finish today's workout</b> (full or 10-min mini). That's the only key.</div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Activate App Lock</button>
           </div>
         </div>
-        <div class="frame-cap">③ Days + time window → Activate</div>
+        <div class="frame-cap">③ Locks on <b>training days</b> — no time window; unlock by training</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Activate App Lock</b></div></div>
@@ -956,10 +957,10 @@
               <p class="lock-body">You're committed. Finish your workout to unlock your apps for the day.</p>
             </div>
             <div class="lockcard" style="margin-top:24px">
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0"><span>Apps locked</span><b style="color:#fff">4 apps</b></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Days</span><b style="color:#fff">Mon, Wed, Fri</b></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Window</span><b style="color:#fff">09:00 – 17:00</b></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Activates</span><b style="color:var(--brand)">Today, 9 AM</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0"><span>Locking</span><b style="color:#fff">Social, Games · +1 app</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Training days</span><b style="color:#fff">Mon, Wed, Fri</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Unlocks when</span><b style="color:var(--green)">You finish the workout</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Need a moment?</span><b style="color:var(--brand)">2× 15-min passes/day</b></div>
             </div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Done</button>
           </div>
@@ -968,9 +969,9 @@
       </div>
     </div>
 
-    <div class="section-label">ACTIVE · Lock screen, Live Activity, unlock by workout</div>
+    <div class="section-label">ACTIVE · Shield, Live Activity, unlock by workout</div>
     <div class="section-rule"></div>
-    <p class="flow-note">During the scheduled window, opening a locked app shows the branded shield. A floating Live Activity reminds the user it's gym time and carries the "Start workout" action (the shield can't open our app).</p>
+    <p class="flow-note">On a training day, opening a locked app shows the branded shield. The shield <b>can't open our app</b> (Apple rule), so the <b>workout actions live on the Live Activity</b> — Start workout, Mini, or a 15-min pass. Finishing the workout unlocks everything and the Live Activity disappears.</p>
 
     <div class="flow">
       <!-- L4 active homepage -->
@@ -978,18 +979,18 @@
         <div class="phone la-phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen">
-            <div class="liveact"><div class="lic">🏋️</div><div><div class="lt">Gym time</div><div class="ls">Apps locked · 09:00–17:00</div></div>
-              <div class="lbtns"><span class="la-btn dark">Break</span><span class="la-btn">Start</span></div></div>
+            <div class="liveact" style="flex-wrap:wrap"><div class="lic">🏋️</div><div style="flex:1"><div class="lt">Train to unlock</div><div class="ls">3 apps locked · Leg Day pending</div></div>
+              <div class="lbtns" style="width:100%;margin-left:0;margin-top:10px;justify-content:space-between"><span class="la-btn">Start workout</span><span class="la-btn dark">Mini</span><span class="la-btn dark">15-min pass</span></div></div>
             <div class="home-head" style="margin-top:6px"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
             <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
             <div class="lockcard active">
               <div class="ti">App Lock <span class="lock-badge">● Active</span></div>
-              <div class="ds">4 apps blocked until you finish today's workout.</div>
+              <div class="ds">3 apps locked until you finish Leg Day. Rest day tomorrow — no lock.</div>
             </div>
           </div>
           <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
         </div>
-        <div class="frame-cap">⑤ Active — Live Activity indicator (Opal-style)</div>
+        <div class="frame-cap">⑤ Active — Live Activity holds the workout actions (shield can't)</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">user opens a <b>locked app</b></div></div>
@@ -1003,12 +1004,13 @@
               <div class="lock-emoji">🔒</div><div class="lock-title">Locked by BraceAI</div>
               <p class="lock-body" id="lock-copy">Apps are resting until you do. Finish today's workout to unlock.</p>
             </div>
-            <div style="position:absolute;bottom:16px;left:15px;right:15px">
-              <button class="btn btn-white">Close</button>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px;display:flex;gap:9px">
+              <button class="btn btn-dark" style="flex:1">Close</button>
+              <button class="btn btn-white" style="flex:1">Take 15 min</button>
             </div>
           </div>
         </div>
-        <div class="frame-cap">⑥ Shield — <b>"Close" only</b> (Apple rule); copy varies by mode</div>
+        <div class="frame-cap">⑥ Shield — <b>Close</b> + <b>15-min pass</b> (both Apple-legal); copy varies by mode</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">finish workout →</div></div>
@@ -1020,22 +1022,22 @@
           <div class="screen">
             <div class="full-lock">
               <div class="lock-emoji">🔓</div><div class="lock-title">Workout done — unlocked!</div>
-              <p class="lock-body">Nice work. Your apps are open for the rest of the day. See you next session.</p>
+              <p class="lock-body">Nice work. Your apps are open for the rest of the day, and the floating lock indicator is gone. See you next session.</p>
               <div style="color:var(--green);font-size:12px;font-weight:700;margin-top:12px">🔥 +1 day streak</div>
             </div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Done</button>
           </div>
         </div>
-        <div class="frame-cap">⑦ Unlock-by-workout → feeds the <b>Streak</b></div>
+        <div class="frame-cap">⑦ Finish workout → one-time confirm, <b>Live Activity ends</b>, Streak +1</div>
       </div>
     </div>
 
-    <div class="section-label">UNLOCK · App Lock sheet → coach friction → duration → active state</div>
+    <div class="section-label">PASS · The 15-min escape valve — one block, capped at 2/day, with friction</div>
     <div class="section-rule"></div>
-    <p class="flow-note">Tap the lock indicator → <b>App Lock sheet</b> (time left + locked apps, each with "Unlock"). Tapping Unlock shows a <b>coach intervention with a WAIT friction</b>, then a per-app duration (<b>1–15 min, 1-min steps</b>). After unlocking, the same sheet returns with that app shown <b>active</b> with a live countdown — no "Unlock" label; it re-locks when the timer ends.</p>
+    <p class="flow-note"><b>One block, one unlock path</b> (Will's note ✓): no per-app unlock — you unlock the whole thing by training. The only escape is a <b>15-min pass</b>, <b>capped at 2 per training day</b> and gated by a coach reaction. After 15 min it hard re-locks; when both passes are spent, the only way in is to train.</p>
 
     <div class="flow">
-      <!-- U1 app lock sheet (locked) -->
+      <!-- P1 app lock sheet — one block, no per-app unlock -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
@@ -1044,122 +1046,83 @@
             <div class="hero"><div class="day">LEG DAY</div></div>
           </div>
           <div class="sheet" style="padding-top:14px">
-            <div style="display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px">
-              <div class="circle-btn" style="position:absolute;left:0;width:32px;height:32px">‹</div>
-              <div style="font-weight:800;font-size:14px">App Lock</div>
+            <div class="sheet-grip"></div>
+            <div style="text-align:center;font-weight:800;font-size:15px;margin-bottom:3px">Locked until you train</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:16px">3 apps · unlocks when you finish Leg Day</div>
+            <div style="display:flex;justify-content:center;gap:14px;margin-bottom:20px">
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">📷<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
+              <div style="position:relative;width:46px;height:46px;border-radius:13px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
             </div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:11px">Time Left:</div>
-            <div style="text-align:center;font-weight:800;font-style:italic;font-size:28px;margin:1px 0 12px">01:26:04</div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:10px;margin-bottom:18px">4 apps blocked</div>
-            <div style="display:flex;justify-content:space-around">
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">📷<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#111;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">🎵<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-            </div>
+            <button class="btn btn-white" style="margin-bottom:9px">Start workout</button>
+            <button class="btn btn-dark" style="margin-bottom:14px">Mini workout · 10 min</button>
+            <div style="text-align:center;color:var(--txt-dim);font-size:12px;font-weight:700">Take a 15-min pass · <span style="color:var(--brand)">2 left today</span></div>
           </div>
         </div>
-        <div class="frame-cap">⑧ App Lock sheet — every app shows "Unlock"</div>
+        <div class="frame-cap">⑧ One block, <b>one unlock path</b> — no per-app unlock (Will's note ✓)</div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Unlock</b> under an app</div></div>
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>15-min pass</b></div></div>
 
-      <!-- U2 coach intervention -->
+      <!-- P2 pass friction -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen" style="display:flex;flex-direction:column">
-            <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 4px">
-              <div class="avatar" style="width:60px;height:60px;margin-bottom:22px"></div>
-              <div style="font-weight:800;font-size:25px;line-height:1.15">You could take a rest but don't forget to do the gym</div>
+            <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:14px">15-min pass</div><div style="width:36px"></div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6px">
+              <div class="avatar" style="width:56px;height:56px;margin-bottom:20px"></div>
+              <div id="pass-copy" style="font-weight:800;font-size:22px;line-height:1.2">Sure — take 15. Leg Day's still here when you're back.</div>
+              <div style="color:var(--txt-dim);font-size:12px;margin-top:14px">1 pass left after this · resets tomorrow</div>
             </div>
             <div style="padding-bottom:14px">
               <div style="position:relative;background:#2a2a30;border-radius:999px;overflow:hidden;text-align:center;padding:14px;font-weight:800;color:#999">
-                <div style="position:absolute;left:0;top:0;bottom:0;width:42%;background:#3a3a40"></div>
-                <span style="position:relative">WAIT 2</span>
+                <div style="position:absolute;left:0;top:0;bottom:0;width:55%;background:#3a3a40"></div>
+                <span style="position:relative">HOLD TO CONFIRM</span>
               </div>
               <div style="text-align:center;font-weight:800;font-size:12px;margin-top:12px">NEVERMIND</div>
             </div>
           </div>
         </div>
-        <div class="frame-cap">⑨ Coach intervention — <b>WAIT friction</b> before unlock</div>
+        <div class="frame-cap">⑨ Friction + coach reaction (copy = Coach Mode) before the pass</div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">friction done</div></div>
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">hold confirms</div></div>
 
-      <!-- U3 duration -->
+      <!-- P3 pass active -->
+      <div class="frame-wrap">
+        <div class="phone la-phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="liveact"><div class="lic">⏳</div><div style="flex:1"><div class="lt">Pass · 14:32 left</div><div class="ls">Apps re-lock at 0:00</div></div>
+              <div class="lbtns"><span class="la-btn">Start workout</span></div></div>
+            <div class="home-head" style="margin-top:6px"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
+            <div class="hero"><div class="day">LEG DAY</div><div class="sm">Quads, Hamstrings · +2 more</div><div class="open">OPEN</div></div>
+            <div class="lockcard active"><div class="ti">App Lock <span class="lock-badge">⏳ Pass active</span></div><div class="ds">Apps open for 14:32, then re-lock. <b style="color:#fff">1 pass left.</b></div></div>
+          </div>
+          <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
+        </div>
+        <div class="frame-cap">⑩ Pass active — countdown, then <b>hard re-lock</b></div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">both passes<br>used →</div></div>
+
+      <!-- P4 passes exhausted (shield) -->
       <div class="frame-wrap">
         <div class="phone">
-          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
-          <div class="screen" style="display:flex;flex-direction:column">
-            <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div></div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%">
-              <div style="font-weight:700;font-size:17px;margin-bottom:22px">Unlock 📷 for…</div>
-              <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:14px">
-                <span style="color:#3a3a42;font-weight:700;font-size:14px">3 minutes</span>
-                <span style="color:#6a6a72;font-weight:700;font-size:15px">4 minutes</span>
-                <div style="background:#2a2a30;border-radius:12px;padding:12px 44px;font-weight:800;font-size:16px">5 minutes</div>
-                <span style="color:#6a6a72;font-weight:700;font-size:15px">6 minutes</span>
-                <span style="color:#3a3a42;font-weight:700;font-size:14px">7 minutes</span>
-              </div>
-              <div style="color:var(--txt-dim);font-size:11px;margin-top:16px">Scroll · 1–15 min (1-min steps)</div>
+          <div class="statusbar"><span>13:05</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="full-lock">
+              <div class="lock-emoji">🔒</div><div class="lock-title">No passes left today</div>
+              <p class="lock-body">Both 15-min passes used. The only way in now: finish Leg Day (or a 10-min mini) from the gym-time bar.</p>
             </div>
-            <div style="padding-bottom:14px">
-              <button class="btn btn-white">UNLOCK</button>
-              <div style="text-align:center;font-weight:800;font-size:12px;margin-top:12px">NEVERMIND</div>
+            <div style="position:absolute;bottom:16px;left:15px;right:15px">
+              <button class="btn btn-dark" style="opacity:.45;margin-bottom:9px">Take 15 min · 0 left</button>
+              <button class="btn btn-white">Close</button>
             </div>
           </div>
         </div>
-        <div class="frame-cap">⑩ Pick duration → UNLOCK</div>
-      </div>
-
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>UNLOCK</b><br>→ back to sheet</div></div>
-
-      <!-- U4 app lock sheet (after unlock — active) -->
-      <div class="frame-wrap">
-        <div class="phone">
-          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
-          <div class="screen" style="filter:brightness(.4)">
-            <div class="home-head"><div class="wk">WEEK 1 ›</div><div class="pill-mini">Weekly Goal 0/3</div></div>
-            <div class="hero"><div class="day">LEG DAY</div></div>
-          </div>
-          <div class="sheet" style="padding-top:14px">
-            <div style="display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:16px">
-              <div class="circle-btn" style="position:absolute;left:0;width:32px;height:32px">‹</div>
-              <div style="font-weight:800;font-size:14px">App Lock</div>
-            </div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:11px">Time Left:</div>
-            <div style="text-align:center;font-weight:800;font-style:italic;font-size:28px;margin:1px 0 12px">01:26:04</div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:10px;margin-bottom:18px">3 apps blocked · 1 unlocked</div>
-            <div style="display:flex;justify-content:space-around">
-              <!-- UNLOCKED / ACTIVE -->
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:0 0 0 2px var(--green)">📷<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:var(--green);border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px;color:#04220f">✓</span></div>
-                <span style="color:var(--green);font-size:11px;font-weight:700">4:59</span></div>
-              <!-- still locked -->
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#111;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">🎵<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:7px">
-                <div style="position:relative;width:50px;height:50px;border-radius:14px;background:#25d366;display:flex;align-items:center;justify-content:center;font-size:21px;opacity:.85">💬<span style="position:absolute;right:-4px;bottom:-4px;width:21px;height:21px;border-radius:50%;background:#1c1c20;border:2px solid #050505;display:flex;align-items:center;justify-content:center;font-size:9px">🔒</span></div>
-                <span style="color:var(--brand);font-size:11px;font-weight:700">Unlock</span></div>
-            </div>
-            <div style="text-align:center;color:var(--green);font-size:10px;margin-top:16px">✓ Instagram unlocked · 4:59 left, then re-locks</div>
-          </div>
-        </div>
-        <div class="frame-cap">⑪ <b>After unlock</b> — Instagram active (green ring, no "Unlock")</div>
+        <div class="frame-cap">⑪ Passes spent → only training unlocks (forcing function)</div>
       </div>
     </div>
 
@@ -1280,8 +1243,8 @@
 
 
   <div class="legend">
-    <b>Reading the flow:</b> orange <b style="color:#ff553a">→</b> arrows show what triggers the next screen. The <b>Coach Mode</b> toggle (top) rewrites copy on Active Workout screens ③, ⑥, ⑦, ⑪ and Lock App screen ⑤ live.<br>
-    <b>iOS notes baked in:</b> app selection uses Apple's system picker (no custom installed-apps list); the lock screen has "Close" only (Apple doesn't allow a button to open our app — "Start workout" lives on the Live Activity instead).<br>
+    <b>Reading the flow:</b> orange <b style="color:#ff553a">→</b> arrows show what triggers the next screen. The <b>Coach Mode</b> toggle (top) rewrites copy on Active Workout screens ③, ⑥, ⑦, ⑪ and Lock App shield ⑥ + pass ⑨ live.<br>
+    <b>iOS notes baked in:</b> selection uses Apple's system picker (categories + apps, no custom installed-apps list); the shield has <b>Close + a 15-min pass</b> (Apple doesn't allow a button to open our app — Start workout / Mini / Pause live on the Live Activity instead).<br>
     <b>Pair with:</b> <b>ACTIVE_WORKOUT_CONTENT.md</b> and <b>LOCK_APP_PLAN.md</b>.
   </div>
 
@@ -1290,7 +1253,8 @@
     suggest:{chill:"Nice, that looked smooth. Want to bump to 20 kg for the next set?",hype:"LET'S GO 🔥 You owned that. 20 kg next set — send it!",direct:"Too light. Add 2.5 kg. Next set: 20 kg.",savage:"Nothing left in reserve? You left half the rack untouched. 20 kg. Move."},
     mild:{chill:"No worries — let's swap this for something that doesn't load your wrist.",hype:"We adapt and keep moving! 💪 Swapping in something safe for your wrist:",direct:"Swapping this exercise. These avoid your wrist:",savage:"Tweaked something? Fine, we work around it — no skipping the session."},
     sharp:{chill:"Stop right there. Sharp pain isn't something we push through. Ending today's session is the smart move.",hype:"Hold up — that's a STOP, not a push. Ending here is the right call.",direct:"Stop. Sharp pain = end session now. Pushing through risks real injury.",savage:"Alright, real talk — sharp pain isn't toughness, it's a warning. We're done for today."},
-    lock:{chill:"Apps are resting until you do. Finish today's workout to unlock.",hype:"IT'S GO TIME 🔥 Crush your workout to set them free!",direct:"Locked. Finish today's workout to unlock.",savage:"Put the phone down. Instagram will survive without you. The gym won't."},
+    lock:{chill:"Apps are resting until you do. Finish today's workout to unlock.",hype:"IT'S GO TIME 🔥 Crush today's workout to set them free!",direct:"Locked. Finish today's workout to unlock.",savage:"Put the phone down. Instagram will survive without you. Leg Day won't do itself."},
+    pass:{chill:"Sure — take 15. Leg Day's still here when you're back.",hype:"15-min breather? Earned it — then we GO 🔥 Leg Day's waiting!",direct:"15 minutes. Then it re-locks. Workout still pending.",savage:"Fine. 15 minutes of doomscrolling. The squat rack is judging you."},
     coachAns:{chill:"Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.",hype:"Okay let's NAIL this 🔥 Chest up, elbows under the bell, sit straight down, EXPLODE up through the heels!",direct:"Chest up. Elbows under the bell. Sit straight down. Drive through heels. Controlled descent.",savage:"It's not that hard — chest up, elbows under the bell, sit down between your knees, push through your heels. Don't half-rep it."},
     cardioKickoff:{chill:"20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.",hype:"20 minutes — LET'S MOVE 🔥 Set it, lock in, and find that rhythm. You've got this!",direct:"20 minutes. Incline 15%, speed 4.5 km/h. Start now and hold the pace.",savage:"20 minutes. Don't drift to a stroll the second I stop watching. Set it. Move."},
     cardioFinish:{chill:"Nice and steady — that's exactly the work. Legs warm, heart happy.",hype:"THAT'S WHAT I'M TALKING ABOUT 🔥 You stayed locked in the whole way!",direct:"Done. 20:00 logged, pace held. Good work.",savage:"Okay, you didn't bail halfway. Barely impressed — faster next time."},
@@ -1304,6 +1268,7 @@
     setCopy('mild-copy',COPY.mild[m]);
     setCopy('sharp-copy',COPY.sharp[m]);
     setCopy('lock-copy',COPY.lock[m]);
+    setCopy('pass-copy',COPY.pass[m]);
     setCopy('coach-ans',COPY.coachAns[m]);
     setCopy('cardio-kickoff',COPY.cardioKickoff[m]);
     setCopy('cardio-finish',COPY.cardioFinish[m]);
