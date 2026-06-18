@@ -937,21 +937,63 @@
             <div class="daybar"><i>S</i><i class="on">M</i><i>T</i><i class="on">W</i><i>T</i><i class="on">F</i><i>S</i></div>
             <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:14px 2px 7px">When do you train?</div>
             <div style="display:flex;gap:6px">
-              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:9px 3px;font-size:11px;font-weight:700;color:#ccc">Morning<br><span style="color:var(--txt-mute);font-size:9px">7 AM</span></div>
-              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:9px 3px;font-size:11px;font-weight:700;color:#ccc">Afternoon<br><span style="color:var(--txt-mute);font-size:9px">1 PM</span></div>
-              <div style="flex:1;text-align:center;background:var(--brand);border:1px solid var(--brand);border-radius:10px;padding:9px 3px;font-size:11px;font-weight:800;color:#fff">Evening<br><span style="color:#ffd8d0;font-size:9px">6 PM</span></div>
-              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:9px 3px;font-size:11px;font-weight:700;color:#ccc">Custom<br><span style="color:var(--txt-mute);font-size:9px">set</span></div>
+              <div style="flex:1;text-align:center;background:var(--brand);border:1px solid var(--brand);border-radius:10px;padding:11px 3px;font-size:12px;font-weight:800;color:#fff">Morning</div>
+              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:11px 3px;font-size:12px;font-weight:700;color:#ccc">Afternoon</div>
+              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:11px 3px;font-size:12px;font-weight:700;color:#ccc">Evening</div>
+              <div style="flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:11px 3px;font-size:12px;font-weight:700;color:#ccc">Custom</div>
             </div>
-            <div style="color:var(--txt-dim);font-size:11px;margin:9px 2px 0">Locks from your workout time <b style="color:#fff">until you finish</b> (or end the session). You can change it any day.</div>
-            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:16px 2px 7px">Flexibility</div>
-            <div class="timefield"><span>15-min breaks per day</span><span class="v">2 ⌄</span></div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:13px 2px 7px">Start time · morning</div>
+            <div style="display:flex;gap:7px">
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:#888">6:30</span>
+              <span style="background:#2a1410;border:1px solid var(--brand);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:800;color:#fff">7:00 AM</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:#888">7:30</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:#888">8:00</span>
+            </div>
+            <div style="color:var(--txt-dim);font-size:11px;margin:11px 2px 0">Locks from <b style="color:#fff">7:00 AM until you finish</b>. Change it any day.</div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:18px 2px 7px">Break</div>
+            <div class="timefield"><span>5 min · 2 a day</span><span class="v">Edit ⌄</span></div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Activate App Lock</button>
           </div>
         </div>
-        <div class="frame-cap">③ Pick <b>Morning / Afternoon / Evening</b> (or Custom) + breaks — no exact-hour fiddling</div>
+        <div class="frame-cap">③ Time of day → <b>scoped time picker</b> (morning shows AM times); Morning is the default</div>
       </div>
 
-      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Activate App Lock</b></div></div>
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Break</b></div></div>
+
+      <!-- L3b break settings bottom sheet -->
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.4)">
+            <div class="wo-top"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:15px">When It Locks</div><div class="circle-btn">✕</div></div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:16px 2px 6px">Your training days</div>
+            <div class="daybar"><i>S</i><i class="on">M</i><i>T</i><i class="on">W</i><i>T</i><i class="on">F</i><i>S</i></div>
+          </div>
+          <div class="sheet" style="padding-top:14px">
+            <div class="sheet-grip"></div>
+            <div style="text-align:center;font-weight:800;font-size:16px;margin-bottom:6px">Breaks</div>
+            <p style="color:var(--txt-dim);font-size:12px;line-height:1.5;text-align:center;margin-bottom:18px">A break opens your locked apps for a few minutes, then they re-lock — for when you genuinely need them mid-session.</p>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:0 2px 8px">How long</div>
+            <div style="display:flex;gap:7px;margin-bottom:16px">
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">3 min</span>
+              <span style="background:#2a1410;border:1px solid var(--brand);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:800;color:#fff">5 min</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">10 min</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#888">15</span>
+            </div>
+            <div style="color:var(--txt-dim);font-size:10px;font-weight:700;text-transform:uppercase;margin:0 2px 8px">How many a day</div>
+            <div style="display:flex;gap:7px;margin-bottom:20px">
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:#888">1</span>
+              <span style="background:#2a1410;border:1px solid var(--brand);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;color:#fff">2</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:#888">3</span>
+              <span style="background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:#888">4</span>
+            </div>
+            <button class="btn btn-white">Save</button>
+          </div>
+        </div>
+        <div class="frame-cap">③b Break settings — what a break is + <b>length & count</b> (default 5 min · 2/day)</div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">Save → tap <b>Activate</b></div></div>
 
       <!-- L4 success -->
       <div class="frame-wrap">
@@ -966,9 +1008,9 @@
             <div class="lockcard" style="margin-top:24px">
               <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0"><span>Locking</span><b style="color:#fff">Social, Games · +1 app</b></div>
               <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Training days</span><b style="color:#fff">Mon, Wed, Fri</b></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Workout time</span><b style="color:#fff">Evening · from 6 PM</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Workout time</span><b style="color:#fff">Morning · from 7 AM</b></div>
               <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Ends when</span><b style="color:var(--green)">You finish your workout</b></div>
-              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Flexibility</span><b style="color:#fff">2 breaks/day · or end session</b></div>
+              <div style="display:flex;justify-content:space-between;font-size:12px;color:#ccc;padding:5px 0;border-top:1px solid var(--stroke)"><span>Breaks</span><b style="color:#fff">5 min · 2 a day</b></div>
             </div>
             <button class="btn btn-white" style="position:absolute;bottom:16px;left:15px;right:15px">Done</button>
           </div>
@@ -1020,7 +1062,7 @@
           <div class="sheet" style="padding-top:14px">
             <div class="sheet-grip"></div>
             <div style="text-align:center;font-weight:800;font-size:16px;margin-bottom:3px">Time for Leg Day 💪</div>
-            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:16px">Quads, Hamstrings · from 6 PM until you finish</div>
+            <div style="text-align:center;color:var(--txt-dim);font-size:11px;margin-bottom:16px">Quads, Hamstrings · from 7 AM until you finish</div>
             <div style="display:flex;justify-content:center;gap:14px;margin-bottom:20px">
               <div style="position:relative;width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">📷<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
               <div style="position:relative;width:46px;height:46px;border-radius:13px;background:#fffc00;display:flex;align-items:center;justify-content:center;font-size:19px;opacity:.85">👻<span style="position:absolute;right:-4px;bottom:-4px;width:19px;height:19px;border-radius:50%;background:#1c1c20;border:2px solid #161619;display:flex;align-items:center;justify-content:center;font-size:8px">🔒</span></div>
@@ -1062,25 +1104,20 @@
 
     <div class="section-label">BREAK · A short timed pass (count set at setup)</div>
     <div class="section-rule"></div>
-    <p class="flow-note">A <b>break</b> is the light escape: a <b>1–15 min</b> timed pass (count set at setup, e.g. 2/day) → countdown → re-locks. For a genuine "not today," <b>Stop session</b> ends the block — but it's gated by friction (next section) and <b>resets the streak</b>. Only finishing the workout keeps the streak.</p>
+    <p class="flow-note">A <b>break</b> is the light escape: a short timed pass at <b>your set length</b> (length + count chosen at setup — default 5 min · 2/day) → countdown → re-locks. <b>Does not affect the streak.</b> For a genuine "not today," <b>Stop session</b> ends the block — gated by friction (next section) and <b>resets the streak</b>.</p>
 
     <div class="flow">
-      <!-- P2 break duration picker -->
+      <!-- P2 break confirm (length from settings) -->
       <div class="frame-wrap">
         <div class="phone">
           <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
           <div class="screen" style="display:flex;flex-direction:column">
             <div class="wo-top" style="padding-top:6px"><div class="circle-btn">‹</div><div style="font-weight:800;font-size:14px">Take a break</div><div style="width:36px"></div></div>
-            <div id="pass-copy" style="text-align:center;color:var(--txt-dim);font-size:12px;margin:2px 8px 0">Sure — pick your minutes. Leg Day's still waiting.</div>
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%">
-              <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:12px">
-                <span style="color:#3a3a42;font-weight:700;font-size:14px">12 minutes</span>
-                <span style="color:#6a6a72;font-weight:700;font-size:15px">13 minutes</span>
-                <div style="background:#2a2a30;border-radius:12px;padding:12px 40px;font-weight:800;font-size:17px">14 minutes</div>
-                <span style="color:#6a6a72;font-weight:700;font-size:15px">15 minutes · max</span>
-                <span style="color:#3a3a42;font-weight:700;font-size:14px">&nbsp;</span>
-              </div>
-              <div style="color:var(--txt-dim);font-size:11px;margin-top:16px">Scroll · 1–15 min (1-min steps)</div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 8px">
+              <div class="avatar" style="width:52px;height:52px;margin-bottom:18px"></div>
+              <div id="pass-copy" style="font-weight:800;font-size:20px;line-height:1.25">Quick break — then it's back to Leg Day.</div>
+              <div style="font-weight:800;font-style:italic;font-size:42px;margin-top:18px">5:00</div>
+              <div style="color:var(--txt-dim);font-size:12px;margin-top:4px">your break length (set in settings)</div>
             </div>
             <div style="padding-bottom:14px">
               <button class="btn btn-white">Start break</button>
@@ -1088,7 +1125,7 @@
             </div>
           </div>
         </div>
-        <div class="frame-cap">⑧ Pick 1–15 min → straight to countdown (no hold-to-confirm, no "nevermind")</div>
+        <div class="frame-cap">⑧ Break uses your set length (5 min) → Start → countdown</div>
       </div>
 
       <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap <b>Start break</b></div></div>
@@ -1106,7 +1143,7 @@
                 <div style="flex:1"><div style="font-weight:800;font-size:16px">On a break</div><div style="color:var(--txt-dim);font-size:11px">1 break left · then back to Leg Day</div></div>
                 <span style="background:#3a1410;color:var(--brand);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:5px 10px;border-radius:var(--pill)">● Break</span>
               </div>
-              <div style="display:flex;align-items:baseline;gap:9px"><span style="font-weight:800;font-style:italic;font-size:32px">13:48</span><span style="color:var(--txt-dim);font-size:12px">until apps re-lock</span></div>
+              <div style="display:flex;align-items:baseline;gap:9px"><span style="font-weight:800;font-style:italic;font-size:32px">4:48</span><span style="color:var(--txt-dim);font-size:12px">until apps re-lock</span></div>
             </div>
           </div>
           <div class="bottombar"><div class="it on"><div class="ic">🏋️</div>Home</div><div class="it"><div class="ic">📈</div>Progress</div><div class="it"><div class="ic">⚙️</div>Settings</div></div>
