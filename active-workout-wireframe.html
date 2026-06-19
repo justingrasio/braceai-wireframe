@@ -268,6 +268,30 @@
   .delta{display:inline-flex;align-items:center;gap:3px;color:var(--green);font-size:12px;font-weight:800}
   .stale{display:inline-flex;align-items:center;gap:4px;color:var(--txt-dim);font-size:11px;font-weight:600}
 
+  /* ===== Weekly Report tab ===== */
+  .rep-card{background:var(--card);border-radius:18px;padding:18px 16px;width:316px;position:relative;overflow:hidden}
+  .rep-kicker{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+  .rep-week{font-size:11px;color:var(--txt-mute);margin-top:3px;font-weight:600}
+  .rep-logo{width:38px;height:38px;border-radius:50%;border:2px solid #2a2a30;display:flex;align-items:center;justify-content:center;font-weight:800;font-style:italic;font-size:17px}
+  .rep-grade{font-weight:800;font-style:italic;font-size:60px;line-height:.85}
+  .rep-label{font-weight:800;font-size:15px;margin-top:7px}
+  .rep-badge{display:inline-block;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;padding:9px 15px;border-radius:999px;margin:8px 0 2px}
+  .rep-coach{display:flex;gap:9px;align-items:flex-start;margin:12px 0 14px}
+  .rep-coach .av{width:26px;height:26px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
+  .rep-coach p{font-size:12.5px;line-height:1.45;font-weight:500;color:#e6e6ea}
+  .rep-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .rep-stat{background:#141417;border:1px solid var(--stroke);border-radius:11px;padding:10px 11px}
+  .rep-stat .l{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--txt-dim);margin-bottom:5px}
+  .rep-stat .v{font-size:16px;font-weight:800;font-style:italic}
+  .rep-stat .d{font-size:10px;font-weight:800;margin-top:3px}
+  .rep-row{display:flex;align-items:center;justify-content:space-between;background:#141417;border:1px solid var(--stroke);border-radius:11px;padding:11px 12px;margin-top:8px;font-size:12px}
+  .rep-row .k{color:var(--txt-dim);font-weight:600}.rep-row .x{font-weight:800}
+  .rep-share{display:flex;gap:8px;margin-top:13px}
+  .rep-share .s{flex:1;text-align:center;background:#1c1c20;border:1px solid var(--stroke);border-radius:10px;padding:9px 0;font-size:11px;font-weight:700;color:#ccc}
+  .up{color:var(--green)}.down{color:#ff8a78}
+  .rep-mini{width:208px;padding:16px 14px}
+  .rep-story{width:248px;min-height:430px;border-radius:22px;padding:24px 18px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
+
   .legend{color:#999;font-size:12px;margin-top:54px;line-height:1.7;border-top:1px solid #444;padding-top:20px;max-width:900px}
   .legend b{color:#fff}
 </style>
@@ -286,6 +310,7 @@
     <button class="tab active" data-tab="workout">Active Workout</button>
     <button class="tab" data-tab="lock">Lock App</button>
     <button class="tab" data-tab="progress">Progress</button>
+    <button class="tab" data-tab="report">Weekly Report</button>
   </div>
 
   <div class="mode-bar">
@@ -1392,6 +1417,126 @@
     </div>
   </div>
 
+  <!-- ============================================================= -->
+  <!-- TAB 4: WEEKLY REPORT -->
+  <!-- ============================================================= -->
+  <div class="tabpanel" id="tab-report">
+
+    <div class="section-label">THE CARD · Graded, shareable weekly report (opens from the Progress banner)</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">The viral surface. The <b>letter grade = consistency</b> (sessions done vs planned) — controllable and fair; the rest (volume, PRs, recovery, most-improved muscle) are shown as stats. Coach line is <b>Coach Mode</b>-driven. Premium + screenshot-worthy.</p>
+
+    <div class="flow" style="align-items:flex-start">
+      <div class="frame-wrap" style="width:316px">
+        <div class="rep-card">
+          <div style="position:absolute;top:13px;right:14px;width:26px;height:26px;border-radius:50%;background:#1c1c20;display:flex;align-items:center;justify-content:center;color:#888;font-size:13px">✕</div>
+          <div class="rep-kicker" style="color:#fff">Weekly Report</div>
+          <div class="rep-week">Week 1 of 4 · Foundation</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:10px">
+            <div>
+              <div class="rep-grade" style="color:var(--green)">A+</div>
+              <div class="rep-label">Perfect week 💪</div>
+            </div>
+            <div class="rep-logo" style="border-color:var(--green);color:var(--green)">A</div>
+          </div>
+          <div class="rep-coach"><div class="av"></div><p id="rep-coach-copy">You showed up for all 3 sessions — that's the whole game. Keep stacking weeks like this.</p></div>
+          <div class="rep-stats">
+            <div class="rep-stat"><div class="l">Time training</div><div class="v">4H 27M</div><div class="d up">▲ 5% vs last wk</div></div>
+            <div class="rep-stat"><div class="l">Volume lifted</div><div class="v">12,370 KG</div><div class="d up">▲ 8% vs last wk</div></div>
+            <div class="rep-stat"><div class="l">New PRs</div><div class="v">4 NEW</div><div class="d up">▲ 1 vs last wk</div></div>
+            <div class="rep-stat"><div class="l">Recovery</div><div class="v">82<small style="font-size:11px;font-style:normal;color:var(--txt-dim)"> /100</small></div><div class="d" style="color:var(--txt-dim)">Well recovered</div></div>
+          </div>
+          <div class="rep-row"><span class="k">💪 Most improved</span><span class="x up">Shoulders ↑ 12%</span></div>
+          <div class="rep-row"><span class="k">✅ Consistency <span style="color:#6a6a72">· your grade</span></span><span class="x">3 / 3 sessions</span></div>
+          <div class="rep-share"><div class="s">＋ Stories</div><div class="s">✎ Edit BG</div><div class="s">⤴ More</div></div>
+          <button class="btn btn-white" style="margin-top:11px">See Details</button>
+        </div>
+        <div class="frame-cap">The full card — <b>great week (A+)</b>; grade = 3/3 sessions</div>
+      </div>
+
+      <div class="flow-arrow" style="width:150px"><div class="lbl" style="margin-top:0"><b>Tap "+ Stories"</b> → a clean, branded share-card built for IG stories ↓</div></div>
+
+      <div class="frame-wrap" style="width:248px">
+        <div class="rep-story" style="background:linear-gradient(165deg,#2a1410,#0b0607);border:1px solid #3a2420">
+          <div style="font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#ff8a78">BraceAI · Week 1</div>
+          <div>
+            <div style="font-weight:800;font-style:italic;font-size:96px;line-height:.8;color:var(--green)">A+</div>
+            <div style="font-weight:800;font-size:18px;margin-top:10px">Perfect week 💪</div>
+            <div style="color:#bbb;font-size:12px;margin-top:4px">3 / 3 sessions</div>
+          </div>
+          <div style="display:flex;gap:16px;justify-content:center">
+            <div><div style="font-weight:800;font-style:italic;font-size:19px">4H27</div><div style="font-size:8px;color:#aaa;text-transform:uppercase;letter-spacing:.4px;margin-top:2px">Time</div></div>
+            <div><div style="font-weight:800;font-style:italic;font-size:19px">12.3T</div><div style="font-size:8px;color:#aaa;text-transform:uppercase;letter-spacing:.4px;margin-top:2px">Volume</div></div>
+            <div><div style="font-weight:800;font-style:italic;font-size:19px">4 PR</div><div style="font-size:8px;color:#aaa;text-transform:uppercase;letter-spacing:.4px;margin-top:2px">Records</div></div>
+          </div>
+          <div style="font-size:10px;color:#888;font-weight:600">braceai.app</div>
+        </div>
+        <div class="frame-cap">Share-card — story-shaped, premium, "flex it" asset</div>
+      </div>
+    </div>
+
+    <div class="section-label">5 STATES · Same card, different week (bad week stays supportive — no alarm red)</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">The grade + color + coach tone shift with the week. <b>Injury/deload</b> and <b>zero-training</b> get a <b>badge, not a letter</b> — an "F" for a not-your-fault week works against retention.</p>
+
+    <div class="flow" style="align-items:flex-start;gap:14px">
+      <div class="frame-wrap" style="width:208px">
+        <div class="rep-card rep-mini">
+          <div class="rep-kicker" style="color:var(--green)">● Great week</div>
+          <div class="rep-grade" style="color:var(--green);font-size:50px;margin-top:6px">A+</div>
+          <div class="rep-label" style="font-size:13px">Perfect attendance</div>
+          <div class="rep-coach" style="margin:10px 0"><div class="av"></div><p style="font-size:11.5px">All 3 sessions done. That's the whole game.</p></div>
+          <div class="rep-row" style="margin-top:0"><span class="k">Consistency</span><span class="x up">3 / 3</span></div>
+        </div>
+        <div class="frame-cap">① Great — green, celebratory</div>
+      </div>
+
+      <div class="frame-wrap" style="width:208px">
+        <div class="rep-card rep-mini">
+          <div class="rep-kicker" style="color:var(--brand)">● Solid week</div>
+          <div class="rep-grade" style="color:var(--brand);font-size:50px;margin-top:6px">B</div>
+          <div class="rep-label" style="font-size:13px">Good, not quite there</div>
+          <div class="rep-coach" style="margin:10px 0"><div class="av"></div><p style="font-size:11.5px">2 of 3 done — solid. One more next week = an A.</p></div>
+          <div class="rep-row" style="margin-top:0"><span class="k">Consistency</span><span class="x" style="color:var(--brand)">2 / 3</span></div>
+        </div>
+        <div class="frame-cap">② Average — brand, encouraging</div>
+      </div>
+
+      <div class="frame-wrap" style="width:208px">
+        <div class="rep-card rep-mini" style="border:1px solid #3a3320">
+          <div class="rep-kicker" style="color:#d9a441">● Rough week</div>
+          <div class="rep-grade" style="color:#d9a441;font-size:50px;margin-top:6px">D</div>
+          <div class="rep-label" style="font-size:13px">No stress — let's reset</div>
+          <div class="rep-coach" style="margin:10px 0"><div class="av"></div><p style="font-size:11.5px">Life happened, it's fine. One beats zero — fresh start Monday.</p></div>
+          <div class="rep-row" style="margin-top:0"><span class="k">Consistency</span><span class="x" style="color:#d9a441">1 / 3</span></div>
+        </div>
+        <div class="frame-cap">③ Bad — <b>amber, supportive (no red)</b></div>
+      </div>
+
+      <div class="frame-wrap" style="width:208px">
+        <div class="rep-card rep-mini" style="border:1px solid #16413a">
+          <div class="rep-kicker" style="color:#5dcca5">● Recovery week</div>
+          <div class="rep-badge" style="background:#0f2a25;color:#5dcca5;margin-top:8px">Recovery</div>
+          <div class="rep-label" style="font-size:13px;margin-top:8px">Smart deload</div>
+          <div class="rep-coach" style="margin:10px 0"><div class="av"></div><p style="font-size:11.5px">You listened to your body — that protects your gains.</p></div>
+          <div class="rep-row" style="margin-top:0"><span class="k">Status</span><span class="x" style="color:#5dcca5">Planned rest</span></div>
+        </div>
+        <div class="frame-cap">④ Injury / deload — <b>badge, not a grade</b></div>
+      </div>
+
+      <div class="frame-wrap" style="width:208px">
+        <div class="rep-card rep-mini">
+          <div class="rep-kicker" style="color:var(--txt-dim)">● Quiet week</div>
+          <div class="rep-grade" style="color:#5a5a61;font-size:50px;margin-top:6px">—</div>
+          <div class="rep-label" style="font-size:13px">Let's get back to it</div>
+          <div class="rep-coach" style="margin:10px 0"><div class="av"></div><p style="font-size:11.5px">No sessions this week — that's okay. Your plan's ready. Start small.</p></div>
+          <div class="rep-row" style="margin-top:0"><span class="k">Consistency</span><span class="x" style="color:var(--txt-dim)">0 / 3</span></div>
+        </div>
+        <div class="frame-cap">⑤ Zero-training — gentle re-engagement, no shame</div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="legend">
     <b>Reading the flow:</b> orange <b style="color:#ff553a">→</b> arrows show what triggers the next screen. The <b>Coach Mode</b> toggle (top) rewrites copy on Active Workout screens ③, ⑥, ⑦, ⑪ and Lock App shield ⑥ + break ⑧ live.<br>
@@ -1406,6 +1551,7 @@
     sharp:{chill:"Stop right there. Sharp pain isn't something we push through. Ending today's session is the smart move.",hype:"Hold up — that's a STOP, not a push. Ending here is the right call.",direct:"Stop. Sharp pain = end session now. Pushing through risks real injury.",savage:"Alright, real talk — sharp pain isn't toughness, it's a warning. We're done for today."},
     lock:{chill:"It's your workout time. Leg Day's waiting — let's get it done.",hype:"IT'S GO TIME 🔥 Leg Day's calling — go crush it!",direct:"Workout time. Do Leg Day now.",savage:"Put the phone down. Leg Day isn't going to lift itself."},
     pass:{chill:"Quick break — then it's back to Leg Day.",hype:"Grab your breather — then we GO 🔥 Leg Day's waiting!",direct:"Pick 1–15 min. Then back to Leg Day.",savage:"Tick-tock. Leg Day's still standing there."},
+    report:{chill:"You showed up for all 3 sessions — that's the whole game. Keep stacking weeks like this.",hype:"3 FOR 3 🔥 PERFECT attendance — you're on a tear, keep it ROLLING!",direct:"3/3 sessions. Perfect consistency. Hold this standard.",savage:"Well, well — you actually showed up. 3/3. Don't let it go to your head. Again next week."},
     coachAns:{chill:"Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.",hype:"Okay let's NAIL this 🔥 Chest up, elbows under the bell, sit straight down, EXPLODE up through the heels!",direct:"Chest up. Elbows under the bell. Sit straight down. Drive through heels. Controlled descent.",savage:"It's not that hard — chest up, elbows under the bell, sit down between your knees, push through your heels. Don't half-rep it."},
     cardioKickoff:{chill:"20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.",hype:"20 minutes — LET'S MOVE 🔥 Set it, lock in, and find that rhythm. You've got this!",direct:"20 minutes. Incline 15%, speed 4.5 km/h. Start now and hold the pace.",savage:"20 minutes. Don't drift to a stroll the second I stop watching. Set it. Move."},
     cardioFinish:{chill:"Nice and steady — that's exactly the work. Legs warm, heart happy.",hype:"THAT'S WHAT I'M TALKING ABOUT 🔥 You stayed locked in the whole way!",direct:"Done. 20:00 logged, pace held. Good work.",savage:"Okay, you didn't bail halfway. Barely impressed — faster next time."},
@@ -1420,6 +1566,7 @@
     setCopy('sharp-copy',COPY.sharp[m]);
     setCopy('lock-copy',COPY.lock[m]);
     setCopy('pass-copy',COPY.pass[m]);
+    setCopy('rep-coach-copy',COPY.report[m]);
     setCopy('coach-ans',COPY.coachAns[m]);
     setCopy('cardio-kickoff',COPY.cardioKickoff[m]);
     setCopy('cardio-finish',COPY.cardioFinish[m]);
