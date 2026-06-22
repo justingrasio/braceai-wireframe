@@ -268,7 +268,7 @@
   .delta{display:inline-flex;align-items:center;gap:3px;color:var(--green);font-size:12px;font-weight:800}
   .stale{display:inline-flex;align-items:center;gap:4px;color:var(--txt-dim);font-size:11px;font-weight:600}
 
-  /* ===== Weekly Report tab ===== */
+  /* ===== Report tab ===== */
   .rep-card{background:var(--card);border-radius:18px;padding:18px 16px;width:316px;position:relative;overflow:hidden}
   .rep-kicker{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
   .rep-week{font-size:11px;color:var(--txt-mute);margin-top:3px;font-weight:600}
@@ -291,6 +291,81 @@
   .up{color:var(--green)}.down{color:#ff8a78}
   .rep-mini{width:208px;padding:16px 14px}
   .rep-story{width:248px;min-height:430px;border-radius:22px;padding:24px 18px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center}
+  /* share comparison cards (Strava-style, ~353x449 → scaled) */
+  .sc-card{width:250px;height:318px;border-radius:20px;padding:17px 15px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden;flex:0 0 auto}
+  .sc-tag{position:absolute;top:12px;right:12px;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;background:rgba(255,255,255,.12);padding:4px 8px;border-radius:999px;color:#ddd}
+  .sc-kicker{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--brand)}
+  .sc-stat{font-weight:800;font-style:italic;font-size:33px;line-height:1;margin-top:7px}
+  .sc-comp{font-size:12.5px;font-weight:600;margin-top:7px;line-height:1.3}
+  .sc-emoji{font-size:58px;line-height:1;margin:8px 0;flex:1;display:flex;align-items:center}
+  .sc-coach{display:flex;gap:7px;align-items:flex-start;text-align:left;background:rgba(255,85,58,.13);border:1px solid rgba(255,85,58,.32);border-radius:12px;padding:8px 9px;width:100%}
+  .sc-coach .av{width:19px;height:19px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
+  .sc-coach p{font-size:10.5px;line-height:1.35;font-weight:600;color:#fff}
+  .sc-brand{font-weight:800;font-style:italic;font-size:12px;letter-spacing:.5px;margin-top:9px;color:var(--brand)}
+  .sc-tile{background:#141417;border:1px solid var(--stroke);border-radius:13px;padding:13px 8px;text-align:center}
+  .sc-tile.sel{border-color:var(--brand);background:#221512}
+  .sc-tile .e{font-size:26px}.sc-tile .n{font-size:10px;font-weight:700;color:#ccc;margin-top:5px}
+  .share-card{width:250px;min-height:320px;height:auto;border-radius:20px;padding:17px 16px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;flex:0 0 auto;background:linear-gradient(160deg,#242429,#0d0d10);border:1px solid var(--stroke);box-shadow:0 16px 36px rgba(0,0,0,.34)}
+  .share-card.light{background:linear-gradient(160deg,#fff,#ededf0);color:#050505}
+  .share-card.brandwash{background:radial-gradient(circle at 70% 8%,rgba(255,85,58,.34),transparent 34%),linear-gradient(160deg,#2a1410,#0b0607)}
+  .share-card.grid{background:linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(160deg,#1c1c20,#090909);background-size:28px 28px,28px 28px,auto}
+  .share-card::after{content:"";position:absolute;right:-26px;top:-28px;width:92px;height:92px;border-radius:50%;background:rgba(255,255,255,.06)}
+  .share-card.light::after{background:rgba(0,0,0,.04)}
+  .share-meta{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;font-size:9px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;color:var(--brand)}
+  .share-meta .chip{background:rgba(255,85,58,.14);border:1px solid rgba(255,85,58,.28);border-radius:999px;padding:5px 8px;color:#ff8a78}
+  .share-card.light .share-meta .chip{background:#fff0ec;color:var(--brand);border-color:#ffd0c7}
+  .share-title{position:relative;z-index:1;font-size:22px;font-weight:800;font-style:italic;text-transform:uppercase;line-height:1.02;margin-top:12px}
+  .share-sub{position:relative;z-index:1;color:#cfcfd4;font-size:11px;font-weight:600;line-height:1.35;margin-top:6px}
+  .share-card.light .share-sub{color:#555}
+  .share-stat{position:relative;z-index:1;font-weight:800;font-style:italic;font-size:38px;line-height:1;color:var(--brand);margin-top:9px}
+  .share-stat small{font-size:14px;color:#ffd2c8}
+  .share-card.light .share-stat small{color:#ff8a78}
+  .share-object{position:relative;z-index:1;margin:10px -8px 2px;height:126px;display:flex;align-items:center;justify-content:center;overflow:visible}
+  .share-object img{max-width:112%;max-height:138px;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.5))}
+  .share-object .scale-tag{position:absolute;right:8px;bottom:7px;background:rgba(255,85,58,.16);border:1px solid rgba(255,85,58,.35);color:#ff8a78;border-radius:999px;padding:5px 9px;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+  .share-object.tall{height:142px}
+  .share-object.tall img{max-height:154px}
+  .share-object.wide img{max-width:124%;max-height:132px}
+  .share-object .object-count{position:absolute;left:8px;bottom:4px;font-size:39px;font-weight:800;font-style:italic;color:#fff;text-shadow:0 8px 20px rgba(0,0,0,.45)}
+  .share-object .score-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;font-size:36px;font-weight:800;font-style:italic;color:#fff;text-shadow:0 0 18px rgba(255,85,58,.42)}
+  .share-object .score-overlay span{color:var(--brand)}
+  .share-proof{position:relative;z-index:1;background:rgba(5,5,5,.34);border:1px solid var(--stroke);border-radius:13px;padding:10px;margin-top:11px}
+  .share-card.light .share-proof{background:rgba(255,255,255,.66);border-color:rgba(0,0,0,.07)}
+  .share-proof .label{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--txt-dim);margin-bottom:6px}
+  .share-card.light .share-proof .label{color:#777}
+  .share-ex{display:flex;align-items:center;justify-content:space-between;gap:9px;font-size:10.5px;padding:5px 0;border-top:1px solid rgba(255,255,255,.07)}
+  .share-ex:first-of-type{border-top:none}
+  .share-card.light .share-ex{border-top-color:rgba(0,0,0,.07)}
+  .share-ex .nm{font-weight:800}
+  .share-ex .dt{color:#a8a8ae;font-weight:700;text-align:right;white-space:nowrap}
+  .share-card.light .share-ex .dt{color:#666}
+  .share-coach{position:relative;z-index:1;display:flex;gap:8px;align-items:flex-start;background:rgba(255,85,58,.12);border:1px solid rgba(255,85,58,.3);border-radius:12px;padding:9px;margin-top:9px}
+  .share-coach .av{width:21px;height:21px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
+  .share-coach p{font-size:10.5px;line-height:1.35;font-weight:700}
+  .share-brand{position:relative;z-index:1;text-align:center;font-weight:800;font-style:italic;font-size:12px;letter-spacing:.6px;color:#fff;margin-top:10px}
+  .share-card.light .share-brand{color:var(--brand)}
+  .share-bars{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;gap:12px;height:92px;margin-top:10px}
+  .share-bar{width:58px;border-radius:14px;background:linear-gradient(180deg,#ff553a,#ffa051);position:relative}
+  .share-bar.old{height:58px;background:#2a2a30}
+  .share-bar.new{height:86px}
+  .share-bar span{position:absolute;top:-18px;left:0;right:0;text-align:center;font-size:10px;font-weight:800;color:#9a9aa2}
+  .share-calendar{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:15px 0 8px}
+  .share-day{height:27px;border-radius:8px;background:#2a2a30;display:flex;align-items:center;justify-content:center;color:#777;font-size:10px;font-weight:800}
+  .share-day.on{background:var(--brand);color:#fff}
+  .share-grade{position:relative;z-index:1;font-weight:800;font-style:italic;font-size:88px;line-height:.8;color:var(--green);margin:12px 0 4px}
+  .share-roast-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .share-roast{background:rgba(255,255,255,.06);border:1px solid var(--stroke);border-radius:12px;padding:10px 8px}
+  .share-roast .n{font-size:18px;font-weight:800;font-style:italic}
+  .share-roast .l{font-size:8px;color:#aaa;font-weight:800;text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
+  .content-bank{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:12px;max-width:980px;margin:18px 0 26px}
+  .content-card{background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:14px}
+  .content-card .k{color:var(--brand);font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px}
+  .content-card .h{font-size:15px;font-weight:800;font-style:italic;text-transform:uppercase;margin-bottom:8px}
+  .content-card p{font-size:12px;line-height:1.45;color:#d8d8dd;margin-bottom:9px}
+  .content-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .content-card li{font-size:12px;line-height:1.35;color:#cfcfd4;border-top:1px solid rgba(255,255,255,.06);padding-top:7px}
+  .content-card b{color:#fff}
+  @media(max-width:900px){.content-bank{grid-template-columns:1fr}}
 
   .legend{color:#999;font-size:12px;margin-top:54px;line-height:1.7;border-top:1px solid #444;padding-top:20px;max-width:900px}
   .legend b{color:#fff}
@@ -310,7 +385,7 @@
     <button class="tab active" data-tab="workout">Active Workout</button>
     <button class="tab" data-tab="lock">Lock App</button>
     <button class="tab" data-tab="progress">Progress</button>
-    <button class="tab" data-tab="report">Weekly Report</button>
+    <button class="tab" data-tab="report">Report</button>
   </div>
 
   <div class="mode-bar">
@@ -1418,9 +1493,167 @@
   </div>
 
   <!-- ============================================================= -->
-  <!-- TAB 4: WEEKLY REPORT -->
+  <!-- TAB 4: REPORT -->
   <!-- ============================================================= -->
   <div class="tabpanel" id="tab-report">
+
+    <div class="section-label">SHARE SYSTEM · Daily + Weekly visual-first share cards</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Six dark-mode share options. Each card leads with a <b>visual object</b>, then uses small copy and proof rows to confirm the flex. Cards use content-fit height here so nothing crops; final export size can be tuned in Figma later.</p>
+
+    <div class="flow" style="align-items:flex-start;gap:14px">
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Daily Report</span><span class="chip">PR Smashed</span></div>
+            <div class="share-title">Total volume pushed</div>
+            <div class="share-stat">8,900<small> KG</small></div>
+            <div class="share-object">
+              <img src="assets/share-half-helicopter.png" alt="Half helicopter visual comparison">
+              <span class="scale-tag">half helicopter</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-daily-pr-copy">You moved serious weight today. Quiet flex, loud numbers.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Exercise proof</div>
+              <div class="share-ex"><span class="nm">Goblet Squat</span><span class="dt">3 sets · 30 reps · 780kg</span></div>
+              <div class="share-ex"><span class="nm">Leg Press</span><span class="dt">4 sets · 40 reps · 1,400kg</span></div>
+              <div class="share-ex"><span class="nm">Leg Extension</span><span class="dt">4 sets · 48 reps · 2,160kg</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Daily ① <b>Half Helicopter PR</b> — total-volume flex with a clear object punchline</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Daily Report</span><span class="chip">Volume flex</span></div>
+            <div class="share-title">Moved a compact car</div>
+            <div class="share-stat">8,900<small> KG</small></div>
+            <div class="share-object wide">
+              <img src="assets/share-compact-car.png" alt="Compact car visual comparison">
+              <span class="object-count">×5</span>
+              <span class="scale-tag">compact car</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-daily-car-copy">Five compact cars worth of work. That is not a casual Tuesday.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Main drivers</div>
+              <div class="share-ex"><span class="nm">Leg Press</span><span class="dt">4 sets · 40 reps · 1,400kg</span></div>
+              <div class="share-ex"><span class="nm">Goblet Squat</span><span class="dt">3 sets · 30 reps · 780kg</span></div>
+              <div class="share-ex"><span class="nm">Ham Curl</span><span class="dt">3 sets · 36 reps · 900kg</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Daily ② <b>Compact Car ×5</b> — one object plus count, instead of five tiny cars</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Daily Report</span><span class="chip">Receipt</span></div>
+            <div class="share-title">Workout receipt</div>
+            <div class="share-stat">12<small> SETS</small></div>
+            <div class="share-object tall">
+              <img src="assets/share-vending-stack.png" alt="Stacked vending machines visual comparison">
+              <span class="scale-tag">machine stack</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-daily-vending-copy">Receipt printed. The machines are stacked because so were the sets.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">What got done</div>
+              <div class="share-ex"><span class="nm">Goblet Squat</span><span class="dt">3 × 10 · 20kg</span></div>
+              <div class="share-ex"><span class="nm">Bulgarian Split</span><span class="dt">3 × 8 · 40kg</span></div>
+              <div class="share-ex"><span class="nm">Leg Extension</span><span class="dt">4 × 12 · 45kg</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Daily ③ <b>Vending Machine Stack</b> — proof-of-work card with a funny heavy pile</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Daily Report</span><span class="chip">Lift PR</span></div>
+            <div class="share-title">Goblet squat PR</div>
+            <div class="share-stat">105<small> KG</small></div>
+            <div class="share-object tall">
+              <img src="assets/share-grand-piano.png" alt="Grand piano visual comparison">
+              <span class="scale-tag">grand piano</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-daily-piano-copy">That squat crossed piano territory. Legs filed a complaint.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">PR proof</div>
+              <div class="share-ex"><span class="nm">Goblet Squat</span><span class="dt">105kg × 6</span></div>
+              <div class="share-ex"><span class="nm">Old PR</span><span class="dt">100kg × 6</span></div>
+              <div class="share-ex"><span class="nm">Gain</span><span class="dt">+5kg today</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Daily ④ <b>Grand Piano PR</b> — single-exercise record with one memorable object</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Weekly Report</span><span class="chip">3 / 3</span></div>
+            <div class="share-title">Excuses lost</div>
+            <div class="share-stat">3–0</div>
+            <div class="share-object wide">
+              <img src="assets/share-scoreboard.png" alt="Sports scoreboard visual">
+              <div class="score-overlay">3 <span>–</span> 0</div>
+              <span class="scale-tag">scoreboard</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-weekly-score-copy">Three planned. Three finished. The excuses got swept.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Week proof</div>
+              <div class="share-ex"><span class="nm">Mon · Leg Day</span><span class="dt">12 sets · 94 reps</span></div>
+              <div class="share-ex"><span class="nm">Wed · Push</span><span class="dt">14 sets · 112 reps</span></div>
+              <div class="share-ex"><span class="nm">Fri · Pull</span><span class="dt">13 sets · 101 reps</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Weekly ① <b>Excuses Lost 3-0</b> — scoreboard makes consistency visual</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Weekly Report</span><span class="chip">A+</span></div>
+            <div class="share-title">Perfect week</div>
+            <div class="share-stat">A+</div>
+            <div class="share-object tall">
+              <img src="assets/share-trophy.png" alt="Weekly trophy and medal visual">
+              <span class="scale-tag">weekly trophy</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-weekly-trophy-copy">All sessions done. Annoyingly consistent, in the best way.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Weekly wrapped</div>
+              <div class="share-ex"><span class="nm">Consistency</span><span class="dt">3 / 3 sessions</span></div>
+              <div class="share-ex"><span class="nm">New PRs</span><span class="dt">4 records</span></div>
+              <div class="share-ex"><span class="nm">Volume</span><span class="dt">12,370kg</span></div>
+            </div>
+            <div class="share-brand">BRACEAI</div>
+          </div>
+        </div>
+        <div class="frame-cap">Weekly ② <b>Trophy / Wrapped</b> — classic achievement card with three proof stats</div>
+      </div>
+    </div>
 
     <div class="section-label">THE CARD · Graded, shareable weekly report (opens from the Progress banner)</div>
     <div class="section-rule"></div>
@@ -1552,6 +1785,12 @@
     lock:{chill:"It's your workout time. Leg Day's waiting — let's get it done.",hype:"IT'S GO TIME 🔥 Leg Day's calling — go crush it!",direct:"Workout time. Do Leg Day now.",savage:"Put the phone down. Leg Day isn't going to lift itself."},
     pass:{chill:"Quick break — then it's back to Leg Day.",hype:"Grab your breather — then we GO 🔥 Leg Day's waiting!",direct:"Pick 1–15 min. Then back to Leg Day.",savage:"Tick-tock. Leg Day's still standing there."},
     report:{chill:"You showed up for all 3 sessions — that's the whole game. Keep stacking weeks like this.",hype:"3 FOR 3 🔥 PERFECT attendance — you're on a tear, keep it ROLLING!",direct:"3/3 sessions. Perfect consistency. Hold this standard.",savage:"Well, well — you actually showed up. 3/3. Don't let it go to your head. Again next week."},
+    shareDailyPr:{chill:"Half a helicopter worth of work. Quiet flex, loud numbers.",hype:"PR SMASHED 🔥 That's half-a-helicopter energy!",direct:"Session record. 8,900 kg total volume logged.",savage:"You finally made the weights nervous. Took long enough."},
+    shareDailyCar:{chill:"Five compact cars worth of work. That is not a casual Tuesday.",hype:"FIVE CARS OF VOLUME 🔥 You moved today!",direct:"8,900 kg logged. Roughly five compact cars of total volume.",savage:"Five cars moved and somehow you still call this 'just leg day'."},
+    shareDailyVending:{chill:"Receipt printed. The machines are stacked because so were the sets.",hype:"PAID IN FULL 🔥 Every set got handled!",direct:"Workout complete. 12 sets, 94 reps, no missed work.",savage:"No dramatic caption needed. You did the workout. Rare behavior."},
+    shareDailyPiano:{chill:"That squat crossed piano territory. Strong day.",hype:"PIANO TERRITORY 🔥 That squat got upgraded!",direct:"Goblet Squat PR logged. 105 kg for 6 reps.",savage:"A grand piano called. It wants its weight class back."},
+    shareWeeklyScore:{chill:"Three planned. Three finished. The habit is working.",hype:"3 FOR 3 🔥 Perfect week, no misses!",direct:"3 planned sessions. 3 completed. Perfect consistency.",savage:"Three workouts. Zero excuses. Suspiciously competent."},
+    shareWeeklyTrophy:{chill:"All sessions done. Annoyingly consistent, in the best way.",hype:"A+ WEEK 🔥 You stayed locked in!",direct:"A+ week. 3/3 sessions completed, 4 PRs logged.",savage:"Well, well. You actually showed up all week."},
     coachAns:{chill:"Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.",hype:"Okay let's NAIL this 🔥 Chest up, elbows under the bell, sit straight down, EXPLODE up through the heels!",direct:"Chest up. Elbows under the bell. Sit straight down. Drive through heels. Controlled descent.",savage:"It's not that hard — chest up, elbows under the bell, sit down between your knees, push through your heels. Don't half-rep it."},
     cardioKickoff:{chill:"20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.",hype:"20 minutes — LET'S MOVE 🔥 Set it, lock in, and find that rhythm. You've got this!",direct:"20 minutes. Incline 15%, speed 4.5 km/h. Start now and hold the pace.",savage:"20 minutes. Don't drift to a stroll the second I stop watching. Set it. Move."},
     cardioFinish:{chill:"Nice and steady — that's exactly the work. Legs warm, heart happy.",hype:"THAT'S WHAT I'M TALKING ABOUT 🔥 You stayed locked in the whole way!",direct:"Done. 20:00 logged, pace held. Good work.",savage:"Okay, you didn't bail halfway. Barely impressed — faster next time."},
@@ -1567,6 +1806,12 @@
     setCopy('lock-copy',COPY.lock[m]);
     setCopy('pass-copy',COPY.pass[m]);
     setCopy('rep-coach-copy',COPY.report[m]);
+    setCopy('share-daily-pr-copy',COPY.shareDailyPr[m]);
+    setCopy('share-daily-car-copy',COPY.shareDailyCar[m]);
+    setCopy('share-daily-vending-copy',COPY.shareDailyVending[m]);
+    setCopy('share-daily-piano-copy',COPY.shareDailyPiano[m]);
+    setCopy('share-weekly-score-copy',COPY.shareWeeklyScore[m]);
+    setCopy('share-weekly-trophy-copy',COPY.shareWeeklyTrophy[m]);
     setCopy('coach-ans',COPY.coachAns[m]);
     setCopy('cardio-kickoff',COPY.cardioKickoff[m]);
     setCopy('cardio-finish',COPY.cardioFinish[m]);
