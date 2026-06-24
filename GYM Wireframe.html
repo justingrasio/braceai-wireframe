@@ -580,6 +580,86 @@
 #tab-onboarding .trust{text-align:center;font-size:11.5px;color:var(--txt-dim);margin:12px 0 2px;line-height:1.55}
 #tab-onboarding .trust b{color:#fff}
 #tab-onboarding .topbar{position:static;top:auto;z-index:1}
+  /* ===== onboarding v2 (brief) — new components, scoped ===== */
+  #tab-onboarding .imgph{background:repeating-linear-gradient(45deg,#17171a,#17171a 7px,#1f1f23 7px,#1f1f23 14px);border:1px dashed #3a3a40;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#6a6a72;font-size:10px;font-weight:700;text-align:center;padding:6px;line-height:1.3}
+  #tab-onboarding .act-chip.femtag{background:#3a1730;color:#f0a6da}
+  #tab-onboarding .goalcard{display:flex;align-items:stretch;background:var(--card);border:1.5px solid var(--stroke);border-radius:12px;overflow:hidden;cursor:pointer;margin-bottom:9px}
+  #tab-onboarding .goalcard.sel{border-color:var(--brand);background:#2a1512}
+  #tab-onboarding .goalcard .gl{padding:13px 14px;font-weight:800;font-size:14px;flex:1;display:flex;flex-direction:column;justify-content:center}
+  #tab-onboarding .goalcard .gl small{font-weight:500;color:var(--txt-dim);font-size:11px;margin-top:3px}
+  #tab-onboarding .goalcard .imgph{width:96px;border-radius:0;border:none;border-left:1px dashed #3a3a40}
+  #tab-onboarding .bodyfig{height:230px;width:128px;margin:4px auto 6px}
+  #tab-onboarding .obslider{position:relative;height:8px;border-radius:99px;background:#26262b;margin:18px 10px 8px}
+  #tab-onboarding .obslider .fillb{position:absolute;left:0;top:0;height:100%;border-radius:99px;background:var(--brand)}
+  #tab-onboarding .obslider .knob{position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--brand);transform:translate(-50%,-50%)}
+  #tab-onboarding .slabels{display:flex;justify-content:space-between;font-size:11px;color:var(--txt-dim);margin:0 10px;font-weight:600}
+  /* two-step demo slide (Effort Check → Daily Check-in) */
+  #tab-onboarding .demoflow{flex:1;overflow:hidden;position:relative}
+  #tab-onboarding .demotrack{display:flex;height:100%;width:200%;transition:transform .5s cubic-bezier(.45,0,.15,1)}
+  #tab-onboarding .demotrack.step2{transform:translateX(-50%)}
+  #tab-onboarding .demopane{flex:0 0 50%;width:50%;height:100%;display:flex;flex-direction:column;overflow-y:auto}
+  #tab-onboarding .demopane::-webkit-scrollbar{display:none}
+  #tab-onboarding .dots{display:flex;gap:6px;justify-content:center;margin:6px 0 10px}
+  #tab-onboarding .dots i{width:6px;height:6px;border-radius:99px;background:#3a3a40;transition:.3s;cursor:pointer}
+  #tab-onboarding .dots i.on{background:var(--brand);width:18px}
+  #tab-onboarding .chart{display:flex;align-items:flex-end;gap:10px;height:150px;padding:12px 6px 6px;border-bottom:1px solid var(--stroke);margin:10px 0 4px}
+  #tab-onboarding .chart .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
+  #tab-onboarding .chart .barb{width:58%;background:linear-gradient(180deg,#ff7a63,#ff553a);border-radius:6px 6px 0 0}
+  #tab-onboarding .chart .wk{font-size:10px;color:var(--txt-dim);font-weight:700}
+  #tab-onboarding .chart .val{font-size:10px;font-weight:800}
+  #tab-onboarding .vs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+  #tab-onboarding .vcol{border-radius:12px;padding:12px;border:1px solid var(--stroke)}
+  #tab-onboarding .vcol.bad{background:#161619}
+  #tab-onboarding .vcol.good{background:#2a1512;border-color:var(--brand)}
+  #tab-onboarding .vcol h4{font-size:11px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.3px}
+  #tab-onboarding .vcol.bad h4{color:var(--txt-dim)}
+  #tab-onboarding .vcol.good h4{color:var(--brand)}
+  #tab-onboarding .vrow{font-size:11px;line-height:1.4;padding:4px 0;display:flex;gap:5px;color:#cfcfd4}
+  #tab-onboarding .baframe{display:flex;gap:6px;margin:8px 0}
+  #tab-onboarding .baframe .imgph{flex:1;height:128px}
+  #tab-onboarding .baframe .imgph .tag{position:absolute}
+  #tab-onboarding .rankbadge{width:74px;height:74px;border-radius:50%;margin:6px auto;background:radial-gradient(circle at 50% 40%,#5a4cff,#241a5e);border:3px solid #7a6cff;display:flex;align-items:center;justify-content:center;font-size:28px}
+  /* overall rank ladder */
+  #tab-onboarding .ranklist{display:flex;flex-direction:column;gap:4px}
+  #tab-onboarding .rankrow{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--stroke);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:800}
+  #tab-onboarding .rankrow .rk{width:22px;text-align:center;font-size:15px}
+  #tab-onboarding .rankrow .rkx{margin-left:auto;font-size:10px;font-weight:700;color:var(--txt-dim);text-transform:uppercase;letter-spacing:.3px}
+  #tab-onboarding .rankrow.locked{opacity:.42}
+  #tab-onboarding .rankrow.cur{border-color:var(--brand);background:#2a1512}
+  #tab-onboarding .rankrow.cur .rkx{color:var(--brand)}
+  /* blurred plan-reveal paywall (merged recap + paywall) */
+  #tab-onboarding .repcard{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:13px;margin-bottom:10px;position:relative;overflow:hidden}
+  #tab-onboarding .repcard.hero{background:linear-gradient(160deg,#2a1512,#101012);border-color:#3a201c}
+  #tab-onboarding .rephd{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:800;margin-bottom:10px}
+  #tab-onboarding .rephd .lockchip{font-size:9px;font-weight:800;color:var(--brand);background:#2a1512;border:1px solid #5a2a22;padding:3px 8px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
+  #tab-onboarding .blur{filter:blur(5px);pointer-events:none;user-select:none}
+  #tab-onboarding .skel{height:9px;border-radius:6px;background:#2a2a30;margin:7px 0}
+  #tab-onboarding .tipbox{background:#1a0f0c;border:1px solid #3a201c;border-radius:10px;padding:11px}
+  #tab-onboarding .tipbox .tl{font-size:9px;font-weight:800;color:var(--brand);letter-spacing:.4px;text-transform:uppercase;margin-bottom:7px}
+  #tab-onboarding .offpill{background:var(--brand);color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;margin-left:6px;letter-spacing:.3px}
+  #tab-onboarding .paystick{position:sticky;bottom:0;margin:8px -20px 0;padding:14px 20px 16px;background:var(--canvas);border-top:1px solid var(--stroke);box-shadow:0 -18px 32px rgba(5,5,5,.92)}
+  #tab-onboarding .body.tap .seg{cursor:pointer}
+  #tab-onboarding .body .seg.sel{fill:var(--brand)}
+  #tab-onboarding .pnote{font-size:10px;color:#9a8a6a;background:#1c160c;border:1px solid #3a2e16;border-radius:7px;padding:6px 9px;margin:8px 0;font-weight:700;line-height:1.4}
+  /* BMI snapshot */
+  #tab-onboarding .bmibar{height:9px;border-radius:99px;background:linear-gradient(90deg,#5ab4ff,#2fd96d,#ffd23a,#ff8c42,#ef4343);position:relative;margin:8px 2px 0}
+  #tab-onboarding .bmimark{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid #050505;transform:translate(-50%,-50%);box-shadow:0 0 0 2px #fff}
+  #tab-onboarding .bmilabels{display:flex;justify-content:space-between;font-size:9.5px;color:var(--txt-dim);margin:8px 2px 0;font-weight:600}
+  #tab-onboarding .bmilabels .on{color:#fff}
+  #tab-onboarding .support{display:flex;gap:10px;align-items:flex-start;background:#0f2419;border:1px solid #1d5138;border-radius:12px;padding:12px;margin:12px 0}
+  #tab-onboarding .support .si{width:30px;height:30px;border-radius:8px;background:#143d28;display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+  #tab-onboarding .support b{font-size:12.5px}
+  #tab-onboarding .support small{display:block;color:#8fbfa3;font-size:11px;margin-top:3px;line-height:1.45}
+  /* before -> after projection card */
+  #tab-onboarding .baprog{position:relative;display:flex;height:86px;border-radius:12px;overflow:hidden;margin-bottom:9px;background:var(--card);border:1px solid var(--stroke)}
+  #tab-onboarding .baprog .h{flex:1;position:relative}
+  #tab-onboarding .baprog .h .imgph{position:absolute;inset:0;border-radius:0;border:none}
+  #tab-onboarding .baprog .bpill{position:absolute;bottom:8px;font-size:12px;font-weight:800;padding:4px 9px;border-radius:8px;z-index:3}
+  #tab-onboarding .baprog .bpill.cur{left:8px;background:rgba(0,0,0,.72);color:#fff}
+  #tab-onboarding .baprog .bpill.goal{right:8px;background:var(--brand);color:#fff}
+  #tab-onboarding .baprog .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;z-index:3;background:rgba(5,5,5,.6);padding:5px 12px;border-radius:9px}
+  #tab-onboarding .baprog .mid b{font-size:12px;display:block;color:#fff}
+  #tab-onboarding .baprog .mid .arr{color:var(--brand);font-weight:900;font-size:13px;letter-spacing:1px}
 </style>
 </head>
 <body>
@@ -2331,366 +2411,324 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
   <span class="page-tab">Onboarding</span>
   <div class="topbar-row">
     <button class="navbtn" id="onb-prev">‹</button>
-    <div class="counter">Screen <b id="onb-cur">1</b> / <span id="onb-tot">39</span> · <span id="onb-actname">The Problem</span></div>
+    <div class="counter">Screen <b id="onb-cur">1</b> / <span id="onb-tot">41</span> · <span id="onb-actname">The Problem</span></div>
     <div class="progress"><i id="onb-bar"></i></div>
     <button class="navbtn" id="onb-next">›</button>
   </div>
 </div>
-<div class="hint">Scroll sideways, swipe, use the ‹ › buttons, or your ← → arrow keys. Tap options to select. Coach voice = friendly default; the picked <b>mode</b> only changes tone once inside the app. Screens marked <b>(tentative)</b> are for you to judge.</div>
+<div class="hint">34-screen spec from the founder brief (gender-first, sells the future self). <b>♀ female-variant</b> screens sit right beside the forked ones. Scroll / swipe / ‹ › / arrow keys; tap to select. Projection numbers &amp; body imagery are <b>placeholders</b> (PT + Ferdyan to finalise).</div>
 
 <div class="strip" id="onb-strip">
 
-<!-- ================= ACT 1 — PROBLEM → SOLUTION ================= -->
-
-<!-- S1 -->
-<div class="slot" data-act="The Problem">
-  <span class="act-chip">Act 1 · Problem</span>
+<div class="slot" data-act="Hook · Gender">
+  <span class="act-chip">1 · Gender</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="stepbar"><i class="on"></i><i></i><i></i><i></i></div>
-      <div class="spacer"></div>
-      <h1 class="q">You walk in.<br><em>Now what?</em></h1>
-      <p class="sub">Most people quit in the first week — not because they're lazy, but because no one ever showed them what to actually do.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Pure empathy. No input yet — just resonance.</div>
-</div>
-
-<!-- S2 -->
-<div class="slot" data-act="The Problem">
-  <span class="act-chip">Act 1 · Problem</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="stepbar"><i class="done"></i><i class="on"></i><i></i><i></i></div>
-      <div class="spacer"></div>
-      <h1 class="q">A real coach?<br><em>$300 a month.</em></h1>
-      <p class="sub">A personal trainer costs more than rent. So most people just guess their way through it — and hope.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Cost pain. The thing they can't afford.</div>
-</div>
-
-<!-- S3 -->
-<div class="slot" data-act="The Problem">
-  <span class="act-chip">Act 1 · Problem</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="stepbar"><i class="done"></i><i class="done"></i><i class="on"></i><i></i></div>
-      <div class="spacer"></div>
-      <h1 class="q">You train.<br><em>Nothing changes.</em></h1>
-      <p class="sub">Random workouts give random results. Without a real plan, you just spin your wheels and lose motivation.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Result pain. The frustration that makes them quit.</div>
-</div>
-
-<!-- S4 -->
-<div class="slot" data-act="The Solution">
-  <span class="act-chip">Act 1 · Solution</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></div>
-      <div class="spacer"></div>
-      <div class="hero">Meet <span>Brace.</span></div>
-      <p class="sub" style="font-size:15px;color:#d4d4d8">A world-class coach in your pocket. One plan, built just for you — and it adjusts every single day. For less than the price of a coffee.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-brand">Let's fix this →</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>The answer to all 3 problems.</b> App = the fix.</div>
-</div>
-
-<!-- ================= ACT 2 — MEET YOUR COACH ================= -->
-
-<!-- S5 name -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Your Coach</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">What should<br>I call you?</h1>
-      <p class="sub">I'll use it to keep things personal — not to spam you.</p>
-      <div class="field ph">Your first name</div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Name captured early</b> → reused everywhere.</div>
-</div>
-
-<!-- Sex (moved up — right after name) -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Your Coach</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">A quick bit<br>about you.</h1>
+      <h1 class="q">Let's build the<br>strongest version<br>of <em>you.</em></h1>
+      <p class="sub">Who are we building for?</p>
       <div class="grid" data-single>
-        <div class="opt tile sel"><div class="ico">♂</div>Male</div>
-        <div class="opt tile"><div class="ico">♀</div>Female</div>
-      </div>
-      <p class="sub" style="margin-top:12px">Just so I can calibrate your plan — change it anytime.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Sex — moved here</b>, right after the name (identity together).</div>
-</div>
-
-<!-- S6 persona -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Your Coach</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">Pick your coach.</h1>
-      <p class="sub">They'll guide every workout. You can switch anytime.</p>
-      <div class="grid" data-single>
-        <div class="opt tile sel"><div class="ico">💪</div><div><b>Marcus</b><small>Male coach</small></div><div class="tick"></div></div>
-        <div class="opt tile"><div class="ico f" style="background:linear-gradient(135deg,#c98bff,#7a5cff)">🔥</div><div><b>Martha</b><small>Female coach</small></div><div class="tick"></div></div>
+        <div class="opt tile sel"><div class="imgph" style="width:100%;height:118px;margin-bottom:8px">MALE<br>body image</div>Male</div>
+        <div class="opt tile"><div class="imgph" style="width:100%;height:118px;margin-bottom:8px">FEMALE<br>body image</div>Female</div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Persona pick: <b>Marcus</b> or <b>Martha</b>.</div>
+  <div class="slot-cap"><b>Screen 1 = the master fork.</b> Sets imagery, goals, baseline, projection & proof for the whole flow.</div>
 </div>
 
-<!-- S7 mode intro -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Coach Mode</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>One more thing — how do you want me to talk to you?</div></div>
-      <h1 class="q">Your coach,<br><em>your energy.</em></h1>
-      <p class="sub">Some people want a calm voice. Some want to get yelled at. Pick whatever keeps you showing up — you can change it anytime.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Show me the options</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Context before the feature</b> (as you asked).</div>
-</div>
-
-<!-- S8 mode preview+pick -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Coach Mode</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q" style="font-size:21px">Choose your mode</h1>
-      <div class="opts" data-single>
-        <div class="opt grid2 sel"><b>😌 Chill</b><small>"No rush. We've got this, one rep at a time."</small><div class="tick" style="position:absolute"></div></div>
-        <div class="opt grid2"><b>🔥 Hype</b><small>"LET'S GO!! Today's the day we start!"</small></div>
-        <div class="opt grid2"><b>🎯 Direct</b><small>"Here's the plan. Show up. Execute."</small></div>
-        <div class="opt grid2"><b>😈 Savage</b><small>"Skip today and you're just lying to yourself."</small></div>
-      </div>
-      <p class="sub" style="margin-top:12px;font-size:11.5px">You'll feel this once we start training.</p>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Preview the tone before picking.</b> Sample line per mode = a live demo of the feature.</div>
-</div>
-
-<!-- S9 lock-in -->
-<div class="slot" data-act="Meet Your Coach">
-  <span class="act-chip">Act 2 · Your Coach</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="spacer"></div>
-      <div class="coach" style="flex-direction:column;align-items:center;text-align:center;gap:14px">
-        <div class="av" style="width:72px;height:72px"></div>
-        <div class="bubble" style="border-radius:14px"><div class="nm">MARCUS</div>Nice to meet you, Alex. I'm Marcus — your coach from here on. Let's build a plan that actually fits <em>you</em>. Quick questions first.</div>
-      </div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Let's go</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Coach locks in.</b> Uses their name. Friendly voice for the rest of onboarding.</div>
-</div>
-
-<!-- ================= ACT 3 — GETTING TO KNOW YOU ================= -->
-
-<!-- S10 goal -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · About You</span>
+<div class="slot" data-act="Hook · Goal">
+  <span class="act-chip">2 · Goal (M)</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <h1 class="q">What are we<br>training for?</h1>
-      <p class="sub">This shapes your whole plan. Pick the main one.</p>
-      <div class="opts" data-single>
-        <div class="opt sel"><div class="ico">🏋️</div>Build muscle<div class="tick"></div></div>
-        <div class="opt"><div class="ico">💪</div>Get stronger<div class="tick"></div></div>
-        <div class="opt"><div class="ico">🔥</div>Lose fat<div class="tick"></div></div>
-        <div class="opt"><div class="ico">⚡</div>Get athletic<div class="tick"></div></div>
-        <div class="opt"><div class="ico">✅</div>General fitness<div class="tick"></div></div>
+      <p class="sub">Pick the main one.</p>
+      <div data-single>
+        <div class="goalcard sel"><div class="gl">Build muscle<small>Add size</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Get stronger<small>Lift heavier</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Get lean &amp; defined<small>Drop fat, keep muscle</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Lose weight<small>Slim down overall</small></div><div class="imgph">img</div></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Multiple goals</b> → goal-specific feedback next.</div>
+  <div class="slot-cap">Men's goal taxonomy — each with a real gendered body image.</div>
 </div>
 
-<!-- S11 goal feedback -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · Feedback</span>
+<div class="slot" data-act="Hook · Goal">
+  <span class="act-chip femtag">2 · Goal ♀</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Build muscle — my favourite. We'll focus on the lifts that actually grow you, and add a little more each week so you keep seeing change.</div></div>
-      <div class="statcard"><div class="big">3×</div><div class="lbl">Brace members hit their goal 3× more often than going it alone.</div></div>
+      <h1 class="q">What are we<br>training for?</h1>
+      <p class="sub">Pick the main one.</p>
+      <div data-single>
+        <div class="goalcard sel"><div class="gl">Lose weight<small>Slim down</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Tone &amp; sculpt<small>Shape &amp; define</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Build strength<small>Strong &amp; capable</small></div><div class="imgph">img</div></div>
+        <div class="goalcard"><div class="gl">Stay fit<small>Keep healthy</small></div><div class="imgph">img</div></div>
+      </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Selective feedback (1 of 5).</b> Copy changes per goal — all 5 variants in the content spec.</div>
+  <div class="slot-cap"><b>♀ Female variant</b> — different goal taxonomy + imagery. Same design language.</div>
 </div>
 
-<!-- S13 age -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · About You</span>
+<div class="slot" data-act="Resonate · Focus">
+  <span class="act-chip">3 · Focus (M)</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where do you want<br>change <em>most?</em></h1>
+      <div class="bodywrap" style="flex:0 0 auto;margin:4px 0">
+        <svg class="body tap" viewBox="0 0 120 220" style="width:108px">
+          <circle class="seg" cx="60" cy="18" r="13"/>
+          <rect class="seg sel" x="40" y="34" width="40" height="20" rx="8"/>
+          <rect class="seg" x="44" y="56" width="32" height="34" rx="8"/>
+          <rect class="seg sel" x="18" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg sel" x="87" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg" x="43" y="106" width="15" height="64" rx="7"/>
+          <rect class="seg" x="62" y="106" width="15" height="64" rx="7"/>
+        </svg>
+      </div>
+      <div class="chips" data-multi>
+        <span class="chip sel">Chest</span><span class="chip sel">Arms</span><span class="chip">Shoulders</span>
+        <span class="chip">Back</span><span class="chip">Abs</span><span class="chip">Legs</span>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Tap a gendered body — ownership + feeds plan emphasis (men).</div>
+</div>
+
+<div class="slot" data-act="Resonate · Focus">
+  <span class="act-chip femtag">3 · Focus ♀</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where do you want<br>change <em>most?</em></h1>
+      <div class="bodywrap" style="flex:0 0 auto;margin:4px 0"><div class="imgph" style="width:108px;height:200px">FEMALE<br>body map</div></div>
+      <div class="chips" data-multi>
+        <span class="chip sel">Glutes</span><span class="chip sel">Abs</span><span class="chip">Arms</span>
+        <span class="chip">Legs</span><span class="chip">Back</span><span class="chip">Full body</span>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>♀</b> Female focus areas + female body map.</div>
+</div>
+
+<div class="slot" data-act="Resonate · Body">
+  <span class="act-chip">4 · Current (M)</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where are you<br>starting from?</h1>
+      <p class="sub">No judgement — just a starting point.</p>
+      <div class="imgph bodyfig">MALE body<br>(morphs with slider)</div>
+      <div class="obslider"><div class="fillb" style="width:55%"></div><div class="knob" style="left:55%"></div></div>
+      <div class="slabels"><span>Lean</span><span>Average</span><span>Heavier</span></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Single morphing body on a body-fat/muscularity slider (JustFit pattern).</div>
+</div>
+
+<div class="slot" data-act="Resonate · Body">
+  <span class="act-chip femtag">4 · Current ♀</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where are you<br>starting from?</h1>
+      <p class="sub">No judgement — just a starting point.</p>
+      <div class="imgph bodyfig">FEMALE body<br>(morphs with slider)</div>
+      <div class="obslider"><div class="fillb" style="width:55%"></div><div class="knob" style="left:55%"></div></div>
+      <div class="slabels"><span>Lean</span><span>Average</span><span>Curvier</span></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>♀</b> Female morphing body.</div>
+</div>
+
+<div class="slot" data-act="Profile">
+  <span class="act-chip">8 · Age</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <h1 class="q">How old are you?</h1>
-      <p class="sub">Recovery and pacing change with age — I'll account for it.</p>
-      <div class="wheel">
-        <div class="dimrow">22</div><div class="dimrow">23</div>
-        <div class="big">24</div>
-        <div class="dimrow">25</div><div class="dimrow">26</div>
+      <p class="sub">So I match you with people like you.</p>
+      <div class="wheel"><div class="dimrow">22</div><div class="dimrow">23</div><div class="big">24</div><div class="dimrow">25</div><div class="dimrow">26</div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Drives age-matched social proof (18).</div>
+</div>
+
+<div class="slot" data-act="Profile">
+  <span class="act-chip">9 · Height / Weight</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Your height<br>&amp; weight?</h1>
+      <p class="sub">Just a starting point.</p>
+      <div style="font-size:11px;color:var(--txt-dim);font-weight:700;margin:6px 0 4px">HEIGHT</div>
+      <div class="chips" style="margin-bottom:6px"><span class="chip sel">cm</span><span class="chip">ft</span></div>
+      <div class="field" style="margin-bottom:12px">178 cm</div>
+      <div style="font-size:11px;color:var(--txt-dim);font-weight:700;margin:0 0 4px">WEIGHT</div>
+      <div class="chips" style="margin-bottom:6px"><span class="chip sel">kg</span><span class="chip">lb</span></div>
+      <div class="field">74 kg</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Unit toggles.</div>
+</div>
+
+<div class="slot" data-act="Resonate · Body">
+  <span class="act-chip">5 · Desired (M)</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">And where do you<br>want to <em>be?</em></h1>
+      <div class="imgph bodyfig">MALE body<br>(target = leaner/bigger)</div>
+      <div class="obslider"><div class="fillb" style="width:22%"></div><div class="knob" style="left:22%"></div></div>
+      <div class="slabels"><span>Lean</span><span>Average</span><span>Heavier</span></div>
+      <div class="pnote">⚑ We store the gap (current → desired). It drives the projection on screen 13.</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Same slider set to target; stores the gap.</div>
+</div>
+
+<div class="slot" data-act="Resonate · Body">
+  <span class="act-chip femtag">5 · Desired ♀</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">And where do you<br>want to <em>be?</em></h1>
+      <div class="imgph bodyfig">FEMALE body<br>(target = toned)</div>
+      <div class="obslider"><div class="fillb" style="width:25%"></div><div class="knob" style="left:25%"></div></div>
+      <div class="slabels"><span>Lean</span><span>Average</span><span>Curvier</span></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>♀</b> Female desired body.</div>
+</div>
+
+<div class="slot" data-act="Resonate · Intensity">
+  <span class="act-chip">7 · Intensity</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How hard do you<br>want to push?</h1>
+      <p class="sub">This scales your plan — and your projection — honestly.</p>
+      <div class="opts" data-single>
+        <div class="opt">🌱 Steady<small>Sustainable, easy to keep up</small><div class="tick"></div></div>
+        <div class="opt sel">🔥 Committed<small>Real progress, real effort</small><div class="tick"></div></div>
+        <div class="opt">⚡ All-in<small>Push hard, fastest results</small><div class="tick"></div></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Age — wheel picker.</div>
+  <div class="slot-cap">Will's missing piece — a self-set commitment that pins the projection.</div>
 </div>
 
-<!-- S14 height -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · About You</span>
+<div class="slot" data-act="Fitness Snapshot">
+  <span class="act-chip">★ Fitness snapshot</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr" style="overflow-y:auto">
+      <h1 class="q" style="font-size:21px">Here's your<br>starting snapshot</h1>
+      <div class="sumcard">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:10px;font-weight:700"><span>Body Mass Index</span><span style="color:var(--txt-dim)">You — 24.5</span></div>
+        <div class="bmibar"><div class="bmimark" style="left:52%"></div></div>
+        <div class="bmilabels"><span>Underweight</span><span class="on">Normal</span><span>Overweight</span><span>Obese</span></div>
+      </div>
+      <div class="sumcard">
+        <div class="sumrow"><span class="k">Goal</span><span class="v">Build muscle</span></div>
+        <div class="sumrow"><span class="k">Focus</span><span class="v">Chest · Arms</span></div>
+        <div class="sumrow"><span class="k">Starting point</span><span class="v">Average build</span></div>
+        <div class="sumrow"><span class="k">Push level</span><span class="v">Committed</span></div>
+      </div>
+      <div class="support">
+        <div class="si">💪</div>
+        <div><b>You’ve got real potential to reach your goal.</b><small>At <b style="color:#fff">Committed</b> effort, Brace builds the plan around your body and gets you there safely — week by week. No crash plans, no shame.</small></div>
+      </div>
+      <p class="sub" style="font-size:10px;text-align:center;margin-top:4px">Based on WHO BMI ranges · a starting point, not a verdict.</p>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>🆕 Feedback after current, desired &amp; intensity.</b> Reflects their data + a supportive note. <b>Copy adapts by BMI band + chosen intensity</b> — e.g. Overweight: "Your BMI's higher than ideal right now — that's exactly what Brace is built to help with. We'll get you there, safely." Normal: "Great base to build from."</div>
+</div>
+
+<div class="slot" data-act="Resonate · Barriers">
+  <span class="act-chip">6 · What's stopped you</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <h1 class="q">Your height?</h1>
-      <div class="chips" style="margin-bottom:14px"><span class="chip sel">cm</span><span class="chip">ft</span></div>
-      <div class="wheel"><div class="big">178 <small>cm</small></div></div>
+      <h1 class="q">Be honest — what's<br>gotten in the way?</h1>
+      <p class="sub">Pick all that fit. Your coach answers these later.</p>
+      <div class="opts" data-multi>
+        <div class="opt sel">No real plan<div class="tick"></div></div>
+        <div class="opt sel">No time<div class="tick"></div></div>
+        <div class="opt">Lost motivation<div class="tick"></div></div>
+        <div class="opt">Injuries / pain<div class="tick"></div></div>
+        <div class="opt">Started over too often<div class="tick"></div></div>
+        <div class="opt">Nothing's worked<div class="tick"></div></div>
+      </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Height + unit toggle.</div>
+  <div class="slot-cap"><b>Replaces the 4 passive "problem" screens</b> — pain becomes interactive input.</div>
 </div>
 
-<!-- S15 weight -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · About You</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">And your weight?</h1>
-      <div class="chips" style="margin-bottom:14px"><span class="chip sel">kg</span><span class="chip">lb</span></div>
-      <div class="wheel"><div class="big">74 <small>kg</small></div></div>
-      <p class="sub" style="margin-top:8px">It's just a starting point — no judgement here.</p>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Weight (feeds plan + protein tips later).</div>
-</div>
-
-<!-- S16 experience -->
-<div class="slot" data-act="About You">
-  <span class="act-chip">Act 3 · About You</span>
+<div class="slot" data-act="Profile">
+  <span class="act-chip">10 · Experience</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <h1 class="q">How long have<br>you trained?</h1>
-      <p class="sub">Be honest — there's no wrong answer. It just sets your starting point.</p>
       <div class="opts" data-single>
-        <div class="opt sel">Brand new<small>Never really trained before</small><div class="tick"></div></div>
-        <div class="opt">Some experience<small>On and off, under a year</small><div class="tick"></div></div>
-        <div class="opt">Experienced<small>1–3 years consistent</small><div class="tick"></div></div>
-        <div class="opt">Expert<small>3+ years, know my way around</small><div class="tick"></div></div>
+        <div class="opt sel">Brand new<small>Never really trained</small><div class="tick"></div></div>
+        <div class="opt">Some experience<small>On &amp; off, under a year</small><div class="tick"></div></div>
+        <div class="opt">Experienced<small>1–3 years</small><div class="tick"></div></div>
+        <div class="opt">Expert<small>3+ years</small><div class="tick"></div></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Experience — beginner → expert (all levels).</div>
+  <div class="slot-cap">All levels (Fitbod ref).</div>
 </div>
 
-<!-- ================= ACT 4 — STRENGTH CHECK → MAP ================= -->
-
-<!-- S17 trained at gym -->
-<div class="slot" data-act="Strength Check">
-  <span class="act-chip">Act 4 · Strength</span>
+<div class="slot" data-act="Baseline">
+  <span class="act-chip">11 · Baseline</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Let's find your real starting strength — no guessing, no egos.</div></div>
-      <h1 class="q">Trained in a<br>gym before?</h1>
-      <div class="opts" data-single>
-        <div class="opt sel">Yes, I know the machines<div class="tick"></div></div>
-        <div class="opt">A little<div class="tick"></div></div>
-        <div class="opt">Never<div class="tick"></div></div>
-      </div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Branches ×3:</b> Yes → ask lifts · A little → light check · Never → skip to Strength Map (see spec).</div>
-</div>
-
-<!-- S18 pushups -->
-<div class="slot" data-act="Strength Check">
-  <span class="act-chip">Act 4 · Strength</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">How many push-ups<br>in one go?</h1>
-      <p class="sub">Best honest guess. This calibrates your starting weights.</p>
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">BRACE</div>Let's find your real starting strength — no guessing.</div></div>
+      <h1 class="q" style="font-size:21px">How many push-ups<br>in one go?</h1>
       <div class="opts" data-single>
         <div class="opt">Under 10<div class="tick"></div></div>
         <div class="opt sel">10–20<div class="tick"></div></div>
         <div class="opt">20–30<div class="tick"></div></div>
         <div class="opt">30+<div class="tick"></div></div>
-        <div class="opt">Not sure<div class="tick"></div></div>
       </div>
-      <div class="spacer"></div>
+      <button class="btn btn-ghost">+ Add lifts (squat/bench) — optional</button>
+      <div class="pnote">⚑ Goal-branched: strength/muscle → push-ups + optional lifts. Fat-loss/tone → activity level + body slider (+ light push-up proxy so we can still show strength gains).</div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Push-ups = strength proxy for everyone.</b></div>
+  <div class="slot-cap">Branches by GOAL (not gender). Coach speaks as "Brace" (persona not picked yet).</div>
 </div>
 
-<!-- S19 lifts -->
-<div class="slot" data-act="Strength Check">
-  <span class="act-chip">Act 4 · Strength</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">Roughly what<br>can you lift?</h1>
-      <p class="sub">Only if you know them — skip anything you're unsure of.</p>
-      <div class="dayrow"><span class="d">Squat</span><span class="t">60 kg</span></div>
-      <div class="dayrow"><span class="d">Bench</span><span class="t">45 kg</span></div>
-      <div class="dayrow"><span class="d">Deadlift</span><span class="t">— kg</span></div>
-      <button class="btn btn-ghost">I'm not sure — skip this</button>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Optional lifts — <b>only if "trained before = Yes."</b> Easy skip.</div>
-</div>
-
-<!-- S20 strength analysis (the dramatized scan) -->
-<div class="slot" data-act="Strength Check">
-  <span class="act-chip">Act 4 · Strength Map</span>
+<div class="slot" data-act="Baseline">
+  <span class="act-chip">12 · Starting-point scan</span>
   <div class="phone anim"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <h1 class="q" style="text-align:center">Reading your<br><em>strength…</em></h1>
+      <h1 class="q" style="text-align:center">Reading your<br><em>starting point…</em></h1>
       <div class="bodywrap">
         <svg class="body" viewBox="0 0 120 220">
-          <circle class="seg" cx="60" cy="18" r="13"/>
-          <rect class="seg s1" x="40" y="34" width="40" height="34" rx="10"/>
-          <rect class="seg s2" x="44" y="70" width="32" height="32" rx="8"/>
-          <rect class="seg s1" x="18" y="38" width="15" height="50" rx="7"/>
-          <rect class="seg s1" x="87" y="38" width="15" height="50" rx="7"/>
-          <rect class="seg s3" x="43" y="106" width="15" height="64" rx="7"/>
+          <circle class="seg" cx="60" cy="18" r="13"/><rect class="seg s1" x="40" y="34" width="40" height="34" rx="10"/>
+          <rect class="seg s2" x="44" y="70" width="32" height="32" rx="8"/><rect class="seg s1" x="18" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg s1" x="87" y="38" width="15" height="50" rx="7"/><rect class="seg s3" x="43" y="106" width="15" height="64" rx="7"/>
           <rect class="seg s3" x="62" y="106" width="15" height="64" rx="7"/>
         </svg>
       </div>
@@ -2699,268 +2737,403 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       <div class="spacer"></div>
     </div>
   </div>
-  <div class="slot-cap"><b>The "scan" moment (tentative).</b> Muscles light up from their answers → reveals the Strength Map. Auto-advances.</div>
+  <div class="slot-cap">Animated scan builds anticipation (Caliber loader + our Strength-Map scan).</div>
 </div>
 
-<!-- Feature preview: in-workout set feedback (effort check) -->
-<div class="slot" data-act="How Brace Adapts">
-  <span class="act-chip">Feature · Set Feedback</span>
+<div class="slot" data-act="The Aha · Projection">
+  <span class="act-chip">13 · Projection (M) ★</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="previewtag">✨ A PEEK INSIDE BRACE</div>
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>And I keep that map accurate as you go. After your sets, I'll ask how they felt — and tune your next weight automatically.</div></div>
-      <div class="ftbox">
-        <div class="mhead"><span class="d"></span>Goblet Squat · Set 2</div>
-        <div class="msetrow"><span>2</span><span>40 kg</span><span>10</span><span>✓</span></div>
-        <div class="ftbox" style="margin:0;padding:11px;background:#161619;box-shadow:none">
-          <div class="mq" style="font-size:13px">How did that set feel?</div>
-          <div class="fbrow"><div class="fb">😮‍💨 Too easy</div><div class="fb on">💪 Perfect</div><div class="fb">🥵 Too hard</div></div>
-        </div>
-      </div>
-      <p class="sub">Too easy → I add weight. Too hard → I pull back. Your numbers stay perfect, every session — no guessing.</p>
+    <div class="scr" style="overflow-y:auto">
+      <h1 class="q" style="font-size:21px">Here's where<br>you're <em>headed.</em></h1>
+      <p class="sub" style="margin-bottom:8px">Gain muscle — your 12-week build. Now → goal.</p>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">35%</span><span class="bpill goal">42%</span><div class="mid"><b>Muscle</b><span class="arr">›››</span></div></div>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">35 cm</span><span class="bpill goal">39 cm</span><div class="mid"><b>Arms</b><span class="arr">›››</span></div></div>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">60 kg</span><span class="bpill goal">80 kg</span><div class="mid"><b>Bench</b><span class="arr">›››</span></div></div>
+      <p class="sub" style="font-size:11px;text-align:center;margin-top:4px">At Committed intensity — built on progressive overload. Realistic, lasting.</p>
+      <div class="pnote">⚑ PLACEHOLDER — PT-validated ranges (open-item #3).</div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Feature preview (movable).</b> In-workout effort check + auto weight tuning. Placed after the Strength Map.</div>
+  <div class="slot-cap"><b>★ Before → after.</b> Male = gain muscle (muscle %, arms, bench). Current (left) → goal (right).</div>
 </div>
 
-<!-- ================= ACT 5 — WHERE & WHEN ================= -->
+<div class="slot" data-act="The Aha · Projection">
+  <span class="act-chip femtag">13 · Projection ♀ ★</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr" style="overflow-y:auto">
+      <h1 class="q" style="font-size:21px">Here's where<br>you're <em>headed.</em></h1>
+      <p class="sub" style="margin-bottom:8px">Lose fat — your 12-week change. Now → goal.</p>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">28%</span><span class="bpill goal">22%</span><div class="mid"><b>Body Fat</b><span class="arr">›››</span></div></div>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">79 cm</span><span class="bpill goal">73 cm</span><div class="mid"><b>Waist</b><span class="arr">›››</span></div></div>
+      <div class="baprog"><div class="h"><div class="imgph">NOW</div></div><div class="h"><div class="imgph">GOAL</div></div><span class="bpill cur">66 kg</span><span class="bpill goal">61 kg</span><div class="mid"><b>Weight</b><span class="arr">›››</span></div></div>
+      <p class="sub" style="font-size:11px;text-align:center;margin-top:4px">Rapid loss isn't healthy — 0.5–1 kg/week is achievable &amp; lasting.</p>
+      <div class="pnote">⚑ PLACEHOLDER — PT-validated ranges (open-item #3).</div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>★ ♀ Before → after.</b> Female = lose fat (body fat, waist, weight).</div>
+</div>
 
-<!-- S21 gym type -->
-<div class="slot" data-act="Where & When">
-  <span class="act-chip">Act 5 · Setup</span>
+<div class="slot" data-act="Why Us · Proof">
+  <span class="act-chip">18 · Social proof (M)</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <h1 class="q">Where will you<br>train?</h1>
-      <p class="sub">So your plan only uses gear you can actually reach.</p>
-      <div class="opts" data-single>
-        <div class="opt sel"><div class="ico">🏟️</div>Large gym<small>Full machines &amp; free weights</small><div class="tick"></div></div>
-        <div class="opt"><div class="ico">🏪</div>Small gym<small>The basics</small><div class="tick"></div></div>
-        <div class="opt"><div class="ico">🏠</div>Home / garage<small>Some equipment</small><div class="tick"></div></div>
-        <div class="opt"><div class="ico">🧘</div>No equipment<small>Bodyweight only</small><div class="tick"></div></div>
+      <h1 class="q" style="font-size:21px">Built for people<br>like you</h1>
+      <div class="baframe"><div class="imgph">BEFORE</div><div class="imgph">AFTER</div></div>
+      <div class="minirev"><div class="av"></div><div><div class="nm">Marcus, 26 <span class="stars">★★★★★</span></div><p>"First plan I actually stuck to. +18kg on my bench in 4 months."</p></div></div>
+      <div class="fr" style="display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--stroke);border-radius:10px;padding:9px 11px;margin-top:8px"><div class="fi" style="width:30px;height:30px;border-radius:8px;background:var(--card-2);display:flex;align-items:center;justify-content:center">🔬</div><b style="font-size:12px">Built on real training science</b></div>
+      <div class="pnote">⚑ Real beta-data placeholders. No invented user counts pre-launch.</div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Identity-matched (gender + age band). Credibility, not invented numbers.</div>
+</div>
+
+<div class="slot" data-act="Why Us · Proof">
+  <span class="act-chip femtag">18 · Social proof ♀</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:21px">Built for people<br>like you</h1>
+      <div class="baframe"><div class="imgph">BEFORE</div><div class="imgph">AFTER</div></div>
+      <div class="minirev"><div class="av f"></div><div><div class="nm">Sara, 25 <span class="stars">★★★★★</span></div><p>"Toned up without the gym anxiety. Down 6cm on my waist."</p></div></div>
+      <div class="pnote">⚑ Female faces/before-afters. Real beta data.</div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>♀</b> Female faces + female testimonial.</div>
+</div>
+
+<div class="slot" data-act="Why Us">
+  <span class="act-chip">15 · You vs generic</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:21px">Why this works<br>when nothing else did</h1>
+      <div class="vs">
+        <div class="vcol bad"><h4>Random workouts</h4>
+          <div class="vrow">✕ No real plan</div><div class="vrow">✕ Ego-guessing weights</div>
+          <div class="vrow">✕ Plateaus</div><div class="vrow">✕ Nothing adjusts</div></div>
+        <div class="vcol good"><h4>BraceAI</h4>
+          <div class="vrow">✓ Adapts daily</div><div class="vrow">✓ Around your body &amp; injuries</div>
+          <div class="vrow">✓ Progressive overload, by science</div><div class="vrow">✓ A coach in your corner</div></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Gym type → pre-fills the equipment list (Fitbod-style).</div>
+  <div class="slot-cap">Two-column contrast (JustFit "Others vs"; PUSH science).</div>
 </div>
 
-<!-- S22 equipment list -->
-<div class="slot" data-act="Where & When">
-  <span class="act-chip">Act 5 · Setup</span>
+<div class="slot" data-act="Setup">
+  <span class="act-chip">19 · Gym type</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where will<br>you train?</h1>
+      <div class="opts" data-single>
+        <div class="opt sel"><div class="ico">🏟️</div>Large gym<small>Full machines &amp; free weights</small><div class="tick"></div></div>
+        <div class="opt"><div class="ico">🏪</div>Small gym<div class="tick"></div></div>
+        <div class="opt"><div class="ico">🏠</div>Home<small>Some equipment</small><div class="tick"></div></div>
+        <div class="opt"><div class="ico">🧘</div>No equipment<div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Pre-fills the equipment list (Fitbod).</div>
+</div>
+
+<div class="slot" data-act="Setup">
+  <span class="act-chip">20 · Equipment (skippable)</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <h1 class="q" style="font-size:21px">Your gym's kit</h1>
-      <p class="sub">Pre-checked for a large gym. Untick anything that's missing.</p>
+      <p class="sub">Pre-checked for a large gym. Untick anything missing.</p>
       <div class="chips" data-multi>
         <span class="chip sel">Barbell</span><span class="chip sel">Dumbbells</span><span class="chip sel">Cables</span>
-        <span class="chip sel">Machines</span><span class="chip sel">Bench</span><span class="chip sel">Squat rack</span>
-        <span class="chip sel">Kettlebells</span><span class="chip">Bands</span><span class="chip">Pull-up bar</span>
+        <span class="chip sel">Machines</span><span class="chip sel">Bench</span><span class="chip sel">Squat rack</span><span class="chip">Bands</span>
       </div>
+      <button class="btn btn-ghost" style="margin-top:14px">Not sure? We'll assume a standard gym →</button>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Equipment pre-checked by gym type</b>, adjustable.</div>
+  <div class="slot-cap"><b>Fixes "gets people stuck"</b> — skippable, pre-filled.</div>
 </div>
 
-<!-- S23 days -->
-<div class="slot" data-act="Where & When">
-  <span class="act-chip">Act 5 · Setup</span>
+<div class="slot" data-act="Setup">
+  <span class="act-chip">21 · Days / week</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <h1 class="q">How many days<br>a week?</h1>
-      <p class="sub">Pick what's realistic. I'll build around it.</p>
-      <div class="grid" data-single>
-        <div class="opt tile">2</div><div class="opt tile">3</div>
-        <div class="opt tile sel">4</div><div class="opt tile">5</div>
+      <div class="grid" data-single><div class="opt tile">2</div><div class="opt tile">3</div><div class="opt tile sel">4</div><div class="opt tile">5</div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Unchanged.</div>
+</div>
+
+<div class="slot" data-act="Setup">
+  <span class="act-chip">Duration</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How long per<br>workout?</h1>
+      <p class="sub">I'll size each session to fit your time.</p>
+      <div class="opts" data-single>
+        <div class="opt">15 min<small>Quick &amp; efficient</small><div class="tick"></div></div>
+        <div class="opt sel">30 min<small>Balanced</small><div class="tick"></div></div>
+        <div class="opt">45 min<small>Full session</small><div class="tick"></div></div>
+        <div class="opt">1 hour<small>Go all in</small><div class="tick"></div></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Days per week.</div>
+  <div class="slot-cap"><b>Workout duration</b> (replaces per-day exact times).</div>
 </div>
 
-<!-- S24 times + alarm -->
-<div class="slot" data-act="Where & When">
-  <span class="act-chip">Act 5 · Setup</span>
+<div class="slot" data-act="Setup">
+  <span class="act-chip">Schedule + alarm</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <h1 class="q" style="font-size:22px">When works?</h1>
-      <p class="sub">Different time each day is fine — tap to set.</p>
-      <div class="dayrow"><span class="d">Mon</span><span class="t">6:00 PM</span></div>
-      <div class="dayrow"><span class="d">Wed</span><span class="t">7:00 AM</span></div>
-      <div class="dayrow"><span class="d">Fri</span><span class="t">6:00 PM</span></div>
-      <div class="dayrow"><span class="d">Sat</span><span class="t">10:00 AM</span></div>
-      <div class="opt sel" style="margin-top:10px"><div class="ico">⏰</div>Set my gym alarms<small>So you never miss a session</small><div class="tick"></div></div>
+      <h1 class="q">What's your<br>schedule like?</h1>
+      <p class="sub">So I set reminders that actually fit your days.</p>
+      <div class="opts" data-single>
+        <div class="opt sel"><div class="ico">🏢</div>9–5<div class="tick"></div></div>
+        <div class="opt"><div class="ico">🌙</div>Shift work<div class="tick"></div></div>
+        <div class="opt"><div class="ico">🔄</div>Flexible hours<div class="tick"></div></div>
+        <div class="opt"><div class="ico">🏖️</div>Not working right now<div class="tick"></div></div>
+      </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Per-day flexible times</b> + alarm offer.</div>
+  <div class="slot-cap"><b>Work schedule (Fitbod style)</b> → smart reminders. Alarm setup moves to the homepage.</div>
 </div>
 
-<!-- ================= ACT 6 — INJURY (caring) ================= -->
-
-<!-- S25 body map -->
-<div class="slot" data-act="Let's Protect You">
-  <span class="act-chip">Act 6 · Injury</span>
+<div class="slot" data-act="Setup · Injury">
+  <span class="act-chip">23 · Injury map</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Before we push — anything I should protect? Tap any spot that bothers you.</div></div>
-      <div class="chips" data-multi style="margin-bottom:10px">
-        <span class="chip">Neck</span><span class="chip">Shoulders</span><span class="chip">Elbows</span>
-        <span class="chip">Wrists</span><span class="chip sel">Lower back</span><span class="chip">Hips</span>
-        <span class="chip sel">Knees</span><span class="chip">Ankles</span>
+      <h1 class="q">Anything I should<br><em>protect?</em></h1>
+      <p class="sub">Tap any spot that bothers you.</p>
+      <div class="bodywrap" style="flex:0 0 auto;margin:2px 0">
+        <svg class="body tap" viewBox="0 0 120 220" style="width:104px">
+          <circle class="seg" cx="60" cy="18" r="13"/><rect class="seg" x="40" y="34" width="40" height="20" rx="8"/>
+          <rect class="seg sel" x="44" y="56" width="32" height="34" rx="8"/><rect class="seg" x="18" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg" x="87" y="38" width="15" height="50" rx="7"/><rect class="seg sel" x="43" y="106" width="15" height="40" rx="7"/>
+          <rect class="seg" x="62" y="106" width="15" height="64" rx="7"/>
+        </svg>
       </div>
       <div class="opt">✅ Nothing right now — I'm good</div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Caring injury intake — your differentiator.</b> Tap areas (or "nothing").</div>
+  <div class="slot-cap"><b>Differentiator.</b> Tappable SVG body, or "Nothing right now" (ALT branch).</div>
 </div>
 
-<!-- S26 follow up -->
-<div class="slot" data-act="Let's Protect You">
-  <span class="act-chip">Act 6 · Injury</span>
+<div class="slot" data-act="Setup · Injury">
+  <span class="act-chip">24 · Reassurance</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Thanks for telling me. How are your <em>knees</em> right now?</div></div>
+      <div class="spacer"></div>
+      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
+        <div class="av" style="width:60px;height:60px"></div>
+        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">BRACE</div>Got it — your plan will protect your knees and lower back. Safe swaps until they're ready, no moves that aggravate them.</div>
+      </div>
+      <div class="protect" style="margin-top:16px">🛡️ Your plan protects: Knees · Lower back</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Neutral "Brace" voice (coach persona still not picked — comes next).</div>
+</div>
+
+<div class="slot" data-act="Setup · Coach">
+  <span class="act-chip">25a · Pick your coach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Pick your <em>coach</em></h1>
+      <p class="sub">This sets their voice. You'll choose how they talk next.</p>
+      <div class="grid" data-single style="margin-bottom:14px">
+        <div class="opt tile sel"><div class="ico">💪</div>Marcus<small>Male voice</small></div>
+        <div class="opt tile"><div class="ico f" style="background:linear-gradient(135deg,#c98bff,#7a5cff)">🔥</div>Martha<small>Female voice</small></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Who</b> — persona = the voice (male/female). Just two tiles, no clutter.</div>
+</div>
+
+<div class="slot" data-act="Setup · Coach">
+  <span class="act-chip">25b · Coach mode</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How should <em>Marcus</em> talk?</h1>
+      <p class="sub">Pick the energy that gets you off the couch. Switch anytime.</p>
       <div class="opts" data-single>
-        <div class="opt">Just a bit tight<div class="tick"></div></div>
-        <div class="opt sel">Achy under load<div class="tick"></div></div>
-        <div class="opt">Sharp pain sometimes<div class="tick"></div></div>
-        <div class="opt">Old injury, mostly fine now<div class="tick"></div></div>
+        <div class="opt grid2"><b>😌 Chill</b><small>"No rush. One clean rep beats five sloppy ones."</small></div>
+        <div class="opt grid2 sel"><b>🔥 Hype</b><small>"LET'S GOOO! Today's the day you surprise yourself!"</small></div>
+        <div class="opt grid2"><b>🎯 Direct</b><small>"Show up. Execute. Next."</small></div>
+        <div class="opt grid2"><b>😈 Savage</b><small>"Swap that dumbbell for a pillow if you're just gonna nap between sets."</small></div>
       </div>
       <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Warm follow-up per area — not a clinical grid.</div>
+  <div class="slot-cap"><b>How</b> — same example lines from the intro, now in the persona's name so the choice feels familiar.</div>
 </div>
 
-<!-- S27 reassurance -->
-<div class="slot" data-act="Let's Protect You">
-  <span class="act-chip">Act 6 · Injury</span>
+<div class="slot" data-act="Show the Magic">
+  <span class="act-chip">25c · Coach, always on</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="spacer"></div>
-      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
-        <div class="av" style="width:60px;height:60px"></div>
-        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Got it — I've got your knees. No deep squats or jumping until they're ready, and I'll swap in safer moves that still get you results. You're in good hands.</div>
+      <div class="previewtag">✨ YOUR COACH, ALWAYS ON</div>
+      <h1 class="q">Marcus has your<br>back — <em>every step</em></h1>
+      <p class="sub" style="margin-bottom:14px">Not just a plan. From here on, Marcus shows up everywhere you train:</p>
+      <div class="opts">
+        <div class="opt"><div class="ico">💬</div><div><b>During your sets</b><small>"How did that feel?" — then tunes the next one.</small></div></div>
+        <div class="opt"><div class="ico">🩹</div><div><b>When something hurts</b><small>Swaps the move on the spot, keeps you safe.</small></div></div>
+        <div class="opt"><div class="ico">☀️</div><div><b>Every morning</b><small>Checks in before shaping your day.</small></div></div>
       </div>
-      <div class="protect" style="margin-top:16px">🛡️ Your plan now protects: Knees · Lower back</div>
       <div class="spacer"></div>
+      <button class="btn btn-white">Show me how it works</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>New context bridge</b> — frames the coach as always-present before the demos, so Effort Check doesn't appear out of nowhere.</div>
+</div>
+
+<div class="slot" data-act="Show the Magic">
+  <span class="act-chip">16 · Demo · Coach in action</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="demoflow">
+        <div class="demotrack">
+
+          <!-- PANE 1 · Effort Check -->
+          <div class="demopane">
+            <div class="previewtag">✨ MARCUS · AFTER YOUR SET</div>
+            <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>How did that set feel? Be honest — that’s how I know when to push you.</div></div>
+            <div class="ftbox">
+              <div class="mhead"><span class="d"></span>Goblet Squat · Set 2 · 17.5 kg</div>
+              <div class="slider-wrap" style="margin:10px 2px 8px">
+                <div class="slider-track"><div class="slider-stops"><i class="on"></i><i></i><i></i><i></i></div></div>
+                <div class="slider-emojis"><span class="on">😮‍💨</span><span>💪</span><span>🔥</span><span>🥵</span></div>
+                <div class="slider-labels"><span class="on">Too easy</span><span>Solid</span><span>Hard but good</span><span>Maxed out</span></div>
+              </div>
+            </div>
+            <div class="ftbox" style="border-color:var(--brand);background:#1a0f0c">
+              <div class="mhead"><span class="d"></span>Next set update</div>
+              <div style="display:flex;align-items:center;gap:9px;font-weight:900;font-style:italic;font-size:18px">
+                <span style="color:var(--txt-dim)">17.5 kg</span><span style="color:var(--brand)">→ 20 kg</span>
+                <span style="margin-left:auto;background:var(--brand);color:#fff;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;letter-spacing:.4px">PR TARGET</span>
+              </div>
+            </div>
+            <p class="sub">Too easy? I bump the weight. Gassed? I ease off. Your plan adapts every single set.</p>
+            <div class="spacer"></div>
+            <div class="dots"><i class="on"></i><i></i></div>
+            <button class="btn btn-white demo-next">See what else I do →</button>
+          </div>
+
+          <!-- PANE 2 · Daily Check-in -->
+          <div class="demopane">
+            <div class="previewtag">✨ MARCUS · EVERY MORNING</div>
+            <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>And every day I check in on you first — how you slept, what’s sore, how you’re feeling — then shape today around it.</div></div>
+            <div class="ftbox">
+              <div class="mhead"><span class="d"></span>Daily Check-in</div>
+              <div class="mq">How are you feeling today?</div>
+              <span class="mchip on">🔥 Fresh</span><span class="mchip">✏️ Sore</span><span class="mchip">🩹 Something hurts</span><span class="mchip">🔋 Low energy</span>
+            </div>
+            <p class="sub">Sore? I ease off. Hurt? I swap the move. Wiped? Recovery day. I’ve always got your back.</p>
+            <div class="spacer"></div>
+            <div class="dots"><i></i><i class="on"></i></div>
+            <button class="btn btn-white">Continue</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slot-cap"><b>One animated screen</b> — Effort Check, then tap → slides to the Daily Check-in. Same flow in-app feels like a smooth onboarding transition, not two cold screens.</div>
+</div>
+
+<div class="slot" data-act="Show the Magic">
+  <span class="act-chip">17 · Demo · Your progress</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="previewtag">✨ MARCUS TRACKS EVERYTHING</div>
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>I log every rep — so you can watch yourself get stronger. Here’s where you’re headed.</div></div>
+      <div class="ftbox" style="text-align:center">
+        <div class="mhead" style="justify-content:center">Strength rank</div>
+        <div style="font-size:26px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.5px">TITAN</div>
+        <div class="obslider" style="margin:12px 4px 6px"><div class="fillb" style="width:65%"></div><div class="knob" style="left:65%"></div></div>
+        <div style="font-size:11px;color:var(--txt-dim);font-weight:700">210 / 320 XP to next rank</div>
+      </div>
+      <div class="ftbox" style="border-color:var(--brand);background:#1a0f0c">
+        <div class="mhead"><span class="d"></span>New personal record · Goblet Squat</div>
+        <div style="display:flex;align-items:center;gap:9px;font-weight:900;font-style:italic;font-size:18px">
+          <span style="color:var(--txt-dim)">100 kg</span><span style="color:var(--brand)">→ 105 kg</span>
+          <span style="margin-left:auto;background:var(--green-deep);color:#7ef0a8;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;letter-spacing:.4px">▲ 5 KG</span>
+        </div>
+      </div>
+      <p class="sub">Every session feeds your Strength Map. You climb the ranks — I keep the numbers moving.</p>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Reassurance.</b> This visibly changes the plan summary later.</div>
+  <div class="slot-cap"><b>Progress preview</b> (image 2) — the coach sees your progress, and so do you. Strength Rank + PRs are the payoff hook.</div>
 </div>
 
-<!-- S27b injury — NO PAIN branch -->
-<div class="slot" data-act="Let's Protect You">
-  <span class="act-chip">Act 6 · Injury · ALT</span>
-  <div class="phone" style="outline:2px dashed #555;outline-offset:6px"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="spacer"></div>
-      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
-        <div class="av" style="width:60px;height:60px"></div>
-        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Love it — green light. 💪 We'll train hard and smart. If anything ever starts to bug you, just tell me in the daily check-in and I'll adjust on the spot.</div>
-      </div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>ALT branch — "Nothing right now."</b> Replaces the follow-up + reassurance. (Dashed = alternate path.)</div>
-</div>
-
-<!-- Feature preview: Daily Check-in -->
-<div class="slot" data-act="How Brace Cares">
-  <span class="act-chip">Feature · Daily Check-in</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="previewtag">✨ A PEEK INSIDE BRACE</div>
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>And this isn't a one-time question. Every day I'll check in — and reshape your workout around how you actually feel.</div></div>
-      <div class="ftbox">
-        <div class="mhead"><span class="d"></span>Daily Check-in</div>
-        <div class="mq">How are you feeling today?</div>
-        <span class="mchip on">🔥 Fresh &amp; Ready</span><span class="mchip">✏️ A bit sore</span>
-        <span class="mchip">🩹 Something hurts</span><span class="mchip">🔋 Low energy</span>
-      </div>
-      <p class="sub">Sore? I ease off. Hurt? I swap the move. Wiped out? I'll give you a recovery day instead. You never train hurt or burnt out.</p>
-      <button class="btn btn-white">Love that</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Feature preview after injury.</b> Real Daily Check-in UI = proof the app cares (your "it's not static" goal).</div>
-</div>
-
-<!-- ================= ACT 7 — LIFESTYLE ================= -->
-
-<!-- S28 lifestyle -->
-<div class="slot" data-act="Lifestyle">
-  <span class="act-chip">Act 7 · Recovery</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">How's your<br>recovery?</h1>
-      <p class="sub">So I never overtrain you. Quick one.</p>
-      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:8px 0 6px">SLEEP MOST NIGHTS</div>
-      <div class="chips" data-single><span class="chip">&lt;5h</span><span class="chip">5–6h</span><span class="chip sel">7–8h</span><span class="chip">8h+</span></div>
-      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:16px 0 6px">DAILY ACTIVITY</div>
-      <div class="chips" data-single><span class="chip">Desk job</span><span class="chip sel">On my feet</span><span class="chip">Active job</span></div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap">Light recovery (sleep + activity). Nutrition stays light.</div>
-</div>
-
-<!-- ================= ACT 8 — WHY / REACH ================= -->
-
-<!-- S30 notifications -->
-<div class="slot" data-act="Your Why">
-  <span class="act-chip">Act 8 · Reach</span>
+<div class="slot" data-act="Commit">
+  <span class="act-chip">26 · Relate 1</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <div class="spacer"></div>
-      <div style="text-align:center;font-size:40px">🔔</div>
-      <h1 class="q" style="text-align:center;font-size:23px">Let me nudge you</h1>
-      <p class="sub" style="text-align:center">A reminder before each session is how this becomes a habit instead of a someday. I'll keep it light.</p>
+      <p class="sub" style="font-size:11px;text-transform:uppercase;letter-spacing:1px">Do you relate to this?</p>
+      <h1 class="q" style="font-size:23px">"I do better when<br>someone keeps me<br>accountable."</h1>
       <div class="spacer"></div>
-      <button class="btn btn-brand">Turn on reminders</button>
-      <button class="btn btn-ghost">Maybe later</button>
+      <div class="grid" data-single><div class="opt tile sel">Yes, that's me</div><div class="opt tile">Not really</div></div>
+      <button class="btn btn-white" style="margin-top:14px">Continue</button>
     </div>
   </div>
-  <div class="slot-cap">Notifications opt-in (habit framing).</div>
+  <div class="slot-cap">Micro-commitment #1.</div>
 </div>
 
-<!-- S31 imessage -->
-<div class="slot" data-act="Your Why">
-  <span class="act-chip">Act 8 · Reach</span>
+<div class="slot" data-act="Commit">
+  <span class="act-chip">27 · Relate 2</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Want me to check in over iMessage? I'll text you reminders, form tips, and a nudge when you go quiet — like a real coach would.</div></div>
-      <div class="field ph">📱 Your number (optional)</div>
       <div class="spacer"></div>
-      <button class="btn btn-brand">Connect iMessage</button>
-      <button class="btn btn-ghost">Skip for now</button>
+      <p class="sub" style="font-size:11px;text-transform:uppercase;letter-spacing:1px">Do you relate to this?</p>
+      <h1 class="q" style="font-size:24px">"I don't know<br>where to start —<br>so I stay stuck."</h1>
+      <div class="spacer"></div>
+      <div class="grid" data-single><div class="opt tile sel">100% me</div><div class="opt tile">Not really</div></div>
+      <button class="btn btn-white" style="margin-top:14px">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>iMessage intro</b> — coach reaches you by text. Skippable.</div>
+  <div class="slot-cap">Micro-commitment #2.</div>
 </div>
 
-<!-- ================= ACT 9 — BUILD ================= -->
+<div class="slot" data-act="Commit">
+  <span class="act-chip">28 · Ready?</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <h1 class="q" style="text-align:center;font-size:24px">Ready to show up —<br>even on the days you<br>don't feel like it?</h1>
+      <div class="spacer"></div>
+      <button class="btn btn-brand">Yes, I'm in</button>
+    </div>
+  </div>
+  <div class="slot-cap">The commitment "yes" right before build.</div>
+</div>
 
-<!-- S32 loader -->
-<div class="slot" data-act="Building Your Plan">
-  <span class="act-chip">Act 9 · Building</span>
+<div class="slot" data-act="Build">
+  <span class="act-chip">29 · Loader</span>
   <div class="phone anim"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
       <div class="spacer"></div>
       <div class="ring"></div>
-      <h1 class="q" style="text-align:center;font-size:22px">Building your<br>plan, Alex…</h1>
+      <h1 class="q" style="text-align:center;font-size:22px">Building your<br>plan…</h1>
       <div class="loadbars">
         <div class="lb lb1"><div class="lbtop"><span>Analysing your answers</span></div><div class="track"><i></i></div></div>
         <div class="lb lb2"><div class="lbtop"><span>Mapping your muscles</span></div><div class="track"><i></i></div></div>
@@ -2970,177 +3143,126 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       <div class="spacer"></div>
     </div>
   </div>
-  <div class="slot-cap"><b>Anticipation loader.</b> Labeled steps = perceived effort/value.</div>
+  <div class="slot-cap">Anticipation loader (Caliber/BetterMe).</div>
 </div>
 
-<!-- ================= ACT 10 — REVEAL ================= -->
+<div class="slot" data-act="Reveal · Name">
+  <span class="act-chip">30 · Name (moved here)</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Last thing — what<br>should your coach<br>call you?</h1>
+      <p class="sub">Your plan's ready. Let's make it yours.</p>
+      <div class="field ph">Your first name</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">See my plan</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Name moved to here</b> — asked after buy-in, not before value.</div>
+</div>
 
-<!-- S33 reveal -->
-<div class="slot" data-act="Your Plan">
-  <span class="act-chip">Act 10 · Reveal</span>
+<div class="slot" data-act="Reveal · Plan">
+  <span class="act-chip">31 · Plan reveal</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr" style="overflow-y:auto">
       <h1 class="q" style="font-size:22px">Alex, your plan<br>is ready. 🎉</h1>
       <div class="sumcard">
         <div class="sumrow"><span class="k">Goal</span><span class="v">Build muscle</span></div>
-        <div class="sumrow"><span class="k">Your plan</span><span class="v">4-week build → peak</span></div>
+        <div class="sumrow"><span class="k">Plan</span><span class="v">4-week build → peak</span></div>
         <div class="sumrow"><span class="k">Schedule</span><span class="v">4 days · your times</span></div>
         <div class="sumrow"><span class="k">Starting point</span><span class="v">Practiced · Lvl 28</span></div>
       </div>
       <div class="protect">🛡️ Built to protect your knees &amp; lower back</div>
-      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:6px 0 4px">WHAT TO EXPECT <span style="color:var(--txt-mute)">(tentative)</span></div>
+      <div style="font-size:11px;color:var(--txt-dim);font-weight:700;margin:6px 0 4px">YOUR PROJECTION</div>
       <div class="timeline">
-        <div class="tl"><span class="dot"></span><span class="when">Day 1</span><span class="what">Your first session, built around you.</span></div>
-        <div class="tl"><span class="dot"></span><span class="when">Week 1</span><span class="what">You build the base — form &amp; consistency.</span></div>
-        <div class="tl"><span class="dot"></span><span class="when">Day 30</span><span class="what">First real strength jump you can feel.</span></div>
-        <div class="tl"><span class="dot"></span><span class="when">Week 4</span><span class="what">You hit your peak — and we level up.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Wk 2</span><span class="what">First strength jump.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Wk 4</span><span class="what">Bench 60 → 66kg.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Wk 12</span><span class="what">Bench 80kg · Expert tier.</span></div>
       </div>
-      <p class="sub" style="font-size:11px;margin-top:8px">Your Strength Map starts here and gets sharper every time you train.</p>
-      <button class="btn btn-white">See my plan</button>
+      <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Payoff.</b> Personalized + injury-aware + humble baseline + 1/7/30/90 timeline (tentative).</div>
+  <div class="slot-cap">Personalised, injury-aware, projection restated.</div>
 </div>
 
-<!-- ================= ACT 10.5 — SHARE FEATURE ================= -->
-
-<!-- Share intro -->
-<div class="slot" data-act="Share Your Wins">
-  <span class="act-chip">Act 10.5 · Share</span>
+<div class="slot" data-act="Reveal · Rank">
+  <span class="act-chip">32 · Rank + compete</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <h1 class="q" style="font-size:23px">Show off<br>your wins. 🏆</h1>
-      <p class="sub">Every session earns a rank and a shareable card. Drop it on your story and let your progress do the talking.</p>
-      <div style="display:flex;gap:8px;justify-content:center;margin:6px 0 10px">
-        <div style="background:linear-gradient(135deg,#7a5cff,#c98bff);border-radius:12px;padding:14px 8px;text-align:center;flex:1">
-          <div style="font-size:22px">🛡️</div><div style="font-weight:900;font-style:italic;font-size:13px">TITAN</div><div style="font-size:9px;opacity:.8">360 DAYS · 100,000KG</div>
-        </div>
-        <div style="background:linear-gradient(135deg,#222,#333);border:1px solid var(--stroke);border-radius:12px;padding:14px 8px;text-align:center;flex:1">
-          <div style="font-size:22px">📸</div><div style="font-weight:800;font-size:11px">Story card</div><div style="font-size:9px;color:var(--txt-dim)">Volume · PRs · photo</div>
-        </div>
-      </div>
-      <div class="chips" style="justify-content:center"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Snap</span></div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">Nice 🔥</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>NEW — share/UGC feature intro.</b> Placed right after the reveal (excitement peak). Doubles as your marketing engine.</div>
-</div>
-
-<!-- ================= ACT 11 — COMMITMENT (before paywall) ================= -->
-
-<!-- Commit 1 -->
-<div class="slot" data-act="Commitment">
-  <span class="act-chip">Act 11 · Commit</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="spacer"></div>
-      <p class="sub" style="font-size:12px;text-transform:uppercase;letter-spacing:1px">Do you relate to this?</p>
-      <h1 class="q" style="font-size:22px">"I do better when<br>someone keeps me<br>accountable."</h1>
-      <div class="spacer"></div>
-      <div class="grid" data-single><div class="opt tile sel">Yes, that's me</div><div class="opt tile">Not really</div></div>
-      <button class="btn btn-white" style="margin-top:14px">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Commitment 1/3</b> — moved here, before the paywall.</div>
-</div>
-
-<!-- Commit 2 -->
-<div class="slot" data-act="Commitment">
-  <span class="act-chip">Act 11 · Commit</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="spacer"></div>
-      <p class="sub" style="font-size:12px;text-transform:uppercase;letter-spacing:1px">And this one?</p>
-      <h1 class="q" style="font-size:22px">"I'm done starting<br>over. This time I<br>actually stick to it."</h1>
-      <div class="spacer"></div>
-      <div class="grid" data-single><div class="opt tile sel">100% me</div><div class="opt tile">Not really</div></div>
-      <button class="btn btn-white" style="margin-top:14px">Continue</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Commitment 2/3</b> — identity/relate.</div>
-</div>
-
-<!-- Commit 3 yes-ladder -->
-<div class="slot" data-act="Commitment">
-  <span class="act-chip">Act 11 · Commit</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <div class="spacer"></div>
-      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
-        <div class="av" style="width:56px;height:56px"></div>
-        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Last thing, Alex — are you ready to show up, even on the days you don't feel like it?</div>
+      <div class="previewtag" style="align-self:center">✨ YOUR STRENGTH RANK</div>
+      <div class="rankbadge" style="background:radial-gradient(circle at 50% 40%,#c08457,#5e3a22);border-color:#c9926a">🔰</div>
+      <h1 class="q" style="text-align:center;font-size:22px">You're starting as<br><em>Initiate.</em></h1>
+      <p class="sub" style="text-align:center;margin-bottom:12px">One rank for your <b>whole body</b> — every muscle you train pushes it up. Climb the ladder like a game.</p>
+      <div class="ranklist">
+        <div class="rankrow locked"><span class="rk">👑</span>Legend<span class="rkx">Top 1%</span></div>
+        <div class="rankrow locked"><span class="rk">🔱</span>Titan</div>
+        <div class="rankrow locked"><span class="rk">💠</span>Vanguard</div>
+        <div class="rankrow locked"><span class="rk">⚔️</span>Fighter</div>
+        <div class="rankrow locked"><span class="rk">🎖️</span>Challenger</div>
+        <div class="rankrow cur"><span class="rk">🔰</span>Initiate<span class="rkx">You're here</span></div>
       </div>
       <div class="spacer"></div>
-      <button class="btn btn-brand">Yes — I'm in 💪</button>
+      <button class="btn btn-dark">Share my rank</button>
+      <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Commitment 3/3</b> — the "yes" micro-commitment → straight into paywall.</div>
+  <div class="slot-cap"><b>Rank explained</b> — overall body rank (sum of all muscle progress), shown as a game ladder Initiate→Legend. Excitement peak; shareable = marketing. <i>Open: seed start tier vs everyone begins Initiate.</i></div>
 </div>
 
-<!-- ================= ACT 12 — PAYWALL ================= -->
-
-<!-- S34 value -->
 <div class="slot" data-act="Paywall">
-  <span class="act-chip">Act 12 · Paywall</span>
+  <span class="act-chip">33 · Plan reveal + paywall</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q" style="font-size:22px">Your plan is<br>locked in.</h1>
-      <p class="sub">Everything Marcus just built, ready the moment you start.</p>
-      <div style="margin:4px 0">
-        <div class="feat"><span class="c">✓</span>Your daily adapting workout</div>
-        <div class="feat"><span class="c">✓</span>Marcus coaching you 24/7</div>
-        <div class="feat"><span class="c">✓</span>Your live Strength Map &amp; progress</div>
-        <div class="feat"><span class="c">✓</span>Injury-safe swaps, automatically</div>
-        <div class="feat"><span class="c">✓</span>Streaks, stats &amp; check-ins</div>
+    <div class="scr paywall" style="overflow-y:auto;padding-bottom:0">
+      <div class="rankbadge" style="width:46px;height:46px;font-size:20px;margin:2px auto 4px;background:radial-gradient(circle at 50% 40%,#3a3a40,#1a1a1e);border-color:#4a4a52">🔒</div>
+      <h1 class="q" style="text-align:center;font-size:21px">Your plan is <em>built</em>.</h1>
+      <p class="sub" style="text-align:center;margin-bottom:12px">Marcus mapped out every session to hit your goal. Unlock to see what you’ll actually do.</p>
+
+      <div class="repcard hero">
+        <div class="rephd"><span>📈 Your 12-week projection</span><span class="lockchip" style="color:#7ef0a8;background:#0f2a18;border-color:#1c5a34">94% match</span></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--txt-dim);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Now</div><div style="font-size:15px;font-weight:900;font-style:italic">🔰 INITIATE</div></div>
+          <div style="color:var(--brand);font-size:20px;font-weight:900">→</div>
+          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--brand);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Week 12</div><div style="font-size:15px;font-weight:900;font-style:italic;color:var(--brand)">💠 VANGUARD</div></div>
+        </div>
       </div>
-      <div class="minirev"><div class="av"></div><div><div class="nm">Jordan M. <span class="stars">★★★★★</span></div><p>"First plan I've actually stuck to. 4 months in, +18kg on my bench."</p></div></div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">See plans</button>
+
+      <div class="repcard">
+        <div class="rephd"><span>🏋️ Week 1 · your workouts</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="blur">
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Goblet Squat</div><div class="ex-meta">3 sets · 10 reps · 17.5 kg</div></div></div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Romanian Deadlift</div><div class="ex-meta">3 sets · 8 reps · 40 kg</div></div></div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Walking Lunge</div><div class="ex-meta">3 sets · 12 reps each leg</div></div></div>
+        </div>
+      </div>
+
+      <div class="repcard">
+        <div class="rephd"><span>📊 Strength projection</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="blur"><div class="chart"><div class="col"><div class="barb" style="height:35%"></div><div class="wk">W1</div></div><div class="col"><div class="barb" style="height:52%"></div><div class="wk">W3</div></div><div class="col"><div class="barb" style="height:68%"></div><div class="wk">W6</div></div><div class="col"><div class="barb" style="height:84%"></div><div class="wk">W9</div></div><div class="col"><div class="barb" style="height:100%"></div><div class="wk">W12</div></div></div></div>
+      </div>
+
+      <div class="repcard">
+        <div class="rephd"><span>💬 Marcus’s focus for you</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="tipbox blur"><div class="tl">Coach tip</div><div class="skel" style="width:100%"></div><div class="skel" style="width:92%"></div><div class="skel" style="width:58%"></div></div>
+      </div>
+
+      <div class="repcard">
+        <div class="rephd"><span>🎯 Your top priorities</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="blur"><div class="skel" style="width:64%;height:12px"></div><div class="skel" style="width:96%"></div><div class="skel" style="width:88%"></div><div class="skel" style="width:70%;height:12px;margin-top:14px"></div><div class="skel" style="width:93%"></div></div>
+      </div>
+
+      <div class="minirev"><div class="av"></div><div><div class="nm">Marcus, 26 <span class="stars">★★★★★</span></div><p>"First plan I actually stuck to. +18kg bench in 4 months."</p></div></div>
+
+      <div class="paystick">
+        <div data-single>
+          <div class="price best sel"><div><div class="pk">Annual <span class="offpill">38% OFF</span></div><div class="psub">7 days free, then $89.99/yr</div></div><div class="pamt">$7.50<small>/mo</small></div></div>
+          <div class="price"><div><div class="pk">Monthly</div><div class="psub">7 days free, then billed monthly</div></div><div class="pamt">$14.99<small>/mo</small></div></div>
+        </div>
+        <button class="btn btn-brand" style="margin-top:8px">Unlock my full plan</button>
+        <p class="fineprint">7 days free · card required · auto-renews to annual · cancel anytime in the App Store.</p>
+      </div>
     </div>
   </div>
-  <div class="slot-cap">Value recap + social proof, before pricing.</div>
+  <div class="slot-cap"><b>Merged recap + paywall</b> (BetterMe / Ansera style) — the real plan shown but <b>blurred</b> to spike curiosity; sticky trial CTA unlocks it. Projection ties to the rank ladder.</div>
 </div>
-
-<!-- S35 pricing + feature showcase -->
-<div class="slot" data-act="Paywall">
-  <span class="act-chip">Act 12 · Paywall</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr" style="overflow-y:auto">
-      <h1 class="q" style="font-size:21px">Start training</h1>
-      <p class="sub">No free trial — your full plan unlocks the moment you join.</p>
-      <div data-single>
-        <div class="price best sel"><div><div class="pk">Annual</div><div class="psub">$89.99 / year</div></div><div class="pamt">$7.50<small>/mo</small></div></div>
-        <div class="price"><div><div class="pk">Monthly</div><div class="psub">Billed monthly</div></div><div class="pamt">$14.99<small>/mo</small></div></div>
-      </div>
-      <button class="btn btn-brand" style="margin-top:8px">Unlock my plan</button>
-      <div class="applebar" style="margin-top:8px"> Pay</div>
-      <p class="fineprint">Account is created right after you join, to save your progress. Cancel anytime in the App Store.</p>
-
-      <div class="trust">Everything below is included — <b>a real coach in your pocket</b>, not a static workout list.</div>
-
-      <div class="grouplbl">Bends to your time</div>
-      <div class="fshow">
-        <div class="fr"><div class="fi">⏱️</div><div><b>Mini workouts</b><small>No time? A 10-min session that still counts.</small></div></div>
-      </div>
-      <div class="grouplbl">Bends to your body</div>
-      <div class="fshow">
-        <div class="fr"><div class="fi">🩺</div><div><b>Daily check-in</b><small>I adjust to how you feel, every day.</small></div></div>
-        <div class="fr"><div class="fi">🧘</div><div><b>Recovery sessions</b><small>Beat-up days get a bounce-back workout.</small></div></div>
-      </div>
-      <div class="grouplbl">Bends to your goals</div>
-      <div class="fshow">
-        <div class="fr"><div class="fi">🔁</div><div><b>Swap any exercise</b><small>Hundreds of presets, all adjustable.</small></div></div>
-        <div class="fr"><div class="fi">🏆</div><div><b>Strength Map &amp; tiers</b><small>Rookie → World Class, per muscle.</small></div></div>
-        <div class="fr"><div class="fi">🔥</div><div><b>Streaks you can share</b><small>Stay consistent, flex your progress.</small></div></div>
-        <div class="fr"><div class="fi">💬</div><div><b>Coach 24/7</b><small>Marcus, in your corner, anytime.</small></div></div>
-      </div>
-      <div class="trust" style="margin-top:14px">⭐️⭐️⭐️⭐️⭐️ <b>"Finally an app that adapts to me."</b><br>Cancel anytime · Your data stays yours</div>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Feature showcase below the paywall</b> — grouped by "bends to you." Builds trust = not a scam.</div>
-</div>
-
 </div><!-- /strip -->
 </div>
 
@@ -3215,6 +3337,14 @@ const strip=document.getElementById('onb-strip');
     }else{ opt.classList.toggle('sel'); }
   });
 
+  // two-step demo: button advances, dots jump between panes
+  strip.addEventListener('click',e=>{
+    const nb=e.target.closest('.demo-next');
+    if(nb){const tr=nb.closest('.demotrack');if(tr)tr.classList.add('step2');return;}
+    const dot=e.target.closest('.dots i');
+    if(dot){const tr=dot.closest('.demotrack');if(tr)tr.classList.toggle('step2',[...dot.parentElement.children].indexOf(dot)===1);}
+  });
+
   // progress + counter from scroll position
   function update(){
     const c=strip.scrollLeft+strip.clientWidth/2;
@@ -3234,7 +3364,7 @@ const strip=document.getElementById('onb-strip');
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)en.target.classList.add('inview');}),{root:strip,threshold:.6});
   strip.querySelectorAll('.phone.anim').forEach(p=>io.observe(p));
   // strength map: light up segments in sequence when in view
-  const smap=document.querySelector('#tab-onboarding .body');
+  const smap=document.querySelector('#tab-onboarding .phone.anim .body');
   if(smap){const io2=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){
     const segs=smap.querySelectorAll('.seg');segs.forEach((s,i)=>setTimeout(()=>{s.classList.add('lit');if(i%2)s.classList.add('g');},250*i));
   }}),{root:strip,threshold:.6});io2.observe(smap.closest('.phone'));}
