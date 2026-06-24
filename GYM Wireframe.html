@@ -215,6 +215,34 @@
   .coach-mini{display:flex;gap:9px;align-items:flex-start;background:rgba(10,10,10,.55);backdrop-filter:blur(6px);border:1px solid var(--stroke);border-radius:12px;padding:10px 11px;margin:12px 0}
   .coach-mini .av{width:24px;height:24px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a)}
   .coach-mini p{font-size:12px;line-height:1.4;font-weight:500}
+  /* workout gallery */
+  .gallery-top{display:flex;align-items:center;justify-content:space-between;padding:6px 0 14px}
+  .gallery-title{font-size:18px;font-weight:800;text-align:center;line-height:1.1}
+  .filter-btn{width:42px;height:42px;border-radius:50%;background:#2a2a30;border:1px solid var(--stroke);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .match-strip{background:rgba(255,85,58,.1);border:1px solid rgba(255,85,58,.25);border-radius:12px;padding:10px 11px;margin:2px 0 10px}
+  .match-strip .k{color:var(--brand);font-size:9px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+  .match-strip .v{font-size:12px;font-weight:700;line-height:1.35;margin-top:4px;color:#e8e8ee}
+  .filter-chips{display:flex;gap:7px;overflow:hidden;margin:0 -15px 8px;padding:0 15px}
+  .filter-chip{flex:0 0 auto;background:#1c1c20;border:1px solid var(--stroke);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:800;color:#d8d8dd;white-space:nowrap}
+  .filter-chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .gallery-list{margin:4px -15px 0}
+  .gallery-item{display:grid;grid-template-columns:54px 1fr 22px;gap:12px;align-items:center;padding:13px 15px;border-top:1px solid rgba(255,255,255,.08)}
+  .gallery-thumb{width:54px;height:54px;border-radius:10px;background:linear-gradient(145deg,#34343a,#141417);position:relative;overflow:hidden}
+  .gallery-thumb::after{content:"";position:absolute;left:16px;right:16px;bottom:8px;height:28px;border-radius:14px 14px 4px 4px;background:linear-gradient(180deg,#777,#26262b);box-shadow:-10px 10px 0 -6px var(--brand),10px 10px 0 -6px var(--brand)}
+  .gallery-name{font-size:15px;font-weight:700;line-height:1.2}
+  .gallery-meta{color:var(--txt-dim);font-size:11px;font-weight:600;margin-top:5px;line-height:1.3}
+  .gallery-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+  .gallery-tag{font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.35px;color:#ff8a78;background:rgba(255,85,58,.12);border:1px solid rgba(255,85,58,.25);border-radius:999px;padding:3px 6px}
+  .gallery-arrow{color:#8b8b92;font-size:20px}
+  .filter-section{margin-bottom:14px}
+  .filter-section .h{font-size:10px;color:var(--txt-dim);font-weight:800;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+  .filter-grid{display:flex;flex-wrap:wrap;gap:7px}
+  .filter-pill{background:#222228;border:1px solid var(--stroke);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:800;color:#d7d7dc}
+  .filter-pill.on{background:rgba(255,85,58,.16);border-color:rgba(255,85,58,.44);color:#ff8a78}
+  .loosen-card{background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:12px;margin-top:10px}
+  .loosen-step{display:flex;justify-content:space-between;gap:10px;font-size:11px;font-weight:700;padding:7px 0;border-top:1px solid rgba(255,255,255,.06)}
+  .loosen-step:first-child{border-top:none}
+  .loosen-step .from{color:#777}.loosen-step .to{color:#fff;text-align:right}
   .ring-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;margin:6px 0}
   .ring{position:relative;width:148px;height:148px}
   .ring svg{transform:rotate(-90deg)}
@@ -344,6 +372,24 @@
   .share-coach p{font-size:10.5px;line-height:1.35;font-weight:700}
   .share-brand{position:relative;z-index:1;text-align:center;font-weight:800;font-style:italic;font-size:12px;letter-spacing:.6px;color:#fff;margin-top:10px}
   .share-card.light .share-brand{color:var(--brand)}
+  .share-footer{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
+  .share-footer .share-brand{margin-top:0;text-align:left}
+  .share-handle{color:#bdbdc3;font-size:10px;font-weight:700;white-space:nowrap}
+  .garage-visual{position:relative;width:100%;height:112px;display:flex;align-items:flex-end;justify-content:center;gap:8px}
+  .garage-car{width:82px;height:30px;border-radius:16px 24px 8px 8px;background:linear-gradient(160deg,#6a6a74,#1a1a1f);border:1px solid rgba(255,255,255,.1);position:relative;box-shadow:0 16px 24px rgba(0,0,0,.36)}
+  .garage-car::before{content:"";position:absolute;left:17px;top:-16px;width:40px;height:22px;border-radius:18px 18px 4px 4px;background:linear-gradient(160deg,#4d4d55,#151519);border:1px solid rgba(255,255,255,.08)}
+  .garage-car::after{content:"";position:absolute;left:10px;right:10px;bottom:-6px;height:10px;border-radius:999px;background:linear-gradient(90deg,#050505 0 16%,#ff553a 16% 24%,transparent 24% 76%,#ff553a 76% 84%,#050505 84%)}
+  .garage-car.side{transform:translateY(-18px) scale(.82);opacity:.62}
+  .muscle-visual{position:relative;width:100%;height:130px;display:flex;align-items:center;justify-content:center;gap:26px}
+  .muscle-body{width:58px;height:114px;position:relative;filter:drop-shadow(0 14px 18px rgba(0,0,0,.38))}
+  .muscle-body::before{content:"";position:absolute;left:19px;top:0;width:20px;height:20px;border-radius:50%;background:#5a5a63}
+  .muscle-body::after{content:"";position:absolute;left:12px;top:18px;width:34px;height:54px;border-radius:17px 17px 12px 12px;background:linear-gradient(180deg,#74747d,#33333a);box-shadow:-18px 8px 0 -8px #44444d,18px 8px 0 -8px #44444d,-11px 62px 0 -7px #3a3a41,11px 62px 0 -7px #3a3a41}
+  .muscle-hot{position:absolute;border-radius:999px;background:linear-gradient(160deg,#ff553a,#ff8a4d);box-shadow:0 0 18px rgba(255,85,58,.42);z-index:2}
+  .muscle-hot.shoulder-l{left:6px;top:27px;width:18px;height:28px;transform:rotate(18deg)}
+  .muscle-hot.shoulder-r{right:6px;top:27px;width:18px;height:28px;transform:rotate(-18deg)}
+  .muscle-hot.back{left:18px;top:31px;width:22px;height:44px}
+  .muscle-hot.leg-l{left:13px;top:74px;width:13px;height:35px}
+  .muscle-hot.leg-r{right:13px;top:74px;width:13px;height:35px}
   .share-bars{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:center;gap:12px;height:92px;margin-top:10px}
   .share-bar{width:58px;border-radius:14px;background:linear-gradient(180deg,#ff553a,#ffa051);position:relative}
   .share-bar.old{height:58px;background:#2a2a30}
@@ -365,10 +411,171 @@
   .content-card ul{list-style:none;display:flex;flex-direction:column;gap:7px}
   .content-card li{font-size:12px;line-height:1.35;color:#cfcfd4;border-top:1px solid rgba(255,255,255,.06);padding-top:7px}
   .content-card b{color:#fff}
+  .prompt-kit{max-width:1080px;margin:18px 0 34px;display:grid;grid-template-columns:1fr;gap:14px}
+  .prompt-panel{background:#141417;border:1px solid var(--stroke);border-radius:12px;padding:15px}
+  .prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .prompt-title{font-size:13px;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:.4px}
+  .prompt-pill{color:var(--brand);background:rgba(255,85,58,.12);border:1px solid rgba(255,85,58,.28);border-radius:999px;padding:5px 9px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+  .prompt-code{background:#070708;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px;color:#e9e9ee;font-size:12px;line-height:1.5;white-space:pre-wrap;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+  .prompt-grid{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:12px}
+  @media(max-width:900px){.prompt-grid{grid-template-columns:1fr}}
   @media(max-width:900px){.content-bank{grid-template-columns:1fr}}
 
   .legend{color:#999;font-size:12px;margin-top:54px;line-height:1.7;border-top:1px solid #444;padding-top:20px;max-width:900px}
   .legend b{color:#fff}
+#tab-onboarding .topbar{position:sticky;top:0;z-index:30;background:#222;border-bottom:2px solid #444;
+    padding:16px 28px 0}
+#tab-onboarding .page-tab{display:inline-block;background:var(--brand);color:#fff;font-weight:900;font-size:20px;
+    letter-spacing:.5px;padding:12px 24px;border-radius:14px 14px 0 0;text-transform:uppercase}
+#tab-onboarding .topbar-row{display:flex;align-items:center;gap:20px;margin-top:14px;padding-bottom:14px}
+#tab-onboarding .progress{flex:1;height:6px;background:#3a3a40;border-radius:99px;overflow:hidden}
+#tab-onboarding .progress > i{display:block;height:100%;width:3%;background:var(--brand);border-radius:99px;transition:width .25s}
+#tab-onboarding .counter{font-size:13px;font-weight:700;color:#cfcfd4;white-space:nowrap;min-width:120px}
+#tab-onboarding .counter b{color:#fff}
+#tab-onboarding .navbtn{background:#1c1c20;border:1px solid var(--stroke);color:#fff;font-family:inherit;font-weight:800;
+    font-size:18px;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#tab-onboarding .navbtn:hover{background:var(--brand);border-color:var(--brand)}
+#tab-onboarding .hint{color:#9a9aa2;font-size:12px;padding:8px 28px 0}
+#tab-onboarding .hint b{color:#fff}
+#tab-onboarding .strip{display:flex;gap:30px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:30px 48px 60px;scroll-behavior:smooth}
+#tab-onboarding .strip::-webkit-scrollbar{height:10px}
+#tab-onboarding .strip::-webkit-scrollbar-thumb{background:#555;border-radius:99px}
+#tab-onboarding .slot{flex:0 0 auto;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;width:340px}
+#tab-onboarding .slot-cap{font-size:12px;color:#bbb;text-align:center;line-height:1.4;max-width:320px;font-weight:600;min-height:32px}
+#tab-onboarding .slot-cap b{color:var(--brand)}
+#tab-onboarding .act-chip{display:inline-block;background:#000;color:#fff;font-size:11px;font-weight:800;letter-spacing:.4px;
+    padding:5px 12px;border-radius:99px;text-transform:uppercase}
+#tab-onboarding .phone{width:340px;height:718px;background:var(--canvas);border-radius:40px;overflow:hidden;
+    position:relative;border:1px solid #000;box-shadow:0 18px 44px rgba(0,0,0,.5);display:flex;flex-direction:column}
+#tab-onboarding .statusbar{display:flex;justify-content:space-between;align-items:center;padding:14px 22px 4px;
+    font-size:12px;font-weight:700;flex:0 0 auto}
+#tab-onboarding .statusbar .dots{letter-spacing:2px;font-size:10px;opacity:.9}
+#tab-onboarding .scr{flex:1;overflow:hidden;position:relative;padding:8px 20px 18px;display:flex;flex-direction:column}
+#tab-onboarding .stepbar{display:flex;gap:4px;margin:2px 0 14px}
+#tab-onboarding .stepbar i{flex:1;height:4px;border-radius:99px;background:#26262b}
+#tab-onboarding .stepbar i.on{background:var(--brand)}
+#tab-onboarding .stepbar i.done{background:#555}
+#tab-onboarding .coach{display:flex;gap:10px;align-items:flex-start;margin-bottom:16px}
+#tab-onboarding .av{width:34px;height:34px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,#ff7a63,#ff553a);border:2px solid var(--brand)}
+#tab-onboarding .av.f{background:linear-gradient(135deg,#c98bff,#7a5cff);border-color:#9a6cff}
+#tab-onboarding .bubble{background:#161619;border:1px solid var(--stroke);border-radius:4px 14px 14px 14px;padding:11px 13px;
+    font-size:14px;line-height:1.45;font-weight:500}
+#tab-onboarding .bubble .nm{font-size:11px;color:var(--brand);font-weight:800;margin-bottom:3px;letter-spacing:.3px}
+#tab-onboarding h1.q{font-size:25px;font-weight:900;line-height:1.12;letter-spacing:-.5px;margin:2px 0 8px}
+#tab-onboarding h1.q em{font-style:italic;color:var(--brand)}
+#tab-onboarding .sub{color:var(--txt-dim);font-size:13px;line-height:1.5;margin-bottom:16px}
+#tab-onboarding .hero{font-size:34px;font-weight:900;font-style:italic;text-transform:uppercase;line-height:1;letter-spacing:-1px;margin:6px 0 10px}
+#tab-onboarding .hero span{color:var(--brand)}
+#tab-onboarding .spacer{flex:1}
+#tab-onboarding .opts{display:flex;flex-direction:column;gap:9px}
+#tab-onboarding .opt{background:var(--card);border:1.5px solid var(--stroke);border-radius:var(--radius);padding:14px 14px;
+    font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:12px;transition:.12s}
+#tab-onboarding .opt small{display:block;color:var(--txt-dim);font-weight:500;font-size:11.5px;margin-top:2px}
+#tab-onboarding .opt .ico{width:34px;height:34px;border-radius:9px;background:var(--card-2);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:17px}
+#tab-onboarding .opt .tick{margin-left:auto;width:22px;height:22px;border-radius:50%;border:2px solid #3a3a40;flex:0 0 auto}
+#tab-onboarding .opt.sel{border-color:var(--brand);background:#2a1512}
+#tab-onboarding .opt.sel .tick{border-color:var(--brand);background:var(--brand)}
+#tab-onboarding .opt.sel .ico{background:var(--brand)}
+#tab-onboarding .opt.grid2{flex-direction:column;align-items:flex-start;gap:8px}
+#tab-onboarding .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#tab-onboarding .opt.tile{flex-direction:column;align-items:center;text-align:center;gap:9px;padding:18px 10px}
+#tab-onboarding .opt.tile .ico{width:46px;height:46px;font-size:22px;border-radius:12px}
+#tab-onboarding .opt.tile .tick{display:none}
+#tab-onboarding .opt.tile.sel .tick{display:none}
+#tab-onboarding .btn{display:block;width:100%;text-align:center;padding:15px;border-radius:var(--pill);
+    font-weight:800;font-size:14px;border:none;font-family:inherit;cursor:pointer;margin-top:10px}
+#tab-onboarding .btn-white{background:#fff;color:#000}
+#tab-onboarding .btn-brand{background:var(--brand);color:#fff}
+#tab-onboarding .btn-ghost{background:transparent;color:#9a9aa2;font-weight:700;font-size:13px}
+#tab-onboarding .field{background:var(--card);border:1.5px solid var(--stroke);border-radius:var(--radius);
+    padding:16px;font-size:16px;color:#fff;font-weight:700;margin-bottom:6px}
+#tab-onboarding .field.ph{color:var(--txt-mute)}
+#tab-onboarding .wheel{text-align:center;padding:12px 0 6px}
+#tab-onboarding .wheel .dimrow{color:var(--txt-mute);font-size:18px;font-weight:700;opacity:.5;margin:3px 0}
+#tab-onboarding .wheel .big{font-size:46px;font-weight:900;letter-spacing:-1px}
+#tab-onboarding .wheel .big small{font-size:18px;color:var(--txt-dim);font-weight:700}
+#tab-onboarding .chips{display:flex;flex-wrap:wrap;gap:8px}
+#tab-onboarding .chip{background:var(--card);border:1.5px solid var(--stroke);border-radius:99px;padding:10px 15px;font-size:13px;font-weight:700;cursor:pointer}
+#tab-onboarding .chip.sel{background:var(--brand);border-color:var(--brand)}
+#tab-onboarding .dayrow{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--stroke);border-radius:10px;padding:10px 12px;margin-bottom:7px;font-weight:700;font-size:13px}
+#tab-onboarding .dayrow .d{width:42px}
+#tab-onboarding .dayrow .t{margin-left:auto;background:var(--card-2);border-radius:8px;padding:6px 12px;color:var(--brand);font-weight:800}
+#tab-onboarding .statcard{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:14px;margin-top:6px}
+#tab-onboarding .statcard .big{font-size:30px;font-weight:900;color:var(--green)}
+#tab-onboarding .statcard .lbl{color:var(--txt-dim);font-size:12px;margin-top:2px}
+#tab-onboarding .bodywrap{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+#tab-onboarding .body{width:150px}
+#tab-onboarding .body .seg{fill:#222;stroke:#0a0a0a;stroke-width:1;transition:fill .5s}
+#tab-onboarding .body .seg.lit{fill:var(--brand)}
+#tab-onboarding .body .seg.lit.g{fill:var(--green)}
+#tab-onboarding .legend{display:flex;justify-content:center;gap:7px;margin-top:8px;flex-wrap:wrap}
+#tab-onboarding .legend span{font-size:9.5px;color:var(--txt-dim);padding:3px 8px;border-radius:99px;background:var(--card)}
+#tab-onboarding .scan-txt{text-align:center;color:var(--brand);font-weight:800;font-size:13px;letter-spacing:.5px;margin-top:6px}
+#tab-onboarding .loadbars{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+#tab-onboarding .lb .lbtop{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;color:#ddd}
+#tab-onboarding .lb .track{height:7px;border-radius:99px;background:#26262b;overflow:hidden}
+#tab-onboarding .lb .track > i{display:block;height:100%;width:0;background:var(--brand);border-radius:99px}
+#tab-onboarding .inview .lb1 .track>i{animation:obfill 1s .1s forwards}
+#tab-onboarding .inview .lb2 .track>i{animation:obfill 1s .9s forwards}
+#tab-onboarding .inview .lb3 .track>i{animation:obfill 1s 1.7s forwards}
+#tab-onboarding .inview .lb4 .track>i{animation:obfill 1s 2.5s forwards}
+@keyframes obfill{to{width:100%}}
+#tab-onboarding .ring{width:120px;height:120px;border-radius:50%;border:8px solid #26262b;border-top-color:var(--brand);
+    margin:10px auto;animation:obspin 1s linear infinite}
+@keyframes obspin{to{transform:rotate(360deg)}}
+#tab-onboarding .sumcard{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:14px;margin-bottom:10px}
+#tab-onboarding .sumrow{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--stroke)}
+#tab-onboarding .sumrow:last-child{border-bottom:none}
+#tab-onboarding .sumrow .k{color:var(--txt-dim);font-weight:600}
+#tab-onboarding .sumrow .v{font-weight:800;text-align:right}
+#tab-onboarding .protect{display:flex;align-items:center;gap:8px;background:#0f2419;border:1px solid #1d5138;border-radius:10px;padding:10px 12px;font-size:12.5px;font-weight:700;color:#7ef0a8;margin-bottom:10px}
+#tab-onboarding .timeline{display:flex;flex-direction:column;gap:0;margin:4px 0}
+#tab-onboarding .tl{display:flex;gap:11px;padding:6px 0}
+#tab-onboarding .tl .dot{width:11px;height:11px;border-radius:50%;background:var(--brand);margin-top:3px;flex:0 0 auto;position:relative}
+#tab-onboarding .tl .dot::after{content:"";position:absolute;left:50%;top:11px;width:1px;height:26px;background:#3a3a40;transform:translateX(-50%)}
+#tab-onboarding .tl:last-child .dot::after{display:none}
+#tab-onboarding .tl .when{font-weight:800;font-size:12px;width:46px;flex:0 0 auto}
+#tab-onboarding .tl .what{font-size:12px;color:var(--txt-dim);line-height:1.35}
+#tab-onboarding .feat{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;padding:6px 0}
+#tab-onboarding .feat .c{width:20px;height:20px;border-radius:50%;background:var(--green-deep);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:12px;flex:0 0 auto}
+#tab-onboarding .price{background:var(--card);border:1.5px solid var(--stroke);border-radius:var(--radius);padding:14px;margin-bottom:9px;display:flex;align-items:center;gap:12px;cursor:pointer}
+#tab-onboarding .price.sel{border-color:var(--brand);background:#2a1512}
+#tab-onboarding .price.best{position:relative}
+#tab-onboarding .price.best::after{content:"BEST VALUE";position:absolute;top:-8px;right:12px;background:var(--brand);color:#fff;font-size:9px;font-weight:800;padding:3px 8px;border-radius:99px}
+#tab-onboarding .price .pk{font-weight:800;font-size:15px}
+#tab-onboarding .price .psub{color:var(--txt-dim);font-size:11px;margin-top:2px}
+#tab-onboarding .price .pamt{margin-left:auto;text-align:right;font-weight:900;font-size:16px}
+#tab-onboarding .price .pamt small{display:block;color:var(--txt-dim);font-size:10px;font-weight:600}
+#tab-onboarding .fineprint{color:var(--txt-mute);font-size:10px;text-align:center;margin-top:8px;line-height:1.4}
+#tab-onboarding .minirev{display:flex;gap:8px;align-items:center;background:var(--card);border-radius:10px;padding:10px;margin-bottom:8px}
+#tab-onboarding .minirev .av{width:30px;height:30px}
+#tab-onboarding .minirev p{font-size:11.5px;line-height:1.4}
+#tab-onboarding .minirev .nm{font-weight:800;font-size:11px}
+#tab-onboarding .stars{color:#ffd23a;font-size:12px;letter-spacing:1px}
+#tab-onboarding .applebar{background:#000;border-radius:12px;padding:13px;text-align:center;font-weight:700;font-size:14px;margin-bottom:8px;border:1px solid #333}
+#tab-onboarding .previewtag{display:inline-block;background:#2a1512;color:var(--brand);font-size:10px;font-weight:800;
+    padding:5px 11px;border-radius:99px;margin-bottom:12px;letter-spacing:.4px}
+#tab-onboarding .ftbox{background:#0c0c0f;border:1px solid var(--stroke);border-radius:16px;padding:13px;margin:2px 0 12px;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+#tab-onboarding .ftbox .mhead{font-size:10px;font-weight:800;color:var(--txt-dim);margin-bottom:9px;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.4px}
+#tab-onboarding .ftbox .mhead .d{width:6px;height:6px;border-radius:50%;background:var(--brand)}
+#tab-onboarding .ftbox .mq{font-size:15px;font-weight:800;margin-bottom:9px}
+#tab-onboarding .mchip{display:inline-flex;align-items:center;gap:5px;background:var(--card);border:1px solid var(--stroke);border-radius:99px;padding:8px 11px;font-size:11px;font-weight:700;margin:0 4px 6px 0}
+#tab-onboarding .mchip.on{background:var(--brand);border-color:var(--brand)}
+#tab-onboarding .fbrow{display:flex;gap:6px;margin-top:4px}
+#tab-onboarding .fbrow .fb{flex:1;text-align:center;background:var(--card);border:1px solid var(--stroke);border-radius:9px;padding:10px 4px;font-size:11.5px;font-weight:700}
+#tab-onboarding .fbrow .fb.on{background:var(--green-deep);color:#7ef0a8;border-color:transparent}
+#tab-onboarding .msetrow{display:grid;grid-template-columns:30px 1fr 1fr 26px;gap:6px;align-items:center;background:var(--green-deep);border-radius:8px;padding:8px;margin-bottom:8px}
+#tab-onboarding .msetrow span{text-align:center;font-weight:800;font-size:12px;color:#7ef0a8}
+#tab-onboarding .fshow{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+#tab-onboarding .fshow .fr{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--stroke);border-radius:10px;padding:9px 11px}
+#tab-onboarding .fshow .fr .fi{width:30px;height:30px;border-radius:8px;background:var(--card-2);display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto}
+#tab-onboarding .fshow .fr b{font-size:12.5px}
+#tab-onboarding .fshow .fr small{display:block;color:var(--txt-dim);font-size:10.5px;font-weight:500;margin-top:1px}
+#tab-onboarding .grouplbl{font-size:10.5px;font-weight:800;color:var(--brand);letter-spacing:.5px;text-transform:uppercase;margin:12px 0 5px}
+#tab-onboarding .trust{text-align:center;font-size:11.5px;color:var(--txt-dim);margin:12px 0 2px;line-height:1.55}
+#tab-onboarding .trust b{color:#fff}
+#tab-onboarding .topbar{position:static;top:auto;z-index:1}
 </style>
 </head>
 <body>
@@ -377,7 +584,7 @@
   <div class="page-rule"></div>
   <p class="intro">
     Flow wireframes. <b>Arrows</b> describe what triggers the next screen ("tap X → this shows").
-    The <b>Coach Mode</b> toggle rewrites coach copy live (works in both tabs). Dark theme, brand
+    The <b>Coach Mode</b> toggle rewrites coach copy live across the wireframe. Dark theme, brand
     <b style="color:#ff553a">#ff553a</b>, Archivo. Content + flow only — not final pixel UI.
   </p>
 
@@ -386,6 +593,8 @@
     <button class="tab" data-tab="lock">Lock App</button>
     <button class="tab" data-tab="progress">Progress</button>
     <button class="tab" data-tab="report">Report</button>
+    <button class="tab" data-tab="assets">Asset Prompts</button>
+    <button class="tab" data-tab="onboarding">Onboarding</button>
   </div>
 
   <div class="mode-bar">
@@ -649,6 +858,162 @@
           </div>
         </div>
         <div class="frame-cap">⑪ Live AI answer <b>(mode-aware)</b> — no pre-written content</div>
+      </div>
+    </div>
+
+    <div class="section-label">SYSTEM 5B · Workout Gallery — smart replacement finder</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Opens from <b>Swap → Presets</b>. The gallery starts with context already applied: same workout type, matching muscles, available equipment, similar duration, and same/slightly easier difficulty. The main list stays clean; deeper filters live in one sheet.</p>
+
+    <div class="flow">
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="gallery-top"><div class="circle-btn">‹</div><div class="gallery-title">Workout Gallery</div><div class="filter-btn">≛</div></div>
+            <div class="match-strip">
+              <div class="k">Smart match from today</div>
+              <div class="v">Replacing Pull Day · Cable + Dumbbell available · Intermediate</div>
+            </div>
+            <div class="filter-chips">
+              <span class="filter-chip on">Equipment · 2</span>
+              <span class="filter-chip on">Upper</span>
+              <span class="filter-chip on">45 min</span>
+              <span class="filter-chip on">Intermediate</span>
+            </div>
+            <div class="gallery-list">
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Back & Biceps</div>
+                  <div class="gallery-meta">45 min · Pull · Cable + Dumbbell</div>
+                  <div class="gallery-tags"><span class="gallery-tag">Best match</span><span class="gallery-tag">Lats</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Upper Body Strength</div>
+                  <div class="gallery-meta">45 min · Upper · Dumbbell + Bench</div>
+                  <div class="gallery-tags"><span class="gallery-tag">No machines</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Cable Pull Builder</div>
+                  <div class="gallery-meta">40 min · Pull · Cable</div>
+                  <div class="gallery-tags"><span class="gallery-tag">Back friendly</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Full Body Circuit</div>
+                  <div class="gallery-meta">35 min · Full Body · Dumbbell</div>
+                  <div class="gallery-tags"><span class="gallery-tag">Loosened</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑫ Gallery default — context chips applied automatically, sorted by <b>Best Match</b></div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">tap filter icon →<br>advanced sheet</div></div>
+
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen" style="filter:brightness(.42)">
+            <div class="gallery-top"><div class="circle-btn">‹</div><div class="gallery-title">Workout Gallery</div><div class="filter-btn">≛</div></div>
+          </div>
+          <div class="sheet" style="max-height:540px;overflow:hidden">
+            <div class="sheet-grip"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+              <div style="font-weight:800;font-size:15px">Filter presets</div>
+              <div style="color:var(--brand);font-size:12px;font-weight:800">Reset</div>
+            </div>
+            <div class="filter-section">
+              <div class="h">Equipment</div>
+              <div class="filter-grid">
+                <span class="filter-pill on">Cable</span><span class="filter-pill on">Dumbbell</span><span class="filter-pill">Barbell</span><span class="filter-pill">Machine</span><span class="filter-pill">Bench</span><span class="filter-pill">Bodyweight</span>
+              </div>
+            </div>
+            <div class="filter-section">
+              <div class="h">Workout type</div>
+              <div class="filter-grid">
+                <span class="filter-pill on">Pull</span><span class="filter-pill">Push</span><span class="filter-pill">Legs</span><span class="filter-pill">Upper</span><span class="filter-pill">Full Body</span><span class="filter-pill">HIIT</span>
+              </div>
+            </div>
+            <div class="filter-section">
+              <div class="h">Muscles</div>
+              <div class="filter-grid">
+                <span class="filter-pill on">Back</span><span class="filter-pill on">Biceps</span><span class="filter-pill">Chest</span><span class="filter-pill">Shoulders</span><span class="filter-pill">Abs</span><span class="filter-pill">Glutes</span>
+              </div>
+            </div>
+            <div class="filter-section">
+              <div class="h">Duration + difficulty</div>
+              <div class="filter-grid">
+                <span class="filter-pill">15 min</span><span class="filter-pill">30 min</span><span class="filter-pill on">45 min</span><span class="filter-pill">60+ min</span><span class="filter-pill">Beginner</span><span class="filter-pill on">Intermediate</span><span class="filter-pill">Advanced</span>
+              </div>
+            </div>
+            <div class="filter-section">
+              <div class="h">Goal + constraints</div>
+              <div class="filter-grid">
+                <span class="filter-pill on">Strength</span><span class="filter-pill">Muscle Gain</span><span class="filter-pill">Conditioning</span><span class="filter-pill">Injury-safe</span><span class="filter-pill">Low back friendly</span><span class="filter-pill">No jumping</span>
+              </div>
+            </div>
+            <button class="btn btn-brand" style="margin-top:2px">Show 18 presets</button>
+          </div>
+        </div>
+        <div class="frame-cap">⑬ Advanced filters — exact equipment, muscles, goal, style, constraints; <b>Reset lives here</b></div>
+      </div>
+
+      <div class="flow-arrow"><div class="ar">→</div><div class="lbl">if results are too narrow →<br>loosen safely</div></div>
+
+      <div class="frame-wrap">
+        <div class="phone">
+          <div class="statusbar"><span>9:41</span><span class="dots">▪▪▪ ⌃ ▭</span></div>
+          <div class="screen">
+            <div class="gallery-top"><div class="circle-btn">‹</div><div class="gallery-title">Workout Gallery</div><div class="filter-btn">≛</div></div>
+            <div class="match-strip">
+              <div class="k">Expanded matches</div>
+              <div class="v">Only 2 exact matches. Showing nearby presets before the list goes empty.</div>
+            </div>
+            <div class="loosen-card">
+              <div class="loosen-step"><span class="from">Exact equipment</span><span class="to">Cable → Cable family</span></div>
+              <div class="loosen-step"><span class="from">Exact muscle</span><span class="to">Lats → Upper back</span></div>
+              <div class="loosen-step"><span class="from">Exact duration</span><span class="to">45 min → 40-50 min</span></div>
+              <div class="loosen-step"><span class="from">Difficulty</span><span class="to">Intermediate kept</span></div>
+            </div>
+            <div class="gallery-list" style="margin-top:10px">
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Cable Pull Builder</div>
+                  <div class="gallery-meta">40 min · Pull · Cable</div>
+                  <div class="gallery-tags"><span class="gallery-tag">Nearest duration</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+              <div class="gallery-item">
+                <div class="gallery-thumb"></div>
+                <div>
+                  <div class="gallery-name">Upper Back Pump</div>
+                  <div class="gallery-meta">50 min · Upper · Machine + Cable</div>
+                  <div class="gallery-tags"><span class="gallery-tag">Muscle family</span></div>
+                </div>
+                <div class="gallery-arrow">›</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="frame-cap">⑭ Fallback state — explains why broader results appear, avoids dead ends</div>
       </div>
     </div>
 
@@ -1603,6 +1968,38 @@
         <div class="frame-cap">Daily ④ <b>Grand Piano PR</b> — single-exercise record with one memorable object</div>
       </div>
 
+    </div>
+
+    <div class="section-label">WEEKLY SHARE OPTIONS · Wrapped-style social cards</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Four weekly concepts built around different share motivations: achievement, competition, aspirational volume, and muscle progress. Each card keeps the proof to <b>Sessions</b>, <b>Volume</b>, and <b>PRs</b>, with a user handle so it feels native to social sharing.</p>
+
+    <div class="flow" style="align-items:flex-start;gap:14px">
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Weekly Report</span><span class="chip">A+</span></div>
+            <div class="share-title">Perfect week</div>
+            <div class="share-stat">A+</div>
+            <div class="share-object tall">
+              <img src="assets/share-trophy.png" alt="Weekly trophy and medal visual">
+              <span class="scale-tag">weekly trophy</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-weekly-wrapped-copy">All sessions done. Annoyingly consistent, in the best way.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Weekly proof</div>
+              <div class="share-ex"><span class="nm">Sessions</span><span class="dt">3 / 3</span></div>
+              <div class="share-ex"><span class="nm">Volume</span><span class="dt">12,370kg</span></div>
+              <div class="share-ex"><span class="nm">PRs</span><span class="dt">4 records</span></div>
+            </div>
+            <div class="share-footer"><div class="share-brand">BRACEAI</div><div class="share-handle">@gervonta_dvs</div></div>
+          </div>
+        </div>
+        <div class="frame-cap">Weekly ① <b>Weekly Wrapped / A+</b> — clean achievement flex</div>
+      </div>
+
       <div class="frame-wrap" style="width:270px">
         <div class="share-card brandwash" style="width:270px">
           <div>
@@ -1618,40 +2015,81 @@
           </div>
           <div>
             <div class="share-proof">
-              <div class="label">Week proof</div>
-              <div class="share-ex"><span class="nm">Mon · Leg Day</span><span class="dt">12 sets · 94 reps</span></div>
-              <div class="share-ex"><span class="nm">Wed · Push</span><span class="dt">14 sets · 112 reps</span></div>
-              <div class="share-ex"><span class="nm">Fri · Pull</span><span class="dt">13 sets · 101 reps</span></div>
+              <div class="label">Weekly proof</div>
+              <div class="share-ex"><span class="nm">Sessions</span><span class="dt">3 / 3</span></div>
+              <div class="share-ex"><span class="nm">Volume</span><span class="dt">12,370kg</span></div>
+              <div class="share-ex"><span class="nm">PRs</span><span class="dt">4 records</span></div>
             </div>
-            <div class="share-brand">BRACEAI</div>
+            <div class="share-footer"><div class="share-brand">BRACEAI</div><div class="share-handle">@gervonta_dvs</div></div>
           </div>
         </div>
-        <div class="frame-cap">Weekly ① <b>Excuses Lost 3-0</b> — scoreboard makes consistency visual</div>
+        <div class="frame-cap">Weekly ② <b>Excuses Lost 3-0</b> — funny competitive consistency card</div>
       </div>
 
       <div class="frame-wrap" style="width:270px">
         <div class="share-card brandwash" style="width:270px">
           <div>
-            <div class="share-meta"><span>Weekly Report</span><span class="chip">A+</span></div>
-            <div class="share-title">Perfect week</div>
-            <div class="share-stat">A+</div>
-            <div class="share-object tall">
-              <img src="assets/share-trophy.png" alt="Weekly trophy and medal visual">
-              <span class="scale-tag">weekly trophy</span>
+            <div class="share-meta"><span>Weekly Report</span><span class="chip">Garage flex</span></div>
+            <div class="share-title">Moved the garage</div>
+            <div class="share-stat">12,370<small> KG</small></div>
+            <div class="share-object wide">
+              <div class="garage-visual" aria-label="Sports car garage placeholder visual">
+                <div class="garage-car side"></div>
+                <div class="garage-car"></div>
+                <div class="garage-car side"></div>
+              </div>
+              <span class="scale-tag">garage flex</span>
             </div>
-            <div class="share-coach"><div class="av"></div><p id="share-weekly-trophy-copy">All sessions done. Annoyingly consistent, in the best way.</p></div>
+            <div class="share-coach"><div class="av"></div><p id="share-weekly-garage-copy">That is a whole garage worth of work. Subtle? Absolutely not.</p></div>
           </div>
           <div>
             <div class="share-proof">
-              <div class="label">Weekly wrapped</div>
-              <div class="share-ex"><span class="nm">Consistency</span><span class="dt">3 / 3 sessions</span></div>
-              <div class="share-ex"><span class="nm">New PRs</span><span class="dt">4 records</span></div>
+              <div class="label">Weekly proof</div>
+              <div class="share-ex"><span class="nm">Sessions</span><span class="dt">3 / 3</span></div>
               <div class="share-ex"><span class="nm">Volume</span><span class="dt">12,370kg</span></div>
+              <div class="share-ex"><span class="nm">PRs</span><span class="dt">4 records</span></div>
             </div>
-            <div class="share-brand">BRACEAI</div>
+            <div class="share-footer"><div class="share-brand">BRACEAI</div><div class="share-handle">@gervonta_dvs</div></div>
           </div>
         </div>
-        <div class="frame-cap">Weekly ② <b>Trophy / Wrapped</b> — classic achievement card with three proof stats</div>
+        <div class="frame-cap">Weekly ③ <b>Garage Flex</b> — aspirational sports-car volume card</div>
+      </div>
+
+      <div class="frame-wrap" style="width:270px">
+        <div class="share-card brandwash" style="width:270px">
+          <div>
+            <div class="share-meta"><span>Weekly Report</span><span class="chip">39 sets</span></div>
+            <div class="share-title">Built this week</div>
+            <div class="share-stat">39<small> SETS</small></div>
+            <div class="share-object tall">
+              <div class="muscle-visual" aria-label="Front and back muscle split placeholder visual">
+                <div class="muscle-body">
+                  <span class="muscle-hot shoulder-l"></span>
+                  <span class="muscle-hot shoulder-r"></span>
+                  <span class="muscle-hot leg-l"></span>
+                  <span class="muscle-hot leg-r"></span>
+                </div>
+                <div class="muscle-body">
+                  <span class="muscle-hot back"></span>
+                  <span class="muscle-hot leg-l"></span>
+                  <span class="muscle-hot leg-r"></span>
+                </div>
+              </div>
+              <span class="scale-tag">muscle split</span>
+            </div>
+            <div class="share-coach"><div class="av"></div><p id="share-weekly-muscle-copy">Pull, legs, push. The week left receipts on the body map.</p></div>
+          </div>
+          <div>
+            <div class="share-proof">
+              <div class="label">Weekly proof</div>
+              <div class="share-ex"><span class="nm">Sessions</span><span class="dt">3 / 3</span></div>
+              <div class="share-ex"><span class="nm">Volume</span><span class="dt">12,370kg</span></div>
+              <div class="share-ex"><span class="nm">PRs</span><span class="dt">4 records</span></div>
+            </div>
+            <div class="share-footer"><div class="share-brand">BRACEAI</div><div class="share-handle">@gervonta_dvs</div></div>
+          </div>
+        </div>
+        <div class="frame-cap">Weekly ④ <b>Muscle Split Wrapped</b> — body-map recap for the week</div>
       </div>
     </div>
 
@@ -1771,11 +2209,936 @@
   </div>
 
 
+  <!-- ============================================================= -->
+  <!-- TAB 5: ASSET PROMPTS -->
+  <!-- ============================================================= -->
+  <div class="tabpanel" id="tab-assets">
+
+    <div class="section-label">PROMPT RULES · Object-only share-card assets</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Attach the share-card reference image first, then paste a prompt. Generate <b>object-only transparent PNG assets</b>; all labels, stats, Coach Mode copy, and BRACEAI branding stay editable in Figma / HTML.</p>
+
+    <div class="prompt-kit">
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Rules for every asset</div><div class="prompt-pill">Use before generating</div></div>
+        <pre class="prompt-code">Create the object only.
+Do not create a full card, poster, UI layout, or social media story.
+Use transparent PNG background.
+Use dark graphite / charcoal material with soft gray highlights.
+Use #ff553a only as a subtle accent, trim, glow, brake caliper, stitch, or lighting detail.
+Do not include text, numbers, captions, brand logos, model badges, license plates, watermarks, people, scenery, roads, floor shadows, or extra props.
+Keep the object large, centered, and readable at small share-card size.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Master prompt template</div><div class="prompt-pill">Replace object + context</div></div>
+        <pre class="prompt-code">Use the attached share-card reference for style direction.
+
+Create an object-only image asset for a fitness app share card.
+
+Subject:
+{OBJECT}
+
+Meaning/context:
+{CONTEXT}
+
+Style:
+Semi-realistic 3D object, premium athletic app aesthetic, dark graphite / charcoal material, soft gray highlights, subtle red-orange accent details using #ff553a. The object should feel polished, modern, and expensive, but still simple enough to read clearly inside a social media share card.
+
+Composition:
+Single centered object, large and readable, isolated cutout, no background scene. Use a clean 3/4 view or side view depending on what makes the object easiest to recognize. Leave generous padding around the object.
+
+Background:
+Transparent PNG background.
+
+Do NOT include:
+Text, numbers, brand logos, model badges, license plates, people, UI, card layout, caption, watermark, shadows on a floor, scenery, extra props, or a full poster/card design.</pre>
+      </div>
+    </div>
+
+    <div class="section-label">GYM FLEX SPORTS CAR PACK · Aspirational volume comparisons</div>
+    <div class="section-rule"></div>
+    <p class="flow-note">Use exact car names as <b>visual references inside the prompt</b>, but keep the generated result unbranded. Final card labels should stay generic, like <b>sports coupe x5</b>, <b>track coupe</b>, <b>supercar</b>, or <b>garage flex</b>.</p>
+
+    <div class="prompt-grid">
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">BMW M4 Competition</div><div class="prompt-pill">Sports coupe</div></div>
+        <pre class="prompt-code">Use the attached share-card reference for style direction.
+
+Create an object-only transparent PNG asset of a BMW M4 Competition coupe as the visual reference for a fitness app share card.
+
+Make it an unbranded semi-realistic 3D performance coupe: aggressive wide stance, low body, sharp front silhouette, sculpted hood, large wheels, dark graphite / charcoal paint, soft gray reflections, and subtle #ff553a accent details on the brake calipers or thin trim.
+
+Do NOT include BMW logos, kidney grille badge details, M badges, model text, license plate, readable text, people, road, garage, background scene, floor shadow, UI, card layout, watermark, or poster design.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Porsche 911 GT3</div><div class="prompt-pill">Track coupe</div></div>
+        <pre class="prompt-code">Create an object-only transparent PNG asset of a Porsche 911 GT3 as the visual reference for a fitness app share card. Make it an unbranded semi-realistic 3D track coupe with a compact rounded body, low nose, wide rear stance, dramatic rear wing, graphite paint, and subtle #ff553a brake caliper or wing-edge accents. Do NOT include Porsche logos, crest, GT3 badges, model text, license plate, people, road, racetrack, UI, or poster design.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Nissan GT-R R35</div><div class="prompt-pill">Power coupe</div></div>
+        <pre class="prompt-code">Create an object-only transparent PNG asset of a Nissan GT-R R35 as the visual reference for a fitness app share card. Make it an unbranded semi-realistic 3D power coupe with muscular boxy stance, wide fenders, dark graphite paint, soft gray highlights, and subtle #ff553a accents. Do NOT include Nissan logos, GT-R badges, model text, license plate, people, road, garage, UI, or poster design.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Mercedes-AMG GT</div><div class="prompt-pill">Grand tourer</div></div>
+        <pre class="prompt-code">Create an object-only transparent PNG asset of a Mercedes-AMG GT as the visual reference for a fitness app share card. Make it an unbranded semi-realistic 3D grand-touring sports car with long hood, low cabin, wide stance, graphite paint, and subtle #ff553a accents. Do NOT include Mercedes logos, AMG badges, grille emblems, model text, license plate, people, showroom, UI, or poster design.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Lamborghini Huracan</div><div class="prompt-pill">Supercar</div></div>
+        <pre class="prompt-code">Create an object-only transparent PNG asset of a Lamborghini Huracan as the visual reference for a fitness app share card. Make it an unbranded semi-realistic 3D supercar with wedge-shaped body, very low stance, angular side intakes, dark graphite paint, and subtle #ff553a accents. Do NOT include Lamborghini logos, bull emblem, Huracan badges, model text, license plate, people, road, city, UI, or poster design.</pre>
+      </div>
+
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Ferrari F8 / 488 style</div><div class="prompt-pill">Exotic flex</div></div>
+        <pre class="prompt-code">Create an object-only transparent PNG asset of a Ferrari F8 / 488 style supercar as the visual reference for a fitness app share card. Make it an unbranded semi-realistic 3D exotic sports car with low aerodynamic body, sculpted side air intakes, graphite paint, and subtle #ff553a accents. Do NOT include Ferrari logos, prancing horse emblem, shield badges, model text, license plate, people, showroom, UI, or poster design.</pre>
+      </div>
+    </div>
+
+    <div class="section-label">QA CHECKLIST · Before using the generated PNG</div>
+    <div class="section-rule"></div>
+    <div class="prompt-kit">
+      <div class="prompt-panel">
+        <div class="prompt-head"><div class="prompt-title">Asset quality gate</div><div class="prompt-pill">Before using asset</div></div>
+        <pre class="prompt-code">Check the generated asset:
+- Object reads clearly at small size.
+- Background is transparent.
+- No text, fake logos, model badges, emblems, or license plates inside the image.
+- Style matches the dark premium card reference.
+- Object has enough padding so it can be cropped/resized.
+- #ff553a appears only as a subtle highlight.
+- If transparent output fails, regenerate with: "perfectly flat solid #00ff00 background for chroma-key removal."</pre>
+      </div>
+    </div>
+  </div>
+
+
   <div class="legend">
     <b>Reading the flow:</b> orange <b style="color:#ff553a">→</b> arrows show what triggers the next screen. The <b>Coach Mode</b> toggle (top) rewrites copy on Active Workout screens ③, ⑥, ⑦, ⑪ and Lock App shield ⑥ + break ⑧ live.<br>
     <b>iOS notes baked in:</b> selection uses Apple's system picker (categories first, no custom installed-apps list); the shield has <b>Close only</b> (Apple doesn't allow a button to open our app — Start workout / Mini / Break / Reschedule live on the Live Activity instead).<br>
     <b>Pair with:</b> <b>ACTIVE_WORKOUT_CONTENT.md</b> and <b>LOCK_APP_PLAN.md</b>.
   </div>
+
+<div class="tabpanel" id="tab-onboarding">
+<div class="topbar">
+  <span class="page-tab">Onboarding</span>
+  <div class="topbar-row">
+    <button class="navbtn" id="onb-prev">‹</button>
+    <div class="counter">Screen <b id="onb-cur">1</b> / <span id="onb-tot">39</span> · <span id="onb-actname">The Problem</span></div>
+    <div class="progress"><i id="onb-bar"></i></div>
+    <button class="navbtn" id="onb-next">›</button>
+  </div>
+</div>
+<div class="hint">Scroll sideways, swipe, use the ‹ › buttons, or your ← → arrow keys. Tap options to select. Coach voice = friendly default; the picked <b>mode</b> only changes tone once inside the app. Screens marked <b>(tentative)</b> are for you to judge.</div>
+
+<div class="strip" id="onb-strip">
+
+<!-- ================= ACT 1 — PROBLEM → SOLUTION ================= -->
+
+<!-- S1 -->
+<div class="slot" data-act="The Problem">
+  <span class="act-chip">Act 1 · Problem</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="stepbar"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="spacer"></div>
+      <h1 class="q">You walk in.<br><em>Now what?</em></h1>
+      <p class="sub">Most people quit in the first week — not because they're lazy, but because no one ever showed them what to actually do.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Pure empathy. No input yet — just resonance.</div>
+</div>
+
+<!-- S2 -->
+<div class="slot" data-act="The Problem">
+  <span class="act-chip">Act 1 · Problem</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="stepbar"><i class="done"></i><i class="on"></i><i></i><i></i></div>
+      <div class="spacer"></div>
+      <h1 class="q">A real coach?<br><em>$300 a month.</em></h1>
+      <p class="sub">A personal trainer costs more than rent. So most people just guess their way through it — and hope.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Cost pain. The thing they can't afford.</div>
+</div>
+
+<!-- S3 -->
+<div class="slot" data-act="The Problem">
+  <span class="act-chip">Act 1 · Problem</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="stepbar"><i class="done"></i><i class="done"></i><i class="on"></i><i></i></div>
+      <div class="spacer"></div>
+      <h1 class="q">You train.<br><em>Nothing changes.</em></h1>
+      <p class="sub">Random workouts give random results. Without a real plan, you just spin your wheels and lose motivation.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Result pain. The frustration that makes them quit.</div>
+</div>
+
+<!-- S4 -->
+<div class="slot" data-act="The Solution">
+  <span class="act-chip">Act 1 · Solution</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="stepbar"><i class="done"></i><i class="done"></i><i class="done"></i><i class="on"></i></div>
+      <div class="spacer"></div>
+      <div class="hero">Meet <span>Brace.</span></div>
+      <p class="sub" style="font-size:15px;color:#d4d4d8">A world-class coach in your pocket. One plan, built just for you — and it adjusts every single day. For less than the price of a coffee.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-brand">Let's fix this →</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>The answer to all 3 problems.</b> App = the fix.</div>
+</div>
+
+<!-- ================= ACT 2 — MEET YOUR COACH ================= -->
+
+<!-- S5 name -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Your Coach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">YOUR COACH</div>Before we start — what should I call you?</div></div>
+      <div class="field ph">Your first name</div>
+      <p class="sub">I'll use it to keep things personal — not to spam you.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Name captured early</b> → reused everywhere.</div>
+</div>
+
+<!-- Sex (moved up — right after name) -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Your Coach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Good to meet you, Alex. Quick one — are you training as…</div></div>
+      <div class="grid" data-single>
+        <div class="opt tile sel"><div class="ico">♂</div>Male</div>
+        <div class="opt tile"><div class="ico">♀</div>Female</div>
+      </div>
+      <p class="sub" style="margin-top:12px">Just so I can calibrate your plan — change it anytime.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Sex — moved here</b>, right after the name (identity together).</div>
+</div>
+
+<!-- S6 persona -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Your Coach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Pick your coach.</h1>
+      <p class="sub">They'll guide every workout. You can switch anytime.</p>
+      <div class="grid" data-single>
+        <div class="opt tile sel"><div class="ico">💪</div><div><b>Marcus</b><small>Male coach</small></div><div class="tick"></div></div>
+        <div class="opt tile"><div class="ico f" style="background:linear-gradient(135deg,#c98bff,#7a5cff)">🔥</div><div><b>Martha</b><small>Female coach</small></div><div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Persona pick: <b>Marcus</b> or <b>Martha</b>.</div>
+</div>
+
+<!-- S7 mode intro -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Coach Mode</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>One more thing — how do you want me to talk to you?</div></div>
+      <h1 class="q">Your coach,<br><em>your energy.</em></h1>
+      <p class="sub">Some people want a calm voice. Some want to get yelled at. Pick whatever keeps you showing up — you can change it anytime.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Show me the options</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Context before the feature</b> (as you asked).</div>
+</div>
+
+<!-- S8 mode preview+pick -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Coach Mode</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:21px">Choose your mode</h1>
+      <div class="opts" data-single>
+        <div class="opt grid2 sel"><b>😌 Chill</b><small>"No rush. We've got this, one rep at a time."</small><div class="tick" style="position:absolute"></div></div>
+        <div class="opt grid2"><b>🔥 Hype</b><small>"LET'S GO!! Today's the day we start!"</small></div>
+        <div class="opt grid2"><b>🎯 Direct</b><small>"Here's the plan. Show up. Execute."</small></div>
+        <div class="opt grid2"><b>😈 Savage</b><small>"Skip today and you're just lying to yourself."</small></div>
+      </div>
+      <p class="sub" style="margin-top:12px;font-size:11.5px">You'll feel this once we start training.</p>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Preview the tone before picking.</b> Sample line per mode = a live demo of the feature.</div>
+</div>
+
+<!-- S9 lock-in -->
+<div class="slot" data-act="Meet Your Coach">
+  <span class="act-chip">Act 2 · Your Coach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div class="coach" style="flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div class="av" style="width:72px;height:72px"></div>
+        <div class="bubble" style="border-radius:14px"><div class="nm">MARCUS</div>Nice to meet you, Alex. I'm Marcus — your coach from here on. Let's build a plan that actually fits <em>you</em>. Quick questions first.</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Let's go</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Coach locks in.</b> Uses their name. Friendly voice for the rest of onboarding.</div>
+</div>
+
+<!-- ================= ACT 3 — GETTING TO KNOW YOU ================= -->
+
+<!-- S10 goal -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · About You</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">What are we<br>training for?</h1>
+      <p class="sub">This shapes your whole plan. Pick the main one.</p>
+      <div class="opts" data-single>
+        <div class="opt sel"><div class="ico">🏋️</div>Build muscle<div class="tick"></div></div>
+        <div class="opt"><div class="ico">💪</div>Get stronger<div class="tick"></div></div>
+        <div class="opt"><div class="ico">🔥</div>Lose fat<div class="tick"></div></div>
+        <div class="opt"><div class="ico">⚡</div>Get athletic<div class="tick"></div></div>
+        <div class="opt"><div class="ico">✅</div>General fitness<div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Multiple goals</b> → goal-specific feedback next.</div>
+</div>
+
+<!-- S11 goal feedback -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · Feedback</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Build muscle — my favourite. We'll focus on the lifts that actually grow you, and add a little more each week so you keep seeing change.</div></div>
+      <div class="statcard"><div class="big">3×</div><div class="lbl">Brace members hit their goal 3× more often than going it alone.</div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Selective feedback (1 of 5).</b> Copy changes per goal — all 5 variants in the content spec.</div>
+</div>
+
+<!-- S13 age -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · About You</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How old are you?</h1>
+      <p class="sub">Recovery and pacing change with age — I'll account for it.</p>
+      <div class="wheel">
+        <div class="dimrow">22</div><div class="dimrow">23</div>
+        <div class="big">24</div>
+        <div class="dimrow">25</div><div class="dimrow">26</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Age — wheel picker.</div>
+</div>
+
+<!-- S14 height -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · About You</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Your height?</h1>
+      <div class="chips" style="margin-bottom:14px"><span class="chip sel">cm</span><span class="chip">ft</span></div>
+      <div class="wheel"><div class="big">178 <small>cm</small></div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Height + unit toggle.</div>
+</div>
+
+<!-- S15 weight -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · About You</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">And your weight?</h1>
+      <div class="chips" style="margin-bottom:14px"><span class="chip sel">kg</span><span class="chip">lb</span></div>
+      <div class="wheel"><div class="big">74 <small>kg</small></div></div>
+      <p class="sub" style="margin-top:8px">It's just a starting point — no judgement here.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Weight (feeds plan + protein tips later).</div>
+</div>
+
+<!-- S16 experience -->
+<div class="slot" data-act="About You">
+  <span class="act-chip">Act 3 · About You</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How long have<br>you trained?</h1>
+      <p class="sub">Be honest — there's no wrong answer. It just sets your starting point.</p>
+      <div class="opts" data-single>
+        <div class="opt sel">Brand new<small>Never really trained before</small><div class="tick"></div></div>
+        <div class="opt">Some experience<small>On and off, under a year</small><div class="tick"></div></div>
+        <div class="opt">Experienced<small>1–3 years consistent</small><div class="tick"></div></div>
+        <div class="opt">Expert<small>3+ years, know my way around</small><div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Experience — beginner → expert (all levels).</div>
+</div>
+
+<!-- ================= ACT 4 — STRENGTH CHECK → MAP ================= -->
+
+<!-- S17 trained at gym -->
+<div class="slot" data-act="Strength Check">
+  <span class="act-chip">Act 4 · Strength</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Let's find your real starting strength — no guessing, no egos.</div></div>
+      <h1 class="q">Trained in a<br>gym before?</h1>
+      <div class="opts" data-single>
+        <div class="opt sel">Yes, I know the machines<div class="tick"></div></div>
+        <div class="opt">A little<div class="tick"></div></div>
+        <div class="opt">Never<div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Branches ×3:</b> Yes → ask lifts · A little → light check · Never → skip to Strength Map (see spec).</div>
+</div>
+
+<!-- S18 pushups -->
+<div class="slot" data-act="Strength Check">
+  <span class="act-chip">Act 4 · Strength</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How many push-ups<br>in one go?</h1>
+      <p class="sub">Best honest guess. This calibrates your starting weights.</p>
+      <div class="opts" data-single>
+        <div class="opt">Under 10<div class="tick"></div></div>
+        <div class="opt sel">10–20<div class="tick"></div></div>
+        <div class="opt">20–30<div class="tick"></div></div>
+        <div class="opt">30+<div class="tick"></div></div>
+        <div class="opt">Not sure<div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Push-ups = strength proxy for everyone.</b></div>
+</div>
+
+<!-- S19 lifts -->
+<div class="slot" data-act="Strength Check">
+  <span class="act-chip">Act 4 · Strength</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Roughly what<br>can you lift?</h1>
+      <p class="sub">Only if you know them — skip anything you're unsure of.</p>
+      <div class="dayrow"><span class="d">Squat</span><span class="t">60 kg</span></div>
+      <div class="dayrow"><span class="d">Bench</span><span class="t">45 kg</span></div>
+      <div class="dayrow"><span class="d">Deadlift</span><span class="t">— kg</span></div>
+      <button class="btn btn-ghost">I'm not sure — skip this</button>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Optional lifts — <b>only if "trained before = Yes."</b> Easy skip.</div>
+</div>
+
+<!-- S20 strength analysis (the dramatized scan) -->
+<div class="slot" data-act="Strength Check">
+  <span class="act-chip">Act 4 · Strength Map</span>
+  <div class="phone anim"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="text-align:center">Reading your<br><em>strength…</em></h1>
+      <div class="bodywrap">
+        <svg class="body" viewBox="0 0 120 220">
+          <circle class="seg" cx="60" cy="18" r="13"/>
+          <rect class="seg s1" x="40" y="34" width="40" height="34" rx="10"/>
+          <rect class="seg s2" x="44" y="70" width="32" height="32" rx="8"/>
+          <rect class="seg s1" x="18" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg s1" x="87" y="38" width="15" height="50" rx="7"/>
+          <rect class="seg s3" x="43" y="106" width="15" height="64" rx="7"/>
+          <rect class="seg s3" x="62" y="106" width="15" height="64" rx="7"/>
+        </svg>
+      </div>
+      <div class="scan-txt">Mapping 12 muscle groups…</div>
+      <div class="legend"><span>Rookie</span><span>Practiced</span><span>Expert</span><span>Elite</span><span>World Class</span></div>
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <div class="slot-cap"><b>The "scan" moment (tentative).</b> Muscles light up from their answers → reveals the Strength Map. Auto-advances.</div>
+</div>
+
+<!-- Feature preview: in-workout set feedback (effort check) -->
+<div class="slot" data-act="How Brace Adapts">
+  <span class="act-chip">Feature · Set Feedback</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="previewtag">✨ A PEEK INSIDE BRACE</div>
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>And I keep that map accurate as you go. After your sets, I'll ask how they felt — and tune your next weight automatically.</div></div>
+      <div class="ftbox">
+        <div class="mhead"><span class="d"></span>Goblet Squat · Set 2</div>
+        <div class="msetrow"><span>2</span><span>40 kg</span><span>10</span><span>✓</span></div>
+        <div class="ftbox" style="margin:0;padding:11px;background:#161619;box-shadow:none">
+          <div class="mq" style="font-size:13px">How did that set feel?</div>
+          <div class="fbrow"><div class="fb">😮‍💨 Too easy</div><div class="fb on">💪 Perfect</div><div class="fb">🥵 Too hard</div></div>
+        </div>
+      </div>
+      <p class="sub">Too easy → I add weight. Too hard → I pull back. Your numbers stay perfect, every session — no guessing.</p>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Feature preview (movable).</b> In-workout effort check + auto weight tuning. Placed after the Strength Map.</div>
+</div>
+
+<!-- ================= ACT 5 — WHERE & WHEN ================= -->
+
+<!-- S21 gym type -->
+<div class="slot" data-act="Where & When">
+  <span class="act-chip">Act 5 · Setup</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">Where will you<br>train?</h1>
+      <p class="sub">So your plan only uses gear you can actually reach.</p>
+      <div class="opts" data-single>
+        <div class="opt sel"><div class="ico">🏟️</div>Large gym<small>Full machines &amp; free weights</small><div class="tick"></div></div>
+        <div class="opt"><div class="ico">🏪</div>Small gym<small>The basics</small><div class="tick"></div></div>
+        <div class="opt"><div class="ico">🏠</div>Home / garage<small>Some equipment</small><div class="tick"></div></div>
+        <div class="opt"><div class="ico">🧘</div>No equipment<small>Bodyweight only</small><div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Gym type → pre-fills the equipment list (Fitbod-style).</div>
+</div>
+
+<!-- S22 equipment list -->
+<div class="slot" data-act="Where & When">
+  <span class="act-chip">Act 5 · Setup</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:21px">Your gym's kit</h1>
+      <p class="sub">Pre-checked for a large gym. Untick anything that's missing.</p>
+      <div class="chips" data-multi>
+        <span class="chip sel">Barbell</span><span class="chip sel">Dumbbells</span><span class="chip sel">Cables</span>
+        <span class="chip sel">Machines</span><span class="chip sel">Bench</span><span class="chip sel">Squat rack</span>
+        <span class="chip sel">Kettlebells</span><span class="chip">Bands</span><span class="chip">Pull-up bar</span>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Equipment pre-checked by gym type</b>, adjustable.</div>
+</div>
+
+<!-- S23 days -->
+<div class="slot" data-act="Where & When">
+  <span class="act-chip">Act 5 · Setup</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How many days<br>a week?</h1>
+      <p class="sub">Pick what's realistic. I'll build around it.</p>
+      <div class="grid" data-single>
+        <div class="opt tile">2</div><div class="opt tile">3</div>
+        <div class="opt tile sel">4</div><div class="opt tile">5</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Days per week.</div>
+</div>
+
+<!-- S24 times + alarm -->
+<div class="slot" data-act="Where & When">
+  <span class="act-chip">Act 5 · Setup</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:22px">When works?</h1>
+      <p class="sub">Different time each day is fine — tap to set.</p>
+      <div class="dayrow"><span class="d">Mon</span><span class="t">6:00 PM</span></div>
+      <div class="dayrow"><span class="d">Wed</span><span class="t">7:00 AM</span></div>
+      <div class="dayrow"><span class="d">Fri</span><span class="t">6:00 PM</span></div>
+      <div class="dayrow"><span class="d">Sat</span><span class="t">10:00 AM</span></div>
+      <div class="opt sel" style="margin-top:10px"><div class="ico">⏰</div>Set my gym alarms<small>So you never miss a session</small><div class="tick"></div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Per-day flexible times</b> + alarm offer.</div>
+</div>
+
+<!-- ================= ACT 6 — INJURY (caring) ================= -->
+
+<!-- S25 body map -->
+<div class="slot" data-act="Let's Protect You">
+  <span class="act-chip">Act 6 · Injury</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Before we push — anything I should protect? Tap any spot that bothers you.</div></div>
+      <div class="chips" data-multi style="margin-bottom:10px">
+        <span class="chip">Neck</span><span class="chip">Shoulders</span><span class="chip">Elbows</span>
+        <span class="chip">Wrists</span><span class="chip sel">Lower back</span><span class="chip">Hips</span>
+        <span class="chip sel">Knees</span><span class="chip">Ankles</span>
+      </div>
+      <div class="opt">✅ Nothing right now — I'm good</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Caring injury intake — your differentiator.</b> Tap areas (or "nothing").</div>
+</div>
+
+<!-- S26 follow up -->
+<div class="slot" data-act="Let's Protect You">
+  <span class="act-chip">Act 6 · Injury</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Thanks for telling me. How are your <em>knees</em> right now?</div></div>
+      <div class="opts" data-single>
+        <div class="opt">Just a bit tight<div class="tick"></div></div>
+        <div class="opt sel">Achy under load<div class="tick"></div></div>
+        <div class="opt">Sharp pain sometimes<div class="tick"></div></div>
+        <div class="opt">Old injury, mostly fine now<div class="tick"></div></div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Warm follow-up per area — not a clinical grid.</div>
+</div>
+
+<!-- S27 reassurance -->
+<div class="slot" data-act="Let's Protect You">
+  <span class="act-chip">Act 6 · Injury</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
+        <div class="av" style="width:60px;height:60px"></div>
+        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Got it — I've got your knees. No deep squats or jumping until they're ready, and I'll swap in safer moves that still get you results. You're in good hands.</div>
+      </div>
+      <div class="protect" style="margin-top:16px">🛡️ Your plan now protects: Knees · Lower back</div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Reassurance.</b> This visibly changes the plan summary later.</div>
+</div>
+
+<!-- S27b injury — NO PAIN branch -->
+<div class="slot" data-act="Let's Protect You">
+  <span class="act-chip">Act 6 · Injury · ALT</span>
+  <div class="phone" style="outline:2px dashed #555;outline-offset:6px"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
+        <div class="av" style="width:60px;height:60px"></div>
+        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Love it — green light. 💪 We'll train hard and smart. If anything ever starts to bug you, just tell me in the daily check-in and I'll adjust on the spot.</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>ALT branch — "Nothing right now."</b> Replaces the follow-up + reassurance. (Dashed = alternate path.)</div>
+</div>
+
+<!-- Feature preview: Daily Check-in -->
+<div class="slot" data-act="How Brace Cares">
+  <span class="act-chip">Feature · Daily Check-in</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="previewtag">✨ A PEEK INSIDE BRACE</div>
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>And this isn't a one-time question. Every day I'll check in — and reshape your workout around how you actually feel.</div></div>
+      <div class="ftbox">
+        <div class="mhead"><span class="d"></span>Daily Check-in</div>
+        <div class="mq">How are you feeling today?</div>
+        <span class="mchip on">🔥 Fresh &amp; Ready</span><span class="mchip">✏️ A bit sore</span>
+        <span class="mchip">🩹 Something hurts</span><span class="mchip">🔋 Low energy</span>
+      </div>
+      <p class="sub">Sore? I ease off. Hurt? I swap the move. Wiped out? I'll give you a recovery day instead. You never train hurt or burnt out.</p>
+      <button class="btn btn-white">Love that</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Feature preview after injury.</b> Real Daily Check-in UI = proof the app cares (your "it's not static" goal).</div>
+</div>
+
+<!-- ================= ACT 7 — LIFESTYLE ================= -->
+
+<!-- S28 lifestyle -->
+<div class="slot" data-act="Lifestyle">
+  <span class="act-chip">Act 7 · Recovery</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q">How's your<br>recovery?</h1>
+      <p class="sub">So I never overtrain you. Quick one.</p>
+      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:8px 0 6px">SLEEP MOST NIGHTS</div>
+      <div class="chips" data-single><span class="chip">&lt;5h</span><span class="chip">5–6h</span><span class="chip sel">7–8h</span><span class="chip">8h+</span></div>
+      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:16px 0 6px">DAILY ACTIVITY</div>
+      <div class="chips" data-single><span class="chip">Desk job</span><span class="chip sel">On my feet</span><span class="chip">Active job</span></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap">Light recovery (sleep + activity). Nutrition stays light.</div>
+</div>
+
+<!-- ================= ACT 8 — WHY / REACH ================= -->
+
+<!-- S30 notifications -->
+<div class="slot" data-act="Your Why">
+  <span class="act-chip">Act 8 · Reach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div style="text-align:center;font-size:40px">🔔</div>
+      <h1 class="q" style="text-align:center;font-size:23px">Let me nudge you</h1>
+      <p class="sub" style="text-align:center">A reminder before each session is how this becomes a habit instead of a someday. I'll keep it light.</p>
+      <div class="spacer"></div>
+      <button class="btn btn-brand">Turn on reminders</button>
+      <button class="btn btn-ghost">Maybe later</button>
+    </div>
+  </div>
+  <div class="slot-cap">Notifications opt-in (habit framing).</div>
+</div>
+
+<!-- S31 imessage -->
+<div class="slot" data-act="Your Why">
+  <span class="act-chip">Act 8 · Reach</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>Want me to check in over iMessage? I'll text you reminders, form tips, and a nudge when you go quiet — like a real coach would.</div></div>
+      <div class="field ph">📱 Your number (optional)</div>
+      <div class="spacer"></div>
+      <button class="btn btn-brand">Connect iMessage</button>
+      <button class="btn btn-ghost">Skip for now</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>iMessage intro</b> — coach reaches you by text. Skippable.</div>
+</div>
+
+<!-- ================= ACT 9 — BUILD ================= -->
+
+<!-- S32 loader -->
+<div class="slot" data-act="Building Your Plan">
+  <span class="act-chip">Act 9 · Building</span>
+  <div class="phone anim"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div class="ring"></div>
+      <h1 class="q" style="text-align:center;font-size:22px">Building your<br>plan, Alex…</h1>
+      <div class="loadbars">
+        <div class="lb lb1"><div class="lbtop"><span>Analysing your answers</span></div><div class="track"><i></i></div></div>
+        <div class="lb lb2"><div class="lbtop"><span>Mapping your muscles</span></div><div class="track"><i></i></div></div>
+        <div class="lb lb3"><div class="lbtop"><span>Working around your knees</span></div><div class="track"><i></i></div></div>
+        <div class="lb lb4"><div class="lbtop"><span>Building week 1</span></div><div class="track"><i></i></div></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Anticipation loader.</b> Labeled steps = perceived effort/value.</div>
+</div>
+
+<!-- ================= ACT 10 — REVEAL ================= -->
+
+<!-- S33 reveal -->
+<div class="slot" data-act="Your Plan">
+  <span class="act-chip">Act 10 · Reveal</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr" style="overflow-y:auto">
+      <h1 class="q" style="font-size:22px">Alex, your plan<br>is ready. 🎉</h1>
+      <div class="sumcard">
+        <div class="sumrow"><span class="k">Goal</span><span class="v">Build muscle</span></div>
+        <div class="sumrow"><span class="k">Your plan</span><span class="v">4-week build → peak</span></div>
+        <div class="sumrow"><span class="k">Schedule</span><span class="v">4 days · your times</span></div>
+        <div class="sumrow"><span class="k">Starting point</span><span class="v">Practiced · Lvl 28</span></div>
+      </div>
+      <div class="protect">🛡️ Built to protect your knees &amp; lower back</div>
+      <div style="font-size:12px;color:var(--txt-dim);font-weight:700;margin:6px 0 4px">WHAT TO EXPECT <span style="color:var(--txt-mute)">(tentative)</span></div>
+      <div class="timeline">
+        <div class="tl"><span class="dot"></span><span class="when">Day 1</span><span class="what">Your first session, built around you.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Week 1</span><span class="what">You build the base — form &amp; consistency.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Day 30</span><span class="what">First real strength jump you can feel.</span></div>
+        <div class="tl"><span class="dot"></span><span class="when">Week 4</span><span class="what">You hit your peak — and we level up.</span></div>
+      </div>
+      <p class="sub" style="font-size:11px;margin-top:8px">Your Strength Map starts here and gets sharper every time you train.</p>
+      <button class="btn btn-white">See my plan</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Payoff.</b> Personalized + injury-aware + humble baseline + 1/7/30/90 timeline (tentative).</div>
+</div>
+
+<!-- ================= ACT 10.5 — SHARE FEATURE ================= -->
+
+<!-- Share intro -->
+<div class="slot" data-act="Share Your Wins">
+  <span class="act-chip">Act 10.5 · Share</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:23px">Show off<br>your wins. 🏆</h1>
+      <p class="sub">Every session earns a rank and a shareable card. Drop it on your story and let your progress do the talking.</p>
+      <div style="display:flex;gap:8px;justify-content:center;margin:6px 0 10px">
+        <div style="background:linear-gradient(135deg,#7a5cff,#c98bff);border-radius:12px;padding:14px 8px;text-align:center;flex:1">
+          <div style="font-size:22px">🛡️</div><div style="font-weight:900;font-style:italic;font-size:13px">TITAN</div><div style="font-size:9px;opacity:.8">360 DAYS · 100,000KG</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#222,#333);border:1px solid var(--stroke);border-radius:12px;padding:14px 8px;text-align:center;flex:1">
+          <div style="font-size:22px">📸</div><div style="font-weight:800;font-size:11px">Story card</div><div style="font-size:9px;color:var(--txt-dim)">Volume · PRs · photo</div>
+        </div>
+      </div>
+      <div class="chips" style="justify-content:center"><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Snap</span></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">Nice 🔥</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>NEW — share/UGC feature intro.</b> Placed right after the reveal (excitement peak). Doubles as your marketing engine.</div>
+</div>
+
+<!-- ================= ACT 11 — COMMITMENT (before paywall) ================= -->
+
+<!-- Commit 1 -->
+<div class="slot" data-act="Commitment">
+  <span class="act-chip">Act 11 · Commit</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <p class="sub" style="font-size:12px;text-transform:uppercase;letter-spacing:1px">Do you relate to this?</p>
+      <h1 class="q" style="font-size:22px">"I do better when<br>someone keeps me<br>accountable."</h1>
+      <div class="spacer"></div>
+      <div class="grid" data-single><div class="opt tile sel">Yes, that's me</div><div class="opt tile">Not really</div></div>
+      <button class="btn btn-white" style="margin-top:14px">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Commitment 1/3</b> — moved here, before the paywall.</div>
+</div>
+
+<!-- Commit 2 -->
+<div class="slot" data-act="Commitment">
+  <span class="act-chip">Act 11 · Commit</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <p class="sub" style="font-size:12px;text-transform:uppercase;letter-spacing:1px">And this one?</p>
+      <h1 class="q" style="font-size:22px">"I'm done starting<br>over. This time I<br>actually stick to it."</h1>
+      <div class="spacer"></div>
+      <div class="grid" data-single><div class="opt tile sel">100% me</div><div class="opt tile">Not really</div></div>
+      <button class="btn btn-white" style="margin-top:14px">Continue</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Commitment 2/3</b> — identity/relate.</div>
+</div>
+
+<!-- Commit 3 yes-ladder -->
+<div class="slot" data-act="Commitment">
+  <span class="act-chip">Act 11 · Commit</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer"></div>
+      <div class="coach" style="flex-direction:column;align-items:center;text-align:center">
+        <div class="av" style="width:56px;height:56px"></div>
+        <div class="bubble" style="border-radius:14px;margin-top:12px"><div class="nm">MARCUS</div>Last thing, Alex — are you ready to show up, even on the days you don't feel like it?</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-brand">Yes — I'm in 💪</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Commitment 3/3</b> — the "yes" micro-commitment → straight into paywall.</div>
+</div>
+
+<!-- ================= ACT 12 — PAYWALL ================= -->
+
+<!-- S34 value -->
+<div class="slot" data-act="Paywall">
+  <span class="act-chip">Act 12 · Paywall</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <h1 class="q" style="font-size:22px">Your plan is<br>locked in.</h1>
+      <p class="sub">Everything Marcus just built, ready the moment you start.</p>
+      <div style="margin:4px 0">
+        <div class="feat"><span class="c">✓</span>Your daily adapting workout</div>
+        <div class="feat"><span class="c">✓</span>Marcus coaching you 24/7</div>
+        <div class="feat"><span class="c">✓</span>Your live Strength Map &amp; progress</div>
+        <div class="feat"><span class="c">✓</span>Injury-safe swaps, automatically</div>
+        <div class="feat"><span class="c">✓</span>Streaks, stats &amp; check-ins</div>
+      </div>
+      <div class="minirev"><div class="av"></div><div><div class="nm">Jordan M. <span class="stars">★★★★★</span></div><p>"First plan I've actually stuck to. 4 months in, +18kg on my bench."</p></div></div>
+      <div class="spacer"></div>
+      <button class="btn btn-white">See plans</button>
+    </div>
+  </div>
+  <div class="slot-cap">Value recap + social proof, before pricing.</div>
+</div>
+
+<!-- S35 pricing + feature showcase -->
+<div class="slot" data-act="Paywall">
+  <span class="act-chip">Act 12 · Paywall</span>
+  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr" style="overflow-y:auto">
+      <h1 class="q" style="font-size:21px">Start training</h1>
+      <p class="sub">No free trial — your full plan unlocks the moment you join.</p>
+      <div data-single>
+        <div class="price best sel"><div><div class="pk">Annual</div><div class="psub">$89.99 / year</div></div><div class="pamt">$7.50<small>/mo</small></div></div>
+        <div class="price"><div><div class="pk">Monthly</div><div class="psub">Billed monthly</div></div><div class="pamt">$14.99<small>/mo</small></div></div>
+      </div>
+      <button class="btn btn-brand" style="margin-top:8px">Unlock my plan</button>
+      <div class="applebar" style="margin-top:8px"> Pay</div>
+      <p class="fineprint">Account is created right after you join, to save your progress. Cancel anytime in the App Store.</p>
+
+      <div class="trust">Everything below is included — <b>a real coach in your pocket</b>, not a static workout list.</div>
+
+      <div class="grouplbl">Bends to your time</div>
+      <div class="fshow">
+        <div class="fr"><div class="fi">⏱️</div><div><b>Mini workouts</b><small>No time? A 10-min session that still counts.</small></div></div>
+      </div>
+      <div class="grouplbl">Bends to your body</div>
+      <div class="fshow">
+        <div class="fr"><div class="fi">🩺</div><div><b>Daily check-in</b><small>I adjust to how you feel, every day.</small></div></div>
+        <div class="fr"><div class="fi">🧘</div><div><b>Recovery sessions</b><small>Beat-up days get a bounce-back workout.</small></div></div>
+      </div>
+      <div class="grouplbl">Bends to your goals</div>
+      <div class="fshow">
+        <div class="fr"><div class="fi">🔁</div><div><b>Swap any exercise</b><small>Hundreds of presets, all adjustable.</small></div></div>
+        <div class="fr"><div class="fi">🏆</div><div><b>Strength Map &amp; tiers</b><small>Rookie → World Class, per muscle.</small></div></div>
+        <div class="fr"><div class="fi">🔥</div><div><b>Streaks you can share</b><small>Stay consistent, flex your progress.</small></div></div>
+        <div class="fr"><div class="fi">💬</div><div><b>Coach 24/7</b><small>Marcus, in your corner, anytime.</small></div></div>
+      </div>
+      <div class="trust" style="margin-top:14px">⭐️⭐️⭐️⭐️⭐️ <b>"Finally an app that adapts to me."</b><br>Cancel anytime · Your data stays yours</div>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Feature showcase below the paywall</b> — grouped by "bends to you." Builds trust = not a scam.</div>
+</div>
+
+</div><!-- /strip -->
+</div>
 
 <script>
   const COPY = {
@@ -1789,8 +3152,10 @@
     shareDailyCar:{chill:"Five compact cars worth of work. That is not a casual Tuesday.",hype:"FIVE CARS OF VOLUME 🔥 You moved today!",direct:"8,900 kg logged. Roughly five compact cars of total volume.",savage:"Five cars moved and somehow you still call this 'just leg day'."},
     shareDailyVending:{chill:"Receipt printed. The machines are stacked because so were the sets.",hype:"PAID IN FULL 🔥 Every set got handled!",direct:"Workout complete. 12 sets, 94 reps, no missed work.",savage:"No dramatic caption needed. You did the workout. Rare behavior."},
     shareDailyPiano:{chill:"That squat crossed piano territory. Strong day.",hype:"PIANO TERRITORY 🔥 That squat got upgraded!",direct:"Goblet Squat PR logged. 105 kg for 6 reps.",savage:"A grand piano called. It wants its weight class back."},
+    shareWeeklyWrapped:{chill:"All sessions done. Annoyingly consistent, in the best way.",hype:"A+ WEEK 🔥 You stayed locked in!",direct:"A+ week. 3/3 sessions completed, 4 PRs logged.",savage:"Well, well. You actually showed up all week."},
     shareWeeklyScore:{chill:"Three planned. Three finished. The habit is working.",hype:"3 FOR 3 🔥 Perfect week, no misses!",direct:"3 planned sessions. 3 completed. Perfect consistency.",savage:"Three workouts. Zero excuses. Suspiciously competent."},
-    shareWeeklyTrophy:{chill:"All sessions done. Annoyingly consistent, in the best way.",hype:"A+ WEEK 🔥 You stayed locked in!",direct:"A+ week. 3/3 sessions completed, 4 PRs logged.",savage:"Well, well. You actually showed up all week."},
+    shareWeeklyGarage:{chill:"That is a whole garage worth of work. Subtle? Absolutely not.",hype:"GARAGE FLEX 🔥 That volume looks expensive!",direct:"12,370 kg lifted this week. 3 sessions, 4 PRs.",savage:"Moved the garage and still probably parked badly."},
+    shareWeeklyMuscle:{chill:"Pull, legs, push. The week left receipts on the body map.",hype:"BUILT THIS WEEK 🔥 Every session left a mark!",direct:"39 sets completed across 3 sessions. Muscle split logged.",savage:"The body map has evidence. Hard to deny you worked."},
     coachAns:{chill:"Chest tall, elbows tucked under the bell, sit straight down between your knees and drive up through your heels. Control the way down.",hype:"Okay let's NAIL this 🔥 Chest up, elbows under the bell, sit straight down, EXPLODE up through the heels!",direct:"Chest up. Elbows under the bell. Sit straight down. Drive through heels. Controlled descent.",savage:"It's not that hard — chest up, elbows under the bell, sit down between your knees, push through your heels. Don't half-rep it."},
     cardioKickoff:{chill:"20 minutes, easy pace. Set the machine, settle in and find your rhythm — I'll keep time.",hype:"20 minutes — LET'S MOVE 🔥 Set it, lock in, and find that rhythm. You've got this!",direct:"20 minutes. Incline 15%, speed 4.5 km/h. Start now and hold the pace.",savage:"20 minutes. Don't drift to a stroll the second I stop watching. Set it. Move."},
     cardioFinish:{chill:"Nice and steady — that's exactly the work. Legs warm, heart happy.",hype:"THAT'S WHAT I'M TALKING ABOUT 🔥 You stayed locked in the whole way!",direct:"Done. 20:00 logged, pace held. Good work.",savage:"Okay, you didn't bail halfway. Barely impressed — faster next time."},
@@ -1810,8 +3175,10 @@
     setCopy('share-daily-car-copy',COPY.shareDailyCar[m]);
     setCopy('share-daily-vending-copy',COPY.shareDailyVending[m]);
     setCopy('share-daily-piano-copy',COPY.shareDailyPiano[m]);
+    setCopy('share-weekly-wrapped-copy',COPY.shareWeeklyWrapped[m]);
     setCopy('share-weekly-score-copy',COPY.shareWeeklyScore[m]);
-    setCopy('share-weekly-trophy-copy',COPY.shareWeeklyTrophy[m]);
+    setCopy('share-weekly-garage-copy',COPY.shareWeeklyGarage[m]);
+    setCopy('share-weekly-muscle-copy',COPY.shareWeeklyMuscle[m]);
     setCopy('coach-ans',COPY.coachAns[m]);
     setCopy('cardio-kickoff',COPY.cardioKickoff[m]);
     setCopy('cardio-finish',COPY.cardioFinish[m]);
@@ -1823,6 +3190,53 @@
     t.classList.add('active');
     document.getElementById('tab-'+t.dataset.tab).classList.add('active');
   }));
+</script>
+<script>
+(function(){
+const strip=document.getElementById('onb-strip');
+  const slots=[...strip.querySelectorAll('.slot')];
+  const bar=document.getElementById('onb-bar'), cur=document.getElementById('onb-cur'), actname=document.getElementById('onb-actname');
+  const total=slots.length;
+  document.getElementById('onb-tot').textContent=total;
+
+  // option selection
+  strip.addEventListener('click',e=>{
+    const opt=e.target.closest('.opt,.chip,.price');
+    if(!opt)return;
+    const group=opt.closest('[data-single],[data-multi]');
+    if(!group)return;
+    if(group.hasAttribute('data-single')){
+      group.querySelectorAll('.opt,.chip,.price').forEach(o=>o.classList.remove('sel'));
+      opt.classList.add('sel');
+    }else{ opt.classList.toggle('sel'); }
+  });
+
+  // progress + counter from scroll position
+  function update(){
+    const c=strip.scrollLeft+strip.clientWidth/2;
+    let idx=0,best=1e9;
+    slots.forEach((s,i)=>{const center=s.offsetLeft+s.offsetWidth/2;const d=Math.abs(center-c);if(d<best){best=d;idx=i;}});
+    cur.textContent=idx+1;
+    actname.textContent=slots[idx].dataset.act;
+    bar.style.width=((idx+1)/total*100)+'%';
+  }
+  strip.addEventListener('scroll',()=>{requestAnimationFrame(update);});
+  function go(i){i=Math.max(0,Math.min(total-1,i));slots[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});}
+  document.getElementById('onb-next').onclick=()=>go(+cur.textContent);     // current is 1-based → next index
+  document.getElementById('onb-prev').onclick=()=>go(+cur.textContent-2);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(+cur.textContent);if(e.key==='ArrowLeft')go(+cur.textContent-2);});
+
+  // trigger animations when a phone scrolls into view
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)en.target.classList.add('inview');}),{root:strip,threshold:.6});
+  strip.querySelectorAll('.phone.anim').forEach(p=>io.observe(p));
+  // strength map: light up segments in sequence when in view
+  const smap=document.querySelector('#tab-onboarding .body');
+  if(smap){const io2=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){
+    const segs=smap.querySelectorAll('.seg');segs.forEach((s,i)=>setTimeout(()=>{s.classList.add('lit');if(i%2)s.classList.add('g');},250*i));
+  }}),{root:strip,threshold:.6});io2.observe(smap.closest('.phone'));}
+
+  update();
+})();
 </script>
 </body>
 </html>
