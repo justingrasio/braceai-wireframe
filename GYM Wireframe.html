@@ -531,6 +531,12 @@
 .onbflow .seqlayer.reveal .bignum .row:nth-child(2){animation-delay:.20s}
 .onbflow .seqlayer.reveal .bignum .row:nth-child(3){animation-delay:.35s}
 @keyframes seqpop{from{opacity:0;transform:translateY(10px)}to{transform:none}}
+/* ── Opal-style promise screen ── */
+.onbflow .promiselist{display:flex;flex-direction:column;gap:15px;margin:4px 0}
+.onbflow .prow{display:flex;gap:12px;align-items:flex-start}
+.onbflow .prow .pico{width:34px;height:34px;border-radius:10px;background:var(--card-2);display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 auto}
+.onbflow .prow b{display:block;font-size:15px;line-height:1.2;margin-bottom:2px}
+.onbflow .prow .psub{display:block;color:var(--txt-dim);font-size:12px;line-height:1.35}
 .onbflow .loadbars{display:flex;flex-direction:column;gap:14px;margin-top:8px}
 .onbflow .lb .lbtop{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;color:#ddd}
 .onbflow .lb .track{height:7px;border-radius:99px;background:#26262b;overflow:hidden}
@@ -3699,30 +3705,39 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
   <div class="slot-cap"><b>One animated screen</b> — Effort Check, then tap → slides to the Daily Check-in. Same flow in-app feels like a smooth onboarding transition, not two cold screens.</div>
 </div>
 
-<div class="slot" data-act="Show the Magic">
-  <span class="act-chip">17 · Demo · Your progress</span>
+<div class="slot" data-act="Reveal · Name">
+  <span class="act-chip">16b · Name (moved up)</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr">
-      <div class="previewtag">✨ MARCUS TRACKS EVERYTHING</div>
-      <div class="coach"><div class="av"></div><div class="bubble"><div class="nm">MARCUS</div>I log every rep — so you can watch yourself get stronger. Here’s where you’re headed.</div></div>
-      <div class="ftbox" style="text-align:center">
-        <div class="mhead" style="justify-content:center">Strength rank</div>
-        <div style="font-size:26px;font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.5px">TITAN</div>
-        <div class="obslider" style="margin:12px 4px 6px"><div class="fillb" style="width:65%"></div><div class="knob" style="left:65%"></div></div>
-        <div style="font-size:11px;color:var(--txt-dim);font-weight:700">210 / 320 XP to next rank</div>
-      </div>
-      <div class="ftbox" style="border-color:var(--brand);background:#1a0f0c">
-        <div class="mhead"><span class="d"></span>New personal record · Goblet Squat</div>
-        <div style="display:flex;align-items:center;gap:9px;font-weight:900;font-style:italic;font-size:18px">
-          <span style="color:var(--txt-dim)">100 kg</span><span style="color:var(--brand)">→ 105 kg</span>
-          <span style="margin-left:auto;background:var(--green-deep);color:#7ef0a8;font-size:9px;font-weight:800;padding:4px 8px;border-radius:999px;letter-spacing:.4px">▲ 5 KG</span>
-        </div>
-      </div>
-      <p class="sub">Every session feeds your Strength Map. You climb the ranks — I keep the numbers moving.</p>
+      <h1 class="q">Quick one —<br>what should I<br><em>call you?</em></h1>
+      <p class="sub">So everything coming next is yours.</p>
+      <input class="field" id="onbName" placeholder="Your first name" autocomplete="off">
+      <div class="spacer"></div>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
-  <div class="slot-cap"><b>Progress preview</b> (image 2) — the coach sees your progress, and so do you. Strength Rank + PRs are the payoff hook.</div>
+  <div class="slot-cap"><b>Name moved up</b> — asked right after the coach demo, so the promise + plan can use it.</div>
+</div>
+
+<div class="slot" data-act="Show the Magic">
+  <span class="act-chip">17 · Demo · Your promise</span>
+  <div class="phone promisephone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+    <div class="scr">
+      <div class="spacer" style="flex:0 0 8px"></div>
+      <h1 class="q" style="text-align:center;font-size:24px;line-height:1.25"><span class="pname">Alex</span>, you'll<br><em class="g goalphrase">build real muscle</em><br>in 12 weeks.</h1>
+      <div class="spacer"></div>
+      <div class="promiselist">
+        <div class="prow"><div class="pico">🎯</div><div><b class="goalhead">Build muscle — in 12 weeks</b><span class="psub">A 4-week build → peak cycle aimed at exactly that.</span></div></div>
+        <div class="prow"><div class="pico">📈</div><div><b class="proofhead">Bench 60 → 80kg</b><span class="psub">Progressive overload — I add load the moment you're ready.</span></div></div>
+        <div class="prow"><div class="pico">🔄</div><div><b>You never stall</b><span class="psub">Every set adapts: too easy I push, sore I ease off.</span></div></div>
+      </div>
+      <div class="spacer"></div>
+      <p class="sub" style="text-align:center;margin-bottom:6px">Every piece below is built around that one goal.</p>
+      <div class="pnote">⚑ PLACEHOLDER — PT-validated ranges (open-item #3).</div>
+      <button class="btn btn-white promise-cta">👊 Let's do this</button>
+    </div>
+  </div>
+  <div class="slot-cap"><b>Promise</b> (Opal-style) — name + their goal up top, three goal-centric proofs that they'll actually get there. The payoff that earns the paywall.</div>
 </div>
 
 <div class="slot" data-act="Commit">
@@ -3787,25 +3802,11 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
   <div class="slot-cap">Anticipation loader (Caliber/BetterMe).</div>
 </div>
 
-<div class="slot" data-act="Reveal · Name">
-  <span class="act-chip">30 · Name (moved here)</span>
-  <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-    <div class="scr">
-      <h1 class="q">Last thing — what<br>should your coach<br>call you?</h1>
-      <p class="sub">Your plan's ready. Let's make it yours.</p>
-      <div class="field ph">Your first name</div>
-      <div class="spacer"></div>
-      <button class="btn btn-white">See my plan</button>
-    </div>
-  </div>
-  <div class="slot-cap"><b>Name moved to here</b> — asked after buy-in, not before value.</div>
-</div>
-
 <div class="slot" data-act="Reveal · Plan">
   <span class="act-chip">31 · Plan reveal</span>
   <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
     <div class="scr" style="overflow-y:auto">
-      <h1 class="q" style="font-size:22px">Alex, your plan<br>is ready. 🎉</h1>
+      <h1 class="q" style="font-size:22px"><span class="pname">Alex</span>, your plan<br>is ready. 🎉</h1>
       <div class="sumcard">
         <div class="sumrow"><span class="k">Goal</span><span class="v">Build muscle</span></div>
         <div class="sumrow"><span class="k">Plan</span><span class="v">4-week build → peak</span></div>
@@ -4222,6 +4223,41 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
     io.observe(phone);
   }
   document.querySelectorAll('.seqphone').forEach(setup);
+})();
+</script>
+<script>
+/* Opal-style promise screen — personalised off window.S (name + goal). */
+(function(){
+  // goal -> {phrase (headline), head (bullet 1), proof (bullet 2 metric)}
+  const goalMap={
+    'Build muscle':{phrase:'build real muscle',head:'Build muscle — in 12 weeks',proof:'Bench 60 → 80kg'},
+    'Get stronger':{phrase:'get noticeably stronger',head:'Get stronger — in 12 weeks',proof:'Bench 60 → 80kg'},
+    'Build strength':{phrase:'build real strength',head:'Build strength — in 12 weeks',proof:'Bench 60 → 80kg'},
+    'Get lean & defined':{phrase:'get lean & defined',head:'Lean & defined — in 12 weeks',proof:'−6kg fat, muscle kept'},
+    'Lose weight':{phrase:'lose the weight for good',head:'Lose weight — in 12 weeks',proof:'−8kg, down to target'},
+    'Tone & sculpt':{phrase:'tone & sculpt',head:'Tone & sculpt — in 12 weeks',proof:'Defined, not bulky'},
+    'Stay fit':{phrase:'stay fit & consistent',head:'Stay fit — week after week',proof:'Fitter every week'}
+  };
+  function nameVal(){ const n=(window.S&&window.S.name||'').trim(); return n||'Alex'; }
+  // keep every .pname in sync (promise headline + plan reveal)
+  function syncNames(){ document.querySelectorAll('.pname').forEach(el=>el.textContent=nameVal()); }
+  const input=document.getElementById('onbName');
+  if(input) input.addEventListener('input',()=>{ window.S=window.S||{}; window.S.name=input.value; syncNames(); });
+
+  function fillPromise(phone){
+    const S=window.S||{};
+    const g=goalMap[S.goal]||{phrase:(S.goal||'hit your goal'),head:((S.goal||'Your goal')+' — in 12 weeks'),proof:'Steady, measurable gains'};
+    const set=(sel,txt)=>{const e=phone.querySelector(sel);if(e)e.textContent=txt;};
+    set('.goalphrase',g.phrase); set('.goalhead',g.head); set('.proofhead',g.proof);
+    syncNames();
+  }
+  document.querySelectorAll('.promisephone').forEach(phone=>{
+    const strip=phone.closest('.strip'), slot=phone.closest('.slot');
+    const cta=phone.querySelector('.promise-cta');
+    if(cta) cta.addEventListener('click',()=>{const slots=[...strip.querySelectorAll('.slot')];const idx=slots.indexOf(slot);if(strip._go)strip._go(idx+1);});
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)fillPromise(phone);}),{root:strip,threshold:.5});
+    io.observe(phone);
+  });
 })();
 </script>
 </body>
