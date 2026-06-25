@@ -516,6 +516,21 @@
 .onbflow .legend{display:flex;justify-content:center;gap:7px;margin-top:8px;flex-wrap:wrap}
 .onbflow .legend span{font-size:9.5px;color:var(--txt-dim);padding:3px 8px;border-radius:99px;background:var(--card)}
 .onbflow .scan-txt{text-align:center;color:var(--brand);font-weight:800;font-size:13px;letter-spacing:.5px;margin-top:6px}
+/* ── Opal-style trade-off sequence (hook → bad → good) ── */
+.onbflow .seqlayer{position:absolute;inset:0;padding:8px 20px 18px;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .5s}
+.onbflow .seqlayer.on{opacity:1;pointer-events:auto}
+.onbflow .q em.g{color:var(--green);font-style:italic}
+.onbflow .bignum{text-align:center;display:flex;flex-direction:column;gap:2px}
+.onbflow .bignum .row{font-weight:800;font-size:22px;line-height:1.05;color:var(--txt-dim);opacity:.45;letter-spacing:-.5px}
+.onbflow .bignum .row.big{font-size:42px;opacity:1;margin:2px 0}
+.onbflow .seqlayer.bad .bignum .big{color:var(--brand)}
+.onbflow .seqlayer.good .bignum .big{color:var(--green)}
+.onbflow .seqlayer .goal{color:var(--brand)}
+.onbflow .seqlayer.reveal .bignum .row{animation:seqpop .5s both}
+.onbflow .seqlayer.reveal .bignum .row:nth-child(1){animation-delay:.05s}
+.onbflow .seqlayer.reveal .bignum .row:nth-child(2){animation-delay:.20s}
+.onbflow .seqlayer.reveal .bignum .row:nth-child(3){animation-delay:.35s}
+@keyframes seqpop{from{opacity:0;transform:translateY(10px)}to{transform:none}}
 .onbflow .loadbars{display:flex;flex-direction:column;gap:14px;margin-top:8px}
 .onbflow .lb .lbtop{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:6px;color:#ddd}
 .onbflow .lb .track{height:7px;border-radius:99px;background:#26262b;overflow:hidden}
@@ -3407,25 +3422,40 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
     <div class="slot-cap"><b>Chat</b> = Cards 6, 10, 11 — what's stopped you (multi) → experience → push-ups baseline.</div>
   </div>
 
-  <div class="slot" data-act="Pause · Scan">
-    <span class="act-chip">Pause · 12 starting-point scan</span>
-    <div class="phone anim"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-      <div class="scr">
-        <h1 class="q" style="text-align:center">Reading your<br><em>starting point…</em></h1>
-        <div class="bodywrap">
-          <svg class="body" viewBox="0 0 120 220">
-            <circle class="seg" cx="60" cy="18" r="13"/><rect class="seg s1" x="40" y="34" width="40" height="34" rx="10"/>
-            <rect class="seg s2" x="44" y="70" width="32" height="32" rx="8"/><rect class="seg s1" x="18" y="38" width="15" height="50" rx="7"/>
-            <rect class="seg s1" x="87" y="38" width="15" height="50" rx="7"/><rect class="seg s3" x="43" y="106" width="15" height="64" rx="7"/>
-            <rect class="seg s3" x="62" y="106" width="15" height="64" rx="7"/>
-          </svg>
+  <div class="slot" data-act="Pause · The trade-off">
+    <span class="act-chip">Pause · 12 the trade-off</span>
+    <div class="phone seqphone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+      <div class="scr" style="position:relative;padding:0">
+        <!-- 1 · hook (auto-advances) -->
+        <div class="seqlayer hook" data-seq="hook">
+          <div class="spacer"></div>
+          <h1 class="q" style="text-align:center;font-size:24px;line-height:1.25">Some <em>not-so-good</em> news,<br>and some <em class="g">great</em> news.</h1>
+          <div class="spacer"></div>
         </div>
-        <div class="scan-txt">Mapping 12 muscle groups…</div>
-        <div class="legend"><span>Rookie</span><span>Practiced</span><span>Expert</span><span>Elite</span><span>World Class</span></div>
-        <div class="spacer"></div>
+        <!-- 2 · bad news (time wasted) -->
+        <div class="seqlayer bad" data-seq="bad">
+          <h1 class="q" style="text-align:center;font-size:19px;line-height:1.3">The not-so-good news —<br>keep going <em>without a plan</em>…</h1>
+          <div class="spacer"></div>
+          <p class="sub" style="text-align:center;margin-bottom:2px">and you're on track to spend</p>
+          <div class="bignum"><div class="row" data-num="lo"></div><div class="row big" data-num="mid"></div><div class="row" data-num="hi"></div></div>
+          <p class="sub" style="text-align:center;margin-top:2px">just chasing <b class="goal">your goal</b> and seeing barely anything back.</p>
+          <div class="spacer"></div>
+          <div class="pnote">⚑ PLACEHOLDER — PT-validated ranges (open-item #3).</div>
+          <button class="btn btn-white seqcta" data-go="good">Fix this</button>
+        </div>
+        <!-- 3 · good news (Brace payoff) -->
+        <div class="seqlayer good" data-seq="good">
+          <h1 class="q" style="text-align:center;font-size:19px;line-height:1.3">The good news —<br>with <em class="g">Brace</em> you could get there in</h1>
+          <div class="spacer"></div>
+          <div class="bignum"><div class="row" data-num="lo"></div><div class="row big" data-num="mid"></div><div class="row" data-num="hi"></div></div>
+          <p class="sub" style="text-align:center;margin-top:2px">training <b class="goal">around your body</b>, not against it — every session adapting to you.</p>
+          <div class="spacer"></div>
+          <div class="pnote">⚑ PLACEHOLDER — PT-validated ranges (open-item #3).</div>
+          <button class="btn btn-white seqcta" data-go="next">Continue</button>
+        </div>
       </div>
     </div>
-    <div class="slot-cap"><b>Pause</b> = Cards 12. Animated scan builds anticipation.</div>
+    <div class="slot-cap"><b>Pause</b> = replaces Cards 12 scan. Opal-style hook → auto-reveal of time <b>wasted</b> (personalised) → CTA flips to Brace's payoff. Flows into the Pause · 13 projection.</div>
   </div>
 
   <div class="slot" data-act="Pause · Projection">
@@ -3525,6 +3555,37 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       </div>
     </div>
     <div class="slot-cap"><b>Pause</b> = Cards 24. Neutral "Brace" voice (persona not picked yet).</div>
+  </div>
+
+  <div class="slot" data-act="Pause · Notifications">
+    <span class="act-chip">Pause · 24b notifications</span>
+    <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+      <div class="scr">
+        <div style="height:36px"></div>
+        <h1 class="q" style="text-align:center">Allow <em>Brace</em> to nudge you. You can always turn this off later.</h1>
+        <div class="spacer"></div>
+        <!-- highlighted iOS permission prompt -->
+        <div style="border:2px solid var(--green);border-radius:22px;padding:14px;box-shadow:0 0 24px rgba(47,217,109,.25)">
+          <div style="background:#2a2a2e;border-radius:16px;overflow:hidden;text-align:center">
+            <div style="padding:18px 18px 14px">
+              <div style="font-weight:800;font-size:16px;color:#fff;line-height:1.25">&ldquo;Brace&rdquo; Would Like to Send You Notifications</div>
+              <div style="font-size:13px;color:#9a9aa0;margin-top:8px;line-height:1.35">Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.</div>
+            </div>
+            <div style="display:flex;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="flex:1;padding:13px 0;font-size:15px;color:#9a9aa0;border-right:1px solid rgba(255,255,255,.12)">Don't Allow</div>
+              <div style="flex:1;padding:13px 0;font-size:15px;font-weight:700;color:#fff">Allow</div>
+            </div>
+          </div>
+        </div>
+        <svg width="60" height="56" viewBox="0 0 60 56" style="display:block;margin:6px auto 0" fill="none">
+          <path d="M30 54 C30 30 18 20 8 14" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M8 14 L18 16 M8 14 L12 25" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="spacer"></div>
+        <button class="btn btn-white">Continue</button>
+      </div>
+    </div>
+    <div class="slot-cap"><b>Permission priming.</b> Soft-ask before the real iOS prompt — frames notifications as coach "nudges," promises an off-switch to lift the Allow rate.</div>
   </div>
 
 
@@ -3981,7 +4042,7 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
 /* Opal-style conversational engine — multi-instance, data-driven.
    Add a question to any cluster below, or a new cluster keyed to a .scr.convo[data-convo]. */
 (function(){
-  const S={}; // shared answers across all clusters in this flow
+  const S={}; window.S=S; // shared answers across all clusters in this flow (exposed for the trade-off sequence)
 
   const goalOpts=()=> S.gender==='Female'
     ? [{l:'Lose weight'},{l:'Tone & sculpt'},{l:'Build strength'},{l:'Stay fit'}]
@@ -4106,6 +4167,61 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
   window.addEventListener('scroll',kick,{passive:true});
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>setTimeout(kick,90)));
   kick();
+})();
+</script>
+<script>
+/* Opal-style trade-off sequence: hook → (auto) bad → (CTA) good → next slot.
+   Personalised off window.S; replays each time the phone scrolls into view. */
+(function(){
+  function personalize(){
+    const S=window.S||{};
+    const wasteMap={'Brand new':20,'Some experience':18,'Experienced':16,'Expert':14};
+    let waste=wasteMap[S.exp]||18;
+    if(Array.isArray(S.stopped)) waste+=Math.min(S.stopped.length,6);
+    const fastMap={'Steady':8,'Committed':6,'All-in':5};
+    const fast=fastMap[S.intensity]||6;
+    const goal=(S.goal||'your goal');
+    return {waste,fast,goal};
+  }
+  function setup(phone){
+    const layers={};
+    phone.querySelectorAll('.seqlayer').forEach(l=>layers[l.dataset.seq]=l);
+    const slot=phone.closest('.slot'), strip=phone.closest('.strip');
+    let timer=null;
+    function show(name){
+      Object.values(layers).forEach(l=>{l.classList.remove('on');l.classList.remove('reveal');});
+      const l=layers[name]; l.classList.add('on');
+      if(name!=='hook'){ void l.offsetWidth; l.classList.add('reveal'); }
+    }
+    function fill(){
+      const p=personalize();
+      const stack=(layer,lo,mid,hi)=>{
+        layer.querySelector('[data-num="lo"]').textContent=lo+' months';
+        layer.querySelector('[data-num="mid"]').textContent=mid;
+        layer.querySelector('[data-num="hi"]').textContent=hi+' months';
+      };
+      // bad-news stack: waste-2 / waste / waste+2  (middle big, just the number)
+      stack(layers.bad, p.waste-2, p.waste+' months', p.waste+2);
+      // good-news stack: fast-1 / fast+ / fast+1
+      stack(layers.good, p.fast-1, p.fast+' months+', p.fast+1);
+      slot.querySelectorAll('.bad .goal').forEach(g=>g.textContent=p.goal);
+    }
+    function play(){
+      clearTimeout(timer);
+      fill(); show('hook');
+      timer=setTimeout(()=>show('bad'),2200);
+    }
+    phone.querySelectorAll('.seqcta').forEach(b=>b.addEventListener('click',()=>{
+      const go=b.dataset.go;
+      if(go==='good'){show('good');}
+      else{ const slots=[...strip.querySelectorAll('.slot')];const idx=slots.indexOf(slot);if(strip._go)strip._go(idx+1); }
+    }));
+    const io=new IntersectionObserver(es=>es.forEach(en=>{
+      if(en.isIntersecting) play(); else clearTimeout(timer);
+    }),{root:strip,threshold:.6});
+    io.observe(phone);
+  }
+  document.querySelectorAll('.seqphone').forEach(setup);
 })();
 </script>
 </body>
