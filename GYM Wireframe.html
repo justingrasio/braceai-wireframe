@@ -651,8 +651,8 @@
   .onbflow .rankrow.cur{border-color:var(--brand);background:#2a1512}
   .onbflow .rankrow.cur .rkx{color:var(--brand)}
   /* blurred plan-reveal paywall (merged recap + paywall) */
-  .onbflow .repcard{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:13px;margin-bottom:10px;position:relative;overflow:hidden}
-  .onbflow .repcard.hero{background:linear-gradient(160deg,#2a1512,#101012);border-color:#3a201c}
+  .onbflow .repcard{background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:13px;margin-bottom:10px;position:relative;overflow:hidden;flex-shrink:0}
+  .onbflow .repcard.hero{background:linear-gradient(160deg,#2a1512,#101012);border-color:#3a201c;height:auto;justify-content:flex-start}
   .onbflow .rephd{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:800;margin-bottom:10px}
   .onbflow .rephd .lockchip{font-size:9px;font-weight:800;color:var(--brand);background:#2a1512;border:1px solid #5a2a22;padding:3px 8px;border-radius:999px;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
   .onbflow .blur{filter:blur(5px);pointer-events:none;user-select:none}
@@ -3258,7 +3258,6 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
         <div class="rankrow cur"><span class="rk">🔰</span>Initiate<span class="rkx">You're here</span></div>
       </div>
       <div class="spacer"></div>
-      <button class="btn btn-dark">Share my rank</button>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
@@ -3273,37 +3272,75 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       <h1 class="q" style="text-align:center;font-size:21px">Your plan is <em>built</em>.</h1>
       <p class="sub" style="text-align:center;margin-bottom:12px">Marcus mapped out every session to hit your goal. Unlock to see what you’ll actually do.</p>
 
+      <!-- Goal projection — JustFit-style date promise + rising curve -->
       <div class="repcard hero">
-        <div class="rephd"><span>📈 Your 12-week projection</span><span class="lockchip" style="color:#7ef0a8;background:#0f2a18;border-color:#1c5a34">94% match</span></div>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--txt-dim);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Now</div><div style="font-size:15px;font-weight:900;font-style:italic">🔰 INITIATE</div></div>
-          <div style="color:var(--brand);font-size:20px;font-weight:900">→</div>
-          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--brand);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Week 12</div><div style="font-size:15px;font-weight:900;font-style:italic;color:var(--brand)">💠 VANGUARD</div></div>
+        <div class="rephd"><span>📈 Based on your plan</span><span class="lockchip" style="color:#7ef0a8;background:#0f2a18;border-color:#1c5a34">94% match</span></div>
+        <div style="text-align:center;margin:4px 0 2px">
+          <div style="font-size:13px;color:var(--txt-dim);font-weight:700">You'll build visible muscle by</div>
+          <div style="font-size:27px;font-weight:900;font-style:italic;color:var(--brand);letter-spacing:-.5px;line-height:1.1">Jul 23</div>
         </div>
+        <svg viewBox="0 0 280 108" preserveAspectRatio="none" width="280" height="108" style="width:100%;height:108px;flex:none;display:block;margin:4px 0 2px">
+          <defs>
+            <linearGradient id="projfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ff553a" stop-opacity=".34"/>
+              <stop offset="1" stop-color="#ff553a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 80 C70 76 92 62 132 56 C172 50 204 34 250 22 L250 92 L20 92 Z" fill="url(#projfill)"/>
+          <path d="M20 80 C70 76 92 62 132 56 C172 50 204 34 250 22" fill="none" stroke="#ff553a" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="20" cy="80" r="4.5" fill="#fff"/>
+          <circle cx="132" cy="56" r="4.5" fill="#fff"/>
+          <circle cx="250" cy="22" r="5.5" fill="#ff553a" stroke="#fff" stroke-width="2"/>
+          <text x="20" y="104" fill="#7a7a82" font-size="10" font-weight="700" text-anchor="start">Today</text>
+          <text x="132" y="104" fill="#7a7a82" font-size="10" font-weight="700" text-anchor="middle">Week 2</text>
+          <text x="250" y="104" fill="#ff553a" font-size="10" font-weight="800" text-anchor="end">Week 4</text>
+        </svg>
+        <div style="font-size:11px;color:var(--txt-dim);font-weight:600;line-height:1.45;margin-top:4px"><b style="color:#fff">83%</b> of people with your starting point hit their first strength jump within <b style="color:#fff">3 weeks</b>.</div>
       </div>
 
+      <!-- Plan content — recaps their answers (proves personalisation) -->
       <div class="repcard">
-        <div class="rephd"><span>🏋️ Week 1 · your workouts</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="rephd"><span>🗂️ Your plan content</span></div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg class="body" viewBox="0 0 120 220" style="width:50px;flex:0 0 auto">
+            <circle class="seg" cx="60" cy="18" r="13"/>
+            <rect class="seg sel" x="40" y="34" width="40" height="20" rx="8"/>
+            <rect class="seg" x="44" y="56" width="32" height="34" rx="8"/>
+            <rect class="seg sel" x="18" y="38" width="15" height="50" rx="7"/>
+            <rect class="seg sel" x="87" y="38" width="15" height="50" rx="7"/>
+            <rect class="seg" x="43" y="106" width="15" height="64" rx="7"/>
+            <rect class="seg" x="62" y="106" width="15" height="64" rx="7"/>
+          </svg>
+          <div style="flex:1;display:flex;flex-direction:column;gap:9px">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">🎯 Focus</span><b style="color:#fff">Chest · Arms</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">⏱️ Session</span><b style="color:#fff">45 min</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">📅 Per week</span><b style="color:#fff">4 days</b></div>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--stroke);margin:11px 0"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:9px"><span style="color:var(--txt-dim);font-weight:700">🛡️ Protects</span><b style="color:#fff">Knees · Lower back</b></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">🎙️ Coach</span><b style="color:#fff">Marcus · Direct</b></div>
+      </div>
+
+      <!-- Plan preview — week-by-week, blurred (curiosity gap) -->
+      <div class="repcard">
+        <div class="rephd"><span>🏋️ Plan preview · 3 weeks</span><span class="lockchip">🔒 Locked</span></div>
         <div class="blur">
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:2px 0 6px">Week 1 · Foundation</div>
           <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Goblet Squat</div><div class="ex-meta">3 sets · 10 reps · 17.5 kg</div></div></div>
           <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Romanian Deadlift</div><div class="ex-meta">3 sets · 8 reps · 40 kg</div></div></div>
-          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Walking Lunge</div><div class="ex-meta">3 sets · 12 reps each leg</div></div></div>
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 6px">Week 2 · Build</div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Incline Dumbbell Press</div><div class="ex-meta">4 sets · 10 reps · 22.5 kg</div></div></div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Bent-Over Row</div><div class="ex-meta">4 sets · 10 reps · 45 kg</div></div></div>
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 6px">Week 3 · Overload</div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Bulgarian Split Squat</div><div class="ex-meta">3 sets · 12 reps each leg</div></div></div>
         </div>
       </div>
 
-      <div class="repcard">
-        <div class="rephd"><span>📊 Strength projection</span><span class="lockchip">🔒 Locked</span></div>
-        <div class="blur"><div class="chart"><div class="col"><div class="barb" style="height:35%"></div><div class="wk">W1</div></div><div class="col"><div class="barb" style="height:52%"></div><div class="wk">W3</div></div><div class="col"><div class="barb" style="height:68%"></div><div class="wk">W6</div></div><div class="col"><div class="barb" style="height:84%"></div><div class="wk">W9</div></div><div class="col"><div class="barb" style="height:100%"></div><div class="wk">W12</div></div></div></div>
-      </div>
-
+      <!-- Coach focus — locked tease of Coach Mode -->
       <div class="repcard">
         <div class="rephd"><span>💬 Marcus’s focus for you</span><span class="lockchip">🔒 Locked</span></div>
         <div class="tipbox blur"><div class="tl">Coach tip</div><div class="skel" style="width:100%"></div><div class="skel" style="width:92%"></div><div class="skel" style="width:58%"></div></div>
-      </div>
-
-      <div class="repcard">
-        <div class="rephd"><span>🎯 Your top priorities</span><span class="lockchip">🔒 Locked</span></div>
-        <div class="blur"><div class="skel" style="width:64%;height:12px"></div><div class="skel" style="width:96%"></div><div class="skel" style="width:88%"></div><div class="skel" style="width:70%;height:12px;margin-top:14px"></div><div class="skel" style="width:93%"></div></div>
       </div>
 
       <div class="minirev"><div class="av"></div><div><div class="nm">Marcus, 26 <span class="stars">★★★★★</span></div><p>"First plan I actually stuck to. +18kg bench in 4 months."</p></div></div>
@@ -3318,7 +3355,7 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       </div>
     </div>
   </div>
-  <div class="slot-cap"><b>Merged recap + paywall</b> (BetterMe / Ansera style) — the real plan shown but <b>blurred</b> to spike curiosity; sticky trial CTA unlocks it. Projection ties to the rank ladder.</div>
+  <div class="slot-cap"><b>Merged recap + paywall</b> (JustFit style) — <b>goal+date promise</b> on top, <b>plan content</b> recaps their answers (focus, session, days, injuries, coach), the <b>weekly plan stays blurred</b> to spike curiosity; sticky trial CTA unlocks it.</div>
 </div>
 </div><!-- /strip -->
 </div><!-- /onb-section cards -->
@@ -3346,19 +3383,19 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
   </div>
 
   <div class="slot" data-act="Pause · Body">
-    <span class="act-chip">Pause · 4 current body</span>
+    <span class="act-chip">Pause · 4 current body (adapts to goal)</span>
     <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
       <div class="scr">
         <h1 class="q">Where are you<br>starting from?</h1>
-        <p class="sub">No judgement — just a starting point.</p>
-        <div class="imgph bodyfig">body<br>(morphs with slider)</div>
-        <div class="obslider"><div class="fillb" style="width:55%"></div><div class="knob" style="left:55%"></div></div>
-        <div class="slabels"><span>Lean</span><span>Average</span><span>Heavier</span></div>
+        <p class="sub">Building muscle — no judgement, just your starting point.</p>
+        <div class="imgph bodyfig">body<br>(morphs along your<br>goal's axis)</div>
+        <div class="obslider"><div class="fillb" style="width:38%"></div><div class="knob" style="left:38%"></div></div>
+        <div class="slabels"><span>Untrained</span><span>Average</span><span>Built</span></div>
         <div class="spacer"></div>
         <button class="btn btn-white">Continue</button>
       </div>
     </div>
-    <div class="slot-cap"><b>Pause</b> = Cards 4. Chat breaks to the body-composition slider, then resumes.</div>
+    <div class="slot-cap"><b>Pause = Cards 4 · adapts to goal.</b> The slider axis swaps so the screen is meaningful for every goal — <b>Lose weight / Get lean / Stay fit</b> → Lean·Average·Heavier (body fat); <b>Build muscle / Get stronger / Build strength</b> → Untrained·Average·Built <i>(shown)</i>; <b>Tone &amp; sculpt</b> → Soft·Average·Toned. The figure morphs along that axis; the desired-body screen mirrors it.</div>
   </div>
 
   <div class="slot" data-act="Chat · Profile">
@@ -3374,15 +3411,15 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
     <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
       <div class="scr">
         <h1 class="q">And where do you<br>want to <em>be?</em></h1>
-        <div class="imgph bodyfig">MALE body<br>(target = leaner/bigger)</div>
-        <div class="obslider"><div class="fillb" style="width:22%"></div><div class="knob" style="left:22%"></div></div>
-        <div class="slabels"><span>Lean</span><span>Average</span><span>Heavier</span></div>
-        <div class="pnote">⚑ We store the gap (current → desired). It drives the projection.</div>
+        <div class="imgph bodyfig">target body<br>(more built)</div>
+        <div class="obslider"><div class="fillb" style="width:78%"></div><div class="knob" style="left:78%"></div></div>
+        <div class="slabels"><span>Untrained</span><span>Average</span><span>Built</span></div>
+        <div class="pnote">⚑ Same goal axis as the start screen — knob defaults to the goal's target end. We store the gap (current → desired); it drives the projection.</div>
         <div class="spacer"></div>
         <button class="btn btn-white">Continue</button>
       </div>
     </div>
-    <div class="slot-cap"><b>Pause</b> = Cards 5. Same slider set to target; stores the gap.</div>
+    <div class="slot-cap"><b>Pause = Cards 5 · mirrors the start screen's axis.</b> Knob defaults to the goal's target end (Built for muscle/strength, Lean for fat-loss, Toned for tone). Stores the gap (current → desired) → projection.</div>
   </div>
 
   <div class="slot" data-act="Chat · Intensity">
@@ -3524,6 +3561,38 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
     <div class="slot-cap"><b>Chat</b> = Cards 19, 20, 21, Duration, Schedule — same options.</div>
   </div>
 
+  <div class="slot" data-act="Pause · Notifications">
+    <span class="act-chip">Pause · sched → notifications</span>
+    <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
+      <div class="scr">
+        <div style="height:36px"></div>
+        <h1 class="q" style="text-align:center">I'll nudge you to train <em>after work</em> — never during it.</h1>
+        <p class="sub" style="text-align:center">Now that I know your schedule, let me remind you at the right time. Turn it off anytime.</p>
+        <div class="spacer"></div>
+        <!-- highlighted iOS permission prompt -->
+        <div style="border:2px solid var(--green);border-radius:22px;padding:14px;box-shadow:0 0 24px rgba(47,217,109,.25)">
+          <div style="background:#2a2a2e;border-radius:16px;overflow:hidden;text-align:center">
+            <div style="padding:18px 18px 14px">
+              <div style="font-weight:800;font-size:16px;color:#fff;line-height:1.25">&ldquo;Brace&rdquo; Would Like to Send You Notifications</div>
+              <div style="font-size:13px;color:#9a9aa0;margin-top:8px;line-height:1.35">Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.</div>
+            </div>
+            <div style="display:flex;border-top:1px solid rgba(255,255,255,.12)">
+              <div style="flex:1;padding:13px 0;font-size:15px;color:#9a9aa0;border-right:1px solid rgba(255,255,255,.12)">Don't Allow</div>
+              <div style="flex:1;padding:13px 0;font-size:15px;font-weight:700;color:#fff">Allow</div>
+            </div>
+          </div>
+        </div>
+        <svg width="60" height="56" viewBox="0 0 60 56" style="display:block;margin:6px auto 0" fill="none">
+          <path d="M30 54 C30 30 18 20 8 14" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M8 14 L18 16 M8 14 L12 25" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="spacer"></div>
+        <button class="btn btn-white">Continue</button>
+      </div>
+    </div>
+    <div class="slot-cap"><b>Permission priming</b> — placed right after the schedule answer so the ask is contextual ("nudge you after work"). Soft-ask before the real iOS prompt; promises an off-switch to lift the Allow rate.</div>
+  </div>
+
   <div class="slot" data-act="Pause · Injury">
     <span class="act-chip">Pause · 23 injury map</span>
     <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
@@ -3562,38 +3631,6 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
     </div>
     <div class="slot-cap"><b>Pause</b> = Cards 24. Neutral "Brace" voice (persona not picked yet).</div>
   </div>
-
-  <div class="slot" data-act="Pause · Notifications">
-    <span class="act-chip">Pause · 24b notifications</span>
-    <div class="phone"><div class="statusbar"><span>9:41</span><span class="dots">●●● ⌃ ▰</span></div>
-      <div class="scr">
-        <div style="height:36px"></div>
-        <h1 class="q" style="text-align:center">Allow <em>Brace</em> to nudge you. You can always turn this off later.</h1>
-        <div class="spacer"></div>
-        <!-- highlighted iOS permission prompt -->
-        <div style="border:2px solid var(--green);border-radius:22px;padding:14px;box-shadow:0 0 24px rgba(47,217,109,.25)">
-          <div style="background:#2a2a2e;border-radius:16px;overflow:hidden;text-align:center">
-            <div style="padding:18px 18px 14px">
-              <div style="font-weight:800;font-size:16px;color:#fff;line-height:1.25">&ldquo;Brace&rdquo; Would Like to Send You Notifications</div>
-              <div style="font-size:13px;color:#9a9aa0;margin-top:8px;line-height:1.35">Notifications may include alerts, sounds, and icon badges. These can be configured in Settings.</div>
-            </div>
-            <div style="display:flex;border-top:1px solid rgba(255,255,255,.12)">
-              <div style="flex:1;padding:13px 0;font-size:15px;color:#9a9aa0;border-right:1px solid rgba(255,255,255,.12)">Don't Allow</div>
-              <div style="flex:1;padding:13px 0;font-size:15px;font-weight:700;color:#fff">Allow</div>
-            </div>
-          </div>
-        </div>
-        <svg width="60" height="56" viewBox="0 0 60 56" style="display:block;margin:6px auto 0" fill="none">
-          <path d="M30 54 C30 30 18 20 8 14" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M8 14 L18 16 M8 14 L12 25" stroke="var(--green)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="spacer"></div>
-        <button class="btn btn-white">Continue</button>
-      </div>
-    </div>
-    <div class="slot-cap"><b>Permission priming.</b> Soft-ask before the real iOS prompt — frames notifications as coach "nudges," promises an off-switch to lift the Allow rate.</div>
-  </div>
-
 
   <!-- ===== downstream (copied from Cards, content unchanged) ===== -->
 <div class="slot" data-act="Setup · Coach">
@@ -3843,7 +3880,6 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
         <div class="rankrow cur"><span class="rk">🔰</span>Initiate<span class="rkx">You're here</span></div>
       </div>
       <div class="spacer"></div>
-      <button class="btn btn-dark">Share my rank</button>
       <button class="btn btn-white">Continue</button>
     </div>
   </div>
@@ -3858,37 +3894,75 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       <h1 class="q" style="text-align:center;font-size:21px">Your plan is <em>built</em>.</h1>
       <p class="sub" style="text-align:center;margin-bottom:12px">Marcus mapped out every session to hit your goal. Unlock to see what you’ll actually do.</p>
 
+      <!-- Goal projection — JustFit-style date promise + rising curve -->
       <div class="repcard hero">
-        <div class="rephd"><span>📈 Your 12-week projection</span><span class="lockchip" style="color:#7ef0a8;background:#0f2a18;border-color:#1c5a34">94% match</span></div>
-        <div style="display:flex;align-items:center;gap:10px">
-          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--txt-dim);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Now</div><div style="font-size:15px;font-weight:900;font-style:italic">🔰 INITIATE</div></div>
-          <div style="color:var(--brand);font-size:20px;font-weight:900">→</div>
-          <div style="flex:1;text-align:center"><div style="font-size:9px;color:var(--brand);font-weight:800;text-transform:uppercase;letter-spacing:.3px">Week 12</div><div style="font-size:15px;font-weight:900;font-style:italic;color:var(--brand)">💠 VANGUARD</div></div>
+        <div class="rephd"><span>📈 Based on your plan</span><span class="lockchip" style="color:#7ef0a8;background:#0f2a18;border-color:#1c5a34">94% match</span></div>
+        <div style="text-align:center;margin:4px 0 2px">
+          <div style="font-size:13px;color:var(--txt-dim);font-weight:700">You'll build visible muscle by</div>
+          <div style="font-size:27px;font-weight:900;font-style:italic;color:var(--brand);letter-spacing:-.5px;line-height:1.1">Jul 23</div>
         </div>
+        <svg viewBox="0 0 280 108" preserveAspectRatio="none" width="280" height="108" style="width:100%;height:108px;flex:none;display:block;margin:4px 0 2px">
+          <defs>
+            <linearGradient id="projfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ff553a" stop-opacity=".34"/>
+              <stop offset="1" stop-color="#ff553a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 80 C70 76 92 62 132 56 C172 50 204 34 250 22 L250 92 L20 92 Z" fill="url(#projfill)"/>
+          <path d="M20 80 C70 76 92 62 132 56 C172 50 204 34 250 22" fill="none" stroke="#ff553a" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="20" cy="80" r="4.5" fill="#fff"/>
+          <circle cx="132" cy="56" r="4.5" fill="#fff"/>
+          <circle cx="250" cy="22" r="5.5" fill="#ff553a" stroke="#fff" stroke-width="2"/>
+          <text x="20" y="104" fill="#7a7a82" font-size="10" font-weight="700" text-anchor="start">Today</text>
+          <text x="132" y="104" fill="#7a7a82" font-size="10" font-weight="700" text-anchor="middle">Week 2</text>
+          <text x="250" y="104" fill="#ff553a" font-size="10" font-weight="800" text-anchor="end">Week 4</text>
+        </svg>
+        <div style="font-size:11px;color:var(--txt-dim);font-weight:600;line-height:1.45;margin-top:4px"><b style="color:#fff">83%</b> of people with your starting point hit their first strength jump within <b style="color:#fff">3 weeks</b>.</div>
       </div>
 
+      <!-- Plan content — recaps their answers (proves personalisation) -->
       <div class="repcard">
-        <div class="rephd"><span>🏋️ Week 1 · your workouts</span><span class="lockchip">🔒 Locked</span></div>
+        <div class="rephd"><span>🗂️ Your plan content</span></div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg class="body" viewBox="0 0 120 220" style="width:50px;flex:0 0 auto">
+            <circle class="seg" cx="60" cy="18" r="13"/>
+            <rect class="seg sel" x="40" y="34" width="40" height="20" rx="8"/>
+            <rect class="seg" x="44" y="56" width="32" height="34" rx="8"/>
+            <rect class="seg sel" x="18" y="38" width="15" height="50" rx="7"/>
+            <rect class="seg sel" x="87" y="38" width="15" height="50" rx="7"/>
+            <rect class="seg" x="43" y="106" width="15" height="64" rx="7"/>
+            <rect class="seg" x="62" y="106" width="15" height="64" rx="7"/>
+          </svg>
+          <div style="flex:1;display:flex;flex-direction:column;gap:9px">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">🎯 Focus</span><b style="color:#fff">Chest · Arms</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">⏱️ Session</span><b style="color:#fff">45 min</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">📅 Per week</span><b style="color:#fff">4 days</b></div>
+          </div>
+        </div>
+        <div style="height:1px;background:var(--stroke);margin:11px 0"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:9px"><span style="color:var(--txt-dim);font-weight:700">🛡️ Protects</span><b style="color:#fff">Knees · Lower back</b></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px"><span style="color:var(--txt-dim);font-weight:700">🎙️ Coach</span><b style="color:#fff">Marcus · Direct</b></div>
+      </div>
+
+      <!-- Plan preview — week-by-week, blurred (curiosity gap) -->
+      <div class="repcard">
+        <div class="rephd"><span>🏋️ Plan preview · 3 weeks</span><span class="lockchip">🔒 Locked</span></div>
         <div class="blur">
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:2px 0 6px">Week 1 · Foundation</div>
           <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Goblet Squat</div><div class="ex-meta">3 sets · 10 reps · 17.5 kg</div></div></div>
           <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Romanian Deadlift</div><div class="ex-meta">3 sets · 8 reps · 40 kg</div></div></div>
-          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Walking Lunge</div><div class="ex-meta">3 sets · 12 reps each leg</div></div></div>
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 6px">Week 2 · Build</div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Incline Dumbbell Press</div><div class="ex-meta">4 sets · 10 reps · 22.5 kg</div></div></div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Bent-Over Row</div><div class="ex-meta">4 sets · 10 reps · 45 kg</div></div></div>
+          <div style="font-size:10px;font-weight:800;color:var(--brand);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 6px">Week 3 · Overload</div>
+          <div class="ex-row"><div class="ex-thumb"></div><div><div class="ex-name">Bulgarian Split Squat</div><div class="ex-meta">3 sets · 12 reps each leg</div></div></div>
         </div>
       </div>
 
-      <div class="repcard">
-        <div class="rephd"><span>📊 Strength projection</span><span class="lockchip">🔒 Locked</span></div>
-        <div class="blur"><div class="chart"><div class="col"><div class="barb" style="height:35%"></div><div class="wk">W1</div></div><div class="col"><div class="barb" style="height:52%"></div><div class="wk">W3</div></div><div class="col"><div class="barb" style="height:68%"></div><div class="wk">W6</div></div><div class="col"><div class="barb" style="height:84%"></div><div class="wk">W9</div></div><div class="col"><div class="barb" style="height:100%"></div><div class="wk">W12</div></div></div></div>
-      </div>
-
+      <!-- Coach focus — locked tease of Coach Mode -->
       <div class="repcard">
         <div class="rephd"><span>💬 Marcus’s focus for you</span><span class="lockchip">🔒 Locked</span></div>
         <div class="tipbox blur"><div class="tl">Coach tip</div><div class="skel" style="width:100%"></div><div class="skel" style="width:92%"></div><div class="skel" style="width:58%"></div></div>
-      </div>
-
-      <div class="repcard">
-        <div class="rephd"><span>🎯 Your top priorities</span><span class="lockchip">🔒 Locked</span></div>
-        <div class="blur"><div class="skel" style="width:64%;height:12px"></div><div class="skel" style="width:96%"></div><div class="skel" style="width:88%"></div><div class="skel" style="width:70%;height:12px;margin-top:14px"></div><div class="skel" style="width:93%"></div></div>
       </div>
 
       <div class="minirev"><div class="av"></div><div><div class="nm">Marcus, 26 <span class="stars">★★★★★</span></div><p>"First plan I actually stuck to. +18kg bench in 4 months."</p></div></div>
@@ -3903,7 +3977,7 @@ Do NOT include BMW logos, kidney grille badge details, M badges, model text, lic
       </div>
     </div>
   </div>
-  <div class="slot-cap"><b>Merged recap + paywall</b> (BetterMe / Ansera style) — the real plan shown but <b>blurred</b> to spike curiosity; sticky trial CTA unlocks it. Projection ties to the rank ladder.</div>
+  <div class="slot-cap"><b>Merged recap + paywall</b> (JustFit style) — <b>goal+date promise</b> on top, <b>plan content</b> recaps their answers (focus, session, days, injuries, coach), the <b>weekly plan stays blurred</b> to spike curiosity; sticky trial CTA unlocks it.</div>
 </div>
 
 </div><!-- /strip opal -->
